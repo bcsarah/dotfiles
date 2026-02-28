@@ -1,0 +1,118 @@
+/* ===== GLOBAL ===== */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    border: none;
+    font-size: 12px;
+    min-height: 0;
+}
+
+/* ===== BAR ===== */
+window#waybar {
+    background: rgba(10, 10, 10, 0.85);
+    color: #e5e5e5;
+}
+
+/* ===== MODULE SPACING ===== */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 0 6px;
+}
+
+/* ===== WORKSPACES ===== */
+#workspaces {
+    margin: 3px 6px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 0 2px;
+    background: transparent;
+    color: #888;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    background: rgba(150, 0, 0, 0.6);
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+#workspaces button:hover {
+    background: rgba(150, 0, 0, 0.35);
+    color: #ffffff;
+}
+
+/* ===== CLOCK ===== */
+#clock {
+    padding: 0 12px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* ===== TRAY ===== */
+#tray {
+    color: #ffffff;
+    padding: 0 6px;
+}
+
+#tray > .passive {
+    color: #ffffff;
+    opacity: 0.6;
+}
+
+#tray > .needs-attention {
+    color: #ffffff;
+    background: rgba(150, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+/* ===== CPU & MEMORY ===== */
+#cpu,
+#memory {
+    padding: 0 8px;
+    color: #cccccc;
+}
+
+#pulseaudio:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+/* ===== AUDIO ===== */
+#pulseaudio {
+    padding: 0 10px;
+}
+
+#pulseaudio.muted {
+    color: #ff5555;
+}
+
+/* ===== BATTERY ===== */
+#battery {
+    padding: 0 10px;
+}
+
+#battery.warning {
+    color: #ffcc00;
+}
+
+#battery.critical {
+    color: #ff4444;
+}
+
+/* ===== POWER BUTTON ===== */
+#custom-power {
+    padding: 0 10px;
+    margin-left: 4px;
+    color: #ff5555;
+    font-size: 14px;
+}
+
+#custom-power:hover {
+    background: rgba(255, 85, 85, 0.15);
+    border-radius: 6px;
+}

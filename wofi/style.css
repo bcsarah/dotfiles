@@ -1,0 +1,49 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    color: #e5e5e5;
+}
+
+/* Janela */
+window {
+    background-color: rgba(15, 15, 15, 0.92);
+    border-radius: 12px;
+    border: 2px solid #8b0000; /* vermelho escuro */
+    padding: 10px;
+}
+
+/* Caixa de entrada */
+#input {
+    margin: 6px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(26, 26, 26, 0.9);
+    color: #ffffff;
+}
+
+/* Lista */
+#outer-box {
+    margin: 6px;
+}
+
+#inner-box {
+    margin-top: 6px;
+}
+
+/* Itens */
+#entry {
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* Item selecionado */
+#entry:selected {
+    background-color: rgba(42, 15, 18, 0.85);
+    border-left: 3px solid #8b0000;
+}
+
+/* Ícones */
+#entry image {
+    margin-right: 10px;
+}

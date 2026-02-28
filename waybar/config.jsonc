@@ -1,0 +1,85 @@
+{
+  "height": 30,
+  "spacing": 4,
+  "modules-left": [
+      "hyprland/workspaces"
+  ],
+  "modules-center": [
+      "clock"
+  ],
+  "modules-right": [
+      "tray",
+      "cpu",
+      "memory",
+      "pulseaudio",
+      "battery",
+      "custom/power"
+  ],
+  "hyprland/workspaces": {
+      "format": "{}"
+  },
+  "tray": {
+      "spacing": 10,
+  },
+  "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+      "format": "{usage}% ",
+      "tooltip": false,
+  "on-click": "kitty -e btop"
+  },
+  "memory": {
+      "format": "{}% ",
+  "on-click": "kitty -e btop"
+  },
+  "battery": {
+      "states": {
+          "warning": 30,
+          "critical": 15
+      },
+      "format": "{capacity}% {icon}",
+      "format-full": "{capacity}% {icon}",
+      "format-charging": "{capacity}% ",
+      "format-plugged": "{capacity}% ",
+      "format-alt": "{time} {icon}",
+      // "format-good": "", // An empty format will hide the module
+      // "format-full": "",
+      "format-icons": ["", "", "", "", ""]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "pulseaudio": {
+      "format": "{volume}% {icon}    {format_source}",
+      "format-bluetooth": "{volume}%  {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": "{volume}% ",
+      "format-source-muted": "",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+  },
+  "custom/power": {
+      "format" : "  ⏻  ",
+  "tooltip": false,
+  "on-click": "hyprctl dispatch exit"
+  }
+}
