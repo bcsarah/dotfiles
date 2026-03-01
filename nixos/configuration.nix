@@ -63,13 +63,6 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  # Pendrive
-  fileSystems."/mnt/pendrive" = {
-    device = "/dev/disk/by-uuid/4E21-0000";
-    fsType = "vfat";
-    options = [ "uid=1000" "gid=1000" "rw" "nofail" ];
-  };
-
   
   # Unfree
   nixpkgs.config.allowUnfree = true;
