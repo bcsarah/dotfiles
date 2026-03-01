@@ -96,6 +96,7 @@
     tmux
     ncdu
     tree
+    yazi
 
     # Neovim Dependencies
     gcc
@@ -172,15 +173,19 @@
   [Desktop Entry]
   Hidden=true
   '';
+  home.file.".local/share/applications/btop.desktop".text = ''
+  [Desktop Entry]
+  Hidden=true
+  '';
+  home.file.".local/share/applications/yazi.desktop".text = ''
+  [Desktop Entry]
+  Hidden=true
+  '';
   home.file.".local/share/applications/qt6ct.desktop".text = ''
   [Desktop Entry]
   Hidden=true
   '';
   home.file.".local/share/applications/qt5ct.desktop".text = ''
-  [Desktop Entry]
-  Hidden=true
-  '';
-  home.file.".local/share/applications/btop.desktop".text = ''
   [Desktop Entry]
   Hidden=true
   '';
