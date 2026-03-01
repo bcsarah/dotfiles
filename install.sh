@@ -1,46 +1,31 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
 
-# Paths
-DOTFILES=$HOME/dotfiles
-CONFIG=$HOME/.config
-NIXOS=/etc/nixos
-BACKUP="$DOTFILES"/backup
-
-# Backup
-mkdir -p "$BACKUP"
-
-sudo cp -r /etc/nixos "$BACKUP"
-cp -r "$CONFIG"/nvim "$BACKUP"
-cp -r "$CONFIG"/fastfetch "$BACKUP"
-cp -r "$CONFIG"/hypr "$BACKUP"
-cp -r "$CONFIG"/waybar "$BACKUP"
-cp -r "$CONFIG"/wofi "$BACKUP"
-cp -r "$CONFIG"/yazi "$BACKUP"
-cp -r "$CONFIG"/lazygit "$BACKUP"
 
 # System Recreation
-sudo cp "$NIXOS"/hardware-configuration.nix "$DOTFILES"/nixos/
-sudo ln -sfnv "$DOTFILES"/nixos "$NIXOS"
-sudo nixos-rebuild boot
+rm -rf ~/dotfiles/nixos/hardware-configuration.nix
+sudo mv /etc/nixos/hardware-configuration.nix ~/dotfiles/nixos/
+
+sudo rm -rf /etc/nixos
+sudo ln -sfnv ~/dotfiles/nixos /etc/
+sudo nixos-rebuild switch
+
 
 # Removing .config
-rm -rf "$DOTFILES"/nvim
-rm -rf "$DOTFILES"/fastfetch
-rm -rf "$DOTFILES"/hypr
-rm -rf "$DOTFILES"/waybar
-rm -rf "$DOTFILES"/wofi
-rm -rf "$DOTFILES"/yazi
-rm -rf "$DOTFILES"/lazygit
+mkdir ~/.config
+rm -rf ~/.config/nvim
+rm -rf ~/.config/fastfetch
+rm -rf ~/.config/hypr
+rm -rf ~/.config/waybar
+rm -rf ~/.config/wofi
+rm -rf ~/.config/yazi
+rm -rf ~/.config/lazygit
+
 
 # Symlinks
-ln -sfnv "$DOTFILES"/nvim "$CONFIG"
-ln -sfnv "$DOTFILES"/fastfetch "$CONFIG"
-ln -sfnv "$DOTFILES"/hypr "$CONFIG"
-ln -sfnv "$DOTFILES"/waybar "$CONFIG"
-ln -sfnv "$DOTFILES"/wofi "$CONFIG"
-ln -sfnv "$DOTFILES"/yazi "$CONFIG"
-ln -sfnv "$DOTFILES"/lazygit "$CONFIG"
-
-# Reboot
-reboot
+ln -sfnv ~/dotfiles/nvim ~/.config/
+ln -sfnv ~/dotfiles/fastfetch ~/.config/
+ln -sfnv ~/dotfiles/hypr ~/.config/
+ln -sfnv ~/dotfiles/waybar ~/.config/
+ln -sfnv ~/dotfiles/wofi ~/.config/
+ln -sfnv ~/dotfiles/yazi ~/.config/
+ln -sfnv ~/dotfiles/lazygit ~/.config/
