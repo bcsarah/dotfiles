@@ -8,8 +8,7 @@ BACKUP="$DOTFILES"/backup
 
 # Backup
 mkdir -p "$BACKUP"
-
-sudo cp -r /etc/nixos "$BACKUP"
+sudo cp -r "$NIXOS" "$BACKUP"
 cp -r "$CONFIG"/nvim "$BACKUP"
 cp -r "$CONFIG"/fastfetch "$BACKUP"
 cp -r "$CONFIG"/hypr "$BACKUP"
@@ -19,11 +18,15 @@ cp -r "$CONFIG"/yazi "$BACKUP"
 cp -r "$CONFIG"/lazygit "$BACKUP"
 
 # System Recreation
-sudo cp "$NIXOS"/hardware-configuration.nix "$DOTFILES"/nixos/
-sudo rm -rf "$NIXOS"
-sudo ln -sfnv "$DOTFILES"/nixos "$NIXOS"
+rm -rf "$DOTFILES"/nixos/hardware-configuration.nix
+sudo mv "$NIXOS"/hardware-configuration.nix "$DOTFILES"/nixos
 
-# Removing .config
+sudo rm -rf "$NIXOS"
+sudo ln -sfnv "$DOTFILES"/nixos /etc
+sudo nixos-rebuild switch
+
+# Removing "$CONFIG"
+mkdir "$CONFIG"
 rm -rf "$CONFIG"/nvim
 rm -rf "$CONFIG"/fastfetch
 rm -rf "$CONFIG"/hypr
