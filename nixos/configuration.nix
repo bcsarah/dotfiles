@@ -27,7 +27,7 @@
   time.timeZone = "America/Maceio";
   time.hardwareClockInLocalTime = true;
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "pt_BR.UTF-8";
   console.keyMap = "br-abnt2";
 
   i18n.extraLocaleSettings = {
@@ -62,6 +62,13 @@
   # Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  # Pendrive
+  fileSystems."/mnt/pendrive" = {
+    device = "/dev/disk/by-uuid/4E21-0000";
+    fsType = "vfat";
+    options = [ "uid=1000" "gid=1000" "rw" "nofail" ];
+  };
 
   
   # Unfree
