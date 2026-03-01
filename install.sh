@@ -1,21 +1,33 @@
 #!/bin/bash
+set -e
 
-# Neovim
-rm -rf ~/.config/nvim/
-ln -sfnv ~/dotfiles/nvim/ ~/.config/
+# Paths
+DOTFILES=$HOME/dotfiles
+CONFIG=$HOME/.config
+NIXOS=/etc/nixos
+BACKUP=$DOTFILES/backup
 
-# Fastfetch
-rm -rf ~/.config/fastfetch
-ln -sfnv ~/dotfiles/fastfetch/ ~/.config/
+# Backup
+mkdir -p $BACKUP
 
-# Hyprland
-rm -rf ~/.config/hypr/
-ln -sfnv ~/dotfiles/hypr/ ~/.config/
+sudo cp -r /etc/nixos $BACKUP
+cp -r $CONFIG/nvim $BACKUP
+cp -r $CONFIG/fastfetch $BACKUP
+cp -r $CONFIG/hypr $BACKUP
+cp -r $CONFIG/waybar $BACKUP
+cp -r $CONFIG/wofi $BACKUP
 
-# Waybar
-rm -rf ~/.config/waybar/
-ln -sfnv ~/dotfiles/waybar/ ~/.config/
+# System Recreation
+sudo cp $NIXOS/hardware-configuration.nix $DOTFILES/nixos/
+sudo ln -sfnv $DOTFILES/nixos $NIXOS
+sudo nixos-rebuild boot
 
-# Wofi
-rm -rf ~/.config/wofi/
-ln -sfnv ~/dotfiles/wofi/ ~/.config/
+# Symlinks
+ln -sfnv $DOTFILES/nvim $CONFIG/nvim
+ln -sfnv $DOTFILES/fastfetch $CONFIG/fastfetch
+ln -sfnv $DOTFILES/hypr $CONFIG/hypr
+ln -sfnv $DOTFILES/waybar $CONFIG/waybar
+ln -sfnv $DOTFILES/wofi $CONFIG/wofi
+
+# Reboot
+reboot
