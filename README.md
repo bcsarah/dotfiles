@@ -37,7 +37,7 @@ Você pode facilmente adaptar:
 - Configuração do sistema via Nix
 
 ---
-## <3 Com amor
+## ❤️ Com amor
 
 O tema foi feito com muito amor e carinho para aqueles que querem ter um setup parecido com o meu. Aceito pull requests!
 > Usem e abusem o quanto quiser! Beleza nunca é o suficiente.
