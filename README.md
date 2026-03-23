@@ -1,1 +1,1 @@
-# Dotfiles (by bcsarah)
+# Dotfiles
