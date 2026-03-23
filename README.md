@@ -13,6 +13,10 @@ Utiliza o **Ashen Theme**, com uma estética:
 Com o passar do tempo, irei adicionar uma nova estética ao repositório
 
 ---
+## 📸 Preview
+~~Ainda preciso tirar a print~~
+
+---
 ## 🧰 Ferramentas
 
 - **WM:** Hyprland
