@@ -190,4 +190,20 @@
   [Desktop Entry]
   Hidden=true
   '';
+  home.file.".local/share/applications/nwg-look.desktop".text = ''
+  [Desktop Entry]
+  Hidden=true
+  '';
+  home.file.".local/share/applications/gnome-color-manager.desktop".text = ''
+  [Desktop Entry]
+  Hidden=true
+  '';
+  home.file.".local/share/applications/rygel.desktop".text = ''
+  [Desktop Entry]
+  Hidden=true
+  '';
+  home.file.".local/share/applications/ibus.desktop".text = ''
+  [Desktop Entry]
+  Hidden=true
+  '';
 }
