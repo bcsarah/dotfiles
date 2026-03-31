@@ -63,11 +63,15 @@
   
   # Unfree
   nixpkgs.config.allowUnfree = true;
+
+  # Flatpak
+  services.flatpak.enable = true;
   
   # Gnome / Hyprland
   services.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = with pkgs; [
     gnome-color-manager
+  ];
 
   services.gnome.core-apps.enable = false;
   services.gnome.rygel.enable = false;

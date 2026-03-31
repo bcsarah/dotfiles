@@ -90,6 +90,7 @@
     wget
     zip
     unzip
+    unrar
     btop
     bluetui
     tmux
@@ -129,13 +130,13 @@
     spotify
     zapzap
     pavucontrol
+    nautilus
 
     # Audio Visual
     onlyoffice-desktopeditors
     krita
-
-    # Games
-    steam
+    obs-studio
+    kdePackages.kdenlive
 
     # Hyprland utilities
     kitty
