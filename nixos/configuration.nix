@@ -6,7 +6,7 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 3;
+  boot.loader.systemd-boot.configurationLimit = 5;
 
 
   # Kernel
@@ -64,14 +64,18 @@
   # Unfree
   nixpkgs.config.allowUnfree = true;
   
-  # Gnome
+  # Gnome / Hyprland
   services.desktopManager.gnome.enable = true;
-  environment.gnome.excludePackages = with pkgs; [];
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-color-manager
+
   services.gnome.core-apps.enable = false;
+  services.gnome.rygel.enable = false;
+  i18n.inputMethod.enable = false;
   programs.seahorse.enable = false;
 
-  # Hyprland
   programs.hyprland.enable = true;
+
 
   # System Packages
   environment.systemPackages = with pkgs; [ ];

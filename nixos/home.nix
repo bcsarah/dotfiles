@@ -15,30 +15,23 @@
     enable = true;
     interactiveShellInit = ''
       function fish_prompt
-      # Quebra de linha antes do prompt
       echo
 
-      # Usuário
       set_color brgreen
       echo -n (whoami)
 
-      # Separador
       set_color brblack
       echo -n "@"
 
-      # Host
       set_color brblue
       echo -n (hostname)
 
-      # Texto "in"
       set_color brblack
       echo -n " in "
 
-      # Diretório
       set_color yellow
       echo -n (prompt_pwd)
 
-      # Git branch
       if git rev-parse --is-inside-work-tree >/dev/null 2>&1
           set branch (git branch --show-current)
           if not git diff --quiet --ignore-submodules
@@ -51,10 +44,7 @@
           echo -n " ("$branch" "$git_icon")"
       end
 
-      # Quebra de linha antes do símbolo do prompt
       echo
-
-      # Símbolo do prompt
       set_color red
       echo -n "❯ "
       set_color normal
@@ -191,18 +181,6 @@
   Hidden=true
   '';
   home.file.".local/share/applications/nwg-look.desktop".text = ''
-  [Desktop Entry]
-  Hidden=true
-  '';
-  home.file.".local/share/applications/gnome-color-manager.desktop".text = ''
-  [Desktop Entry]
-  Hidden=true
-  '';
-  home.file.".local/share/applications/rygel.desktop".text = ''
-  [Desktop Entry]
-  Hidden=true
-  '';
-  home.file.".local/share/applications/ibus.desktop".text = ''
   [Desktop Entry]
   Hidden=true
   '';
