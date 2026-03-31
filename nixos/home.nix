@@ -10,14 +10,6 @@
   programs.home-manager.enable = true;
 
 
-  # GTK
-  gtk = {
-    enable = true;
-    iconTheme.name = "Papirus-dark";
-    cursorTheme.name = "GoogleDot-Black";
-  };
-
-
   # Fish
   programs.fish = {
     enable = true;
@@ -147,7 +139,6 @@
     spotify
     zapzap
     pavucontrol
-    github-desktop
 
     # Audio Visual
     onlyoffice-desktopeditors
@@ -179,6 +170,7 @@
     # Outros
     papirus-icon-theme
     google-cursor
+    nwg-look
 
   ];
 
