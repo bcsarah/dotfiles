@@ -124,7 +124,6 @@
     jdt-language-server
     
     # GUI
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     discord
     spotify
     zapzap

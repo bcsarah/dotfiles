@@ -1,14 +1,7 @@
 {
-  description = "Flakes & Home-Manager by bcsarah64";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -20,14 +13,12 @@
 
       modules = [
         ./configuration.nix
-
         home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            extraSpecialArgs = { inherit inputs; };
-
-            users.bcsarah = import ./home.nix;
-          };
+	{
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs ; };
+          home-manager.users.bcsarah = import ./home.nix;
         }
       ];
     };
