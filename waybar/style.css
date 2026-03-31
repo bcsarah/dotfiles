@@ -8,8 +8,8 @@
 
 /* ===== BAR ===== */
 window#waybar {
-    background: rgba(10, 10, 10, 0.85);
-    color: #e5e5e5;
+    background: rgba(40, 40, 40, 0.9); /* #282828 */
+    color: #ebdbb2;
 }
 
 /* ===== MODULE SPACING ===== */
@@ -28,91 +28,96 @@ window#waybar {
     padding: 0 8px;
     margin: 0 2px;
     background: transparent;
-    color: #888;
+    color: #928374;
     transition: all 0.2s ease;
 }
 
 #workspaces button.active {
-    background: rgba(150, 0, 0, 0.6);
-    color: #ffffff;
+    background: #98971a; /* green */
+    color: #282828;
     border-radius: 4px;
 }
 
 #workspaces button:hover {
-    background: rgba(150, 0, 0, 0.35);
-    color: #ffffff;
+    background: #458588; /* blue */
+    color: #ebdbb2;
 }
 
 /* ===== CLOCK ===== */
 #clock {
     padding: 0 12px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fabd2f; /* yellow */
 }
 
 /* ===== TRAY ===== */
 #tray {
-    color: #ffffff;
+    color: #ebdbb2;
     padding: 0 6px;
 }
 
 #tray > .passive {
-    color: #ffffff;
     opacity: 0.6;
 }
 
 #tray > .needs-attention {
-    color: #ffffff;
-    background: rgba(150, 0, 0, 0.5);
+    color: #282828;
+    background: #cc241d; /* red */
     border-radius: 4px;
 }
 
 /* ===== CPU & MEMORY ===== */
-#cpu,
+#cpu {
+    padding: 0 8px;
+    color: #83a598; /* aqua */
+}
+
 #memory {
     padding: 0 8px;
-    color: #cccccc;
+    color: #b16286; /* purple */
 }
 
 #pulseaudio:hover,
 #battery:hover,
 #cpu:hover,
 #memory:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(235, 219, 178, 0.08);
     border-radius: 4px;
 }
 
 /* ===== AUDIO ===== */
 #pulseaudio {
     padding: 0 10px;
+    color: #d79921;
 }
 
 #pulseaudio.muted {
-    color: #ff5555;
+    color: #cc241d;
 }
 
 /* ===== BATTERY ===== */
 #battery {
     padding: 0 10px;
+    color: #98971a;
 }
 
 #battery.warning {
-    color: #ffcc00;
+    color: #fabd2f;
 }
 
 #battery.critical {
-    color: #ff4444;
+    color: #cc241d;
 }
 
 /* ===== POWER BUTTON ===== */
 #custom-power {
     padding: 0 10px;
     margin-left: 4px;
-    color: #ff5555;
+    color: #fb4934;
     font-size: 14px;
 }
 
 #custom-power:hover {
-    background: rgba(255, 85, 85, 0.15);
+    background: rgba(251, 73, 52, 0.15);
     border-radius: 6px;
 }

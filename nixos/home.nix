@@ -13,15 +13,8 @@
   # GTK
   gtk = {
     enable = true;
-    theme.name = "Adwaita-dark";
     iconTheme.name = "Papirus-dark";
     cursorTheme.name = "GoogleDot-Black";
-  };
-
-  # QT
-  qt = {
-    enable = true;  
-    platformTheme.name = "gtk3";
   };
 
 
@@ -29,26 +22,50 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      set -U fish_greeting ""
-
       function fish_prompt
-        set_color brred
-        echo -n (whoami)
-        set_color white
-        echo -n "@"
-        set_color red
-        echo -n (hostname)" "
+      # Quebra de linha antes do prompt
+      echo
 
-        set_color white
-        echo (prompt_pwd)
-        set_color brblack
-        echo -n "-❯ "
+      # Usuário
+      set_color brgreen
+      echo -n (whoami)
 
-        set_color normal
+      # Separador
+      set_color brblack
+      echo -n "@"
+
+      # Host
+      set_color brblue
+      echo -n (hostname)
+
+      # Texto "in"
+      set_color brblack
+      echo -n " in "
+
+      # Diretório
+      set_color yellow
+      echo -n (prompt_pwd)
+
+      # Git branch
+      if git rev-parse --is-inside-work-tree >/dev/null 2>&1
+          set branch (git branch --show-current)
+          if not git diff --quiet --ignore-submodules
+              set_color red
+              set git_icon "✗"
+          else
+              set_color brpurple
+              set git_icon "✔"
+          end
+          echo -n " ("$branch" "$git_icon")"
       end
 
-      function fish_postexec --on-event fish_postexec
-        echo
+      # Quebra de linha antes do símbolo do prompt
+      echo
+
+      # Símbolo do prompt
+      set_color red
+      echo -n "❯ "
+      set_color normal
       end
     '';
     shellAliases = {};
@@ -59,7 +76,7 @@
   programs.git = {
     enable = true;
     settings.user = {
-      name = "Sarah Aurora";
+      name = "Better Call Sarah";
       email = "sarahalencar6409@gmail.com";
     };
   };
@@ -113,6 +130,7 @@
     python3
     python3Packages.pip
     python3Packages.virtualenv
+
     nodejs
     nodePackages.typescript
     nodePackages.typescript-language-server
@@ -120,10 +138,14 @@
     nodePackages.nodejs
     prettier
     eslint
+
     jdk17
     jdt-language-server
+
+    ruby
     
     # GUI
+    firefox
     discord
     spotify
     zapzap
@@ -132,13 +154,9 @@
     # Audio Visual
     onlyoffice-desktopeditors
     krita
-    obs-studio
-    kdePackages.kdenlive
 
     # Games
     steam
-    lutris
-    wineWow64Packages.stable
 
     # Hyprland utilities
     kitty
@@ -163,11 +181,6 @@
     # Outros
     papirus-icon-theme
     google-cursor
-    nwg-look
-    adwaita-qt
-    adwaita-qt6
-    kdePackages.qt6ct
-    libsForQt5.qt5ct
 
   ];
 
@@ -180,18 +193,6 @@
   Hidden=true
   '';
   home.file.".local/share/applications/yazi.desktop".text = ''
-  [Desktop Entry]
-  Hidden=true
-  '';
-  home.file.".local/share/applications/qt6ct.desktop".text = ''
-  [Desktop Entry]
-  Hidden=true
-  '';
-  home.file.".local/share/applications/qt5ct.desktop".text = ''
-  [Desktop Entry]
-  Hidden=true
-  '';
-  home.file.".local/share/applications/nwg-look.desktop".text = ''
   [Desktop Entry]
   Hidden=true
   '';

@@ -64,6 +64,12 @@
   # Unfree
   nixpkgs.config.allowUnfree = true;
   
+  # Gnome
+  services.desktopManager.gnome.enable = true;
+  environment.gnome.excludePackages = with pkgs; [];
+  services.gnome.core-apps.enable = false;
+  programs.seahorse.enable = false;
+
   # Hyprland
   programs.hyprland.enable = true;
 

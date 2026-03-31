@@ -1,7 +1,6 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
 
-  // Logo
   "logo": {
     "type": "small",
     "padding": {
@@ -9,69 +8,40 @@
       "left": 3
     },
     "color": {
-        "1": "red",
-        "2": "#800000",
-        "3": "red",
-        "4": "#800000",
-        "5": "red",
-        "6": "#800000",
-      }
+      "1": "#e53935",
+      "2": "#fb8c00",
+      "3": "#fbc02d",
+      "4": "#c0ca33",
+      "5": "#26a69a",
+      "6": "#f48fb1"
+    }
   },
 
-  // Layout geral
   "display": {
     "separator": "",
     "key": {
       "width": 16
     },
-    "color": "red"
+    "color": "#a89984"
   },
 
-  // Módulos exibidos
   "modules": [
     "break",
     "title",
     "break",
 
-    {
-      "type": "os",
-      "key": " OS"
-    },
-    {
-      "type": "kernel",
-      "key": "󰌢 Kernel"
-    },
-    {
-      "type": "uptime",
-      "key": "󱫐 Uptime"
-    },
-    {
-      "type": "packages",
-      "key": "󰏖 Packages"
-    },
-    {
-      "type": "shell",
-      "key": " Shell"
-    },
-    {
-      "type": "terminal",
-      "key": " Terminal"
-    },
+    { "type": "os", "key": " OS" },
+    { "type": "kernel", "key": "󰌢 Kernel" },
+    { "type": "uptime", "key": "󱫐 Uptime" },
+    { "type": "packages", "key": "󰏖 Packages" },
+    { "type": "shell", "key": " Shell" },
+    { "type": "terminal", "key": " Terminal" },
 
     "separator",
 
-    {
-      "type": "cpu",
-      "key": "󰍛 CPU"
-    },
-    {
-      "type": "gpu",
-      "key": "󰢮 GPU"
-    },
-    {
-      "type": "memory",
-      "key": "󰑭 Memory"
-    },
+    { "type": "cpu", "key": "󰍛 CPU" },
+    { "type": "gpu", "key": "󰢮 GPU" },
+    { "type": "memory", "key": "󰑭 Memory" },
     {
       "type": "disk",
       "key": "󰋊 Disk",
@@ -80,27 +50,10 @@
 
     "separator",
 
-    {
-      "type": "desktop-environment",
-      "key": "󰧨 DE"
-    },
-    {
-      "type": "wm",
-      "key": "󰖯 WM"
-    },
-    {
-      "type": "theme",
-      "key": "󰉼 Theme"
-    },
-    {
-      "type": "icons",
-      "key": "󰀻 Icons"
-    },
-    {
-      "type": "font",
-      "key": "󰛖 Font"
-    },
-
+    { "type": "desktop-environment", "key": "󰧨 DE" },
+    { "type": "wm", "key": "󰖯 WM" },
+    { "type": "theme", "key": "󰉼 Theme" },
+    { "type": "icons", "key": "󰀻 Icons" },
+    { "type": "font", "key": "󰛖 Font" }
   ]
 }
-
