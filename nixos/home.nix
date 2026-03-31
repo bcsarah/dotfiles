@@ -130,7 +130,6 @@
     python3
     python3Packages.pip
     python3Packages.virtualenv
-
     nodejs
     nodePackages.typescript
     nodePackages.typescript-language-server
@@ -138,10 +137,8 @@
     nodePackages.nodejs
     prettier
     eslint
-
     jdk17
     jdt-language-server
-
     ruby
     
     # GUI
@@ -150,6 +147,7 @@
     spotify
     zapzap
     pavucontrol
+    github-desktop
 
     # Audio Visual
     onlyoffice-desktopeditors
