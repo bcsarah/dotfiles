@@ -1,13 +1,13 @@
 # ❄️ Dotfiles - NixOS + Hyprland
 
-Este repositório contém meus **dotfiles** com foco em um ambiente moderno, minimalista e consistente utilizando o **tema Ashen** em todo o sistema, rodando sobre o tão famoso **Hyprland**.
+Este repositório contém meus **dotfiles** com foco em um ambiente moderno, minimalista e consistente utilizando o **tema Gruvbox** em todo o sistema, rodando sobre o tão famoso **Hyprland**.
 
 ---
 ## 🎨 Tema
 
-Utiliza o **Ashen Theme**, com uma estética:
-- Extremamente escura
-- Grande uso da cor vermelha
+Utiliza o **Gruvbox**, com uma estética:
+- Escura ao olhar
+- Foco no conforto ocular
 - Visual consistente entre as ferramentas
 
 Com o passar do tempo, irei adicionar uma nova estética ao repositório
@@ -34,7 +34,7 @@ Com o passar do tempo, irei adicionar uma nova estética ao repositório
 ## ✨ Personalização
 
 Você pode facilmente adaptar:
-- Tons do tema Ashen
+- Tons do tema Gruvbox
 - Keybinds do Hyprland
 - Estilo da Waybar
 - Plugins do Neovim
