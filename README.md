@@ -1,47 +1,45 @@
 # ❄️ Dotfiles - NixOS + Hyprland
 
-Este repositório contém meus **dotfiles** com foco em um ambiente moderno, minimalista e consistente utilizando o **tema Gruvbox** em todo o sistema, rodando sobre o tão famoso **Hyprland**.
+This repository contains my **dotfiles**, focused on a modern, minimal, and consistent environment using the **Gruvbox theme** across the entire system, running on the famous **Hyprland**.
 
 ---
-## 🎨 Tema
+## 🎨 Theme
 
-Utiliza o **Gruvbox**, com uma estética:
-- Escura ao olhar
-- Foco no conforto ocular
-- Visual consistente entre as ferramentas
-
-Com o passar do tempo, irei adicionar uma nova estética ao repositório
+Uses **Gruvbox**, with an aesthetic that is:
+- Easy on the eyes  
+- Focused on visual comfort  
+- Consistent across all tools  
 
 ---
 ## 📸 Preview
-~~Ainda preciso tirar a print~~
+~~Still need to take a screenshot~~
 
 ---
-## 🧰 Ferramentas
+## 🧰 Tools
 
-- **WM:** Hyprland
-- **Terminal:** kitty
-- **Shell:** fish
-- **Editor:** Neovim
-- **Barra:** Waybar
-- **Launcher:** Wofi
-- **Gerenciador de Arquivos:** Yazi
-- **Fetch:** Fastfetch
-- **Git UI:** Lazygit
-- **Sistema:** NixOS, ou qualquer (apenas linkar, sem nixos/)
-
----
-## ✨ Personalização
-
-Você pode facilmente adaptar:
-- Tons do tema Gruvbox
-- Keybinds do Hyprland
-- Estilo da Waybar
-- Plugins do Neovim
-- Configuração do sistema via Nix
+- **WM:** Hyprland  
+- **Terminal:** kitty  
+- **Shell:** fish  
+- **Editor:** Neovim  
+- **Bar:** Waybar  
+- **Launcher:** Wofi  
+- **File Manager:** Yazi  
+- **Fetch:** Fastfetch  
+- **Git UI:** Lazygit  
+- **System:** NixOS, or any distro (just link it, without nixos/)
 
 ---
-## ❤️ Com amor
+## ✨ Customization
 
-O tema foi feito com muito amor e carinho para aqueles que querem ter um setup parecido com o meu. Aceito pull requests!
-> Usem e abusem o quanto quiser! Beleza nunca é o suficiente.
+You can easily tweak:
+- Gruvbox color tones  
+- Hyprland keybinds  
+- Waybar styling  
+- Neovim plugins  
+- System configuration via Nix  
+
+---
+## ❤️ Made with love
+
+This theme was crafted with a lot of love and care for those who want a setup similar to mine. Pull requests are welcome!  
+> Use and abuse it as much as you want — beauty is never enough.

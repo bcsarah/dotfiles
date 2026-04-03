@@ -6,9 +6,6 @@
   home.homeDirectory = "/home/bcsarah";
   home.stateVersion = "26.05";
 
-  # Home-Manager
-  programs.home-manager.enable = true;
-
 
   # Fish
   programs.fish = {
@@ -54,7 +51,7 @@
   };
 
 
-  # Git
+  # Git / Lazygit
   programs.git = {
     enable = true;
     settings.user = {
@@ -62,8 +59,6 @@
       email = "sarahalencar6409@gmail.com";
     };
   };
-
-  # LazyGit
   programs.lazygit.enable = true;
 
 
@@ -75,15 +70,16 @@
     viAlias = true;
 
     withPython3 = true;
-    withRuby = true;
     withNodeJs = true;
+    withRuby = true;
+    withJava = true;
   };
 
 
   # Unfree Software
   nixpkgs.config.allowUnfree = true;
 
-  # Pacotes do usuário
+  # Home Packages
   home.packages = with pkgs; [
     
     # CLI
@@ -111,13 +107,8 @@
 
     # Programming
     python3
-    python3Packages.pip
-    python3Packages.virtualenv
     nodejs
-    prettier
-    eslint
     jdk17
-    jdt-language-server
     ruby
     
     # GUI
@@ -145,7 +136,7 @@
     brightnessctl
     wl-clipboard
 
-    # CLI divertido
+    # Better CLI
     fastfetch
     sl
     cmatrix
@@ -154,13 +145,14 @@
     cava
     cowsay
 
-    # Outros
+    # Others
     papirus-icon-theme
     google-cursor
     nwg-look
 
   ];
 
+  # Hide desktop icons
   home.file.".local/share/applications/nvim.desktop".text = ''
   [Desktop Entry]
   Hidden=true

@@ -12,13 +12,17 @@
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  # ZRAM
+  zramSwap.enable = true;
+
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
   # Network
   networking.networkmanager.enable = true;
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos";
+
 
   # Locales
   time.timeZone = "America/Maceio";
@@ -42,6 +46,10 @@
 
   # Greeter
   services.displayManager.ly.enable = true;
+  
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
 
   # Users
@@ -49,23 +57,14 @@
     isNormalUser = true;
     description = "Better Call Sarah";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;	# Change Shell
+    shell = pkgs.fish;
   };
   users.defaultUserShell = pkgs.fish;
 
   # Shell
   programs.fish.enable = true;
   
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 
-  
-  # Unfree
-  nixpkgs.config.allowUnfree = true;
-
-  # Flatpak
-  services.flatpak.enable = true;
   
   # Gnome / Hyprland
   services.desktopManager.gnome.enable = true;
@@ -81,8 +80,17 @@
   programs.hyprland.enable = true;
 
 
+  # Unfree
+  nixpkgs.config.allowUnfree = true;
+
+  # Flatpak
+  services.flatpak.enable = true;
+
+
   # System Packages
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [
+    noto-fonts-cjk-sans
+  ];
 
   # Fonts
   fonts.packages = with pkgs; [
@@ -94,5 +102,3 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
-
-
