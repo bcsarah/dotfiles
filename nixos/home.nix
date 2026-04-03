@@ -114,10 +114,6 @@
     python3Packages.pip
     python3Packages.virtualenv
     nodejs
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    nodePackages.vscode-langservers-extracted
-    nodePackages.nodejs
     prettier
     eslint
     jdk17
