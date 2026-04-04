@@ -19,4 +19,3 @@ vim.keymap.set("v", "<S-Tab>", "<gv")
 -- Word Wrap
 vim.opt.wrap = true
 vim.opt.breakindent = true
-

@@ -10,41 +10,32 @@
   # Fish
   programs.fish = {
     enable = true;
+    shellInit = ''
+      clear
+      fastfetch
+    '';
     interactiveShellInit = ''
       function fish_prompt
-      echo
+        echo
+        set_color yellow
+        echo -n (prompt_pwd)
 
-      set_color brgreen
-      echo -n (whoami)
+        if git rev-parse --is-inside-work-tree >/dev/null 2>&1
+            set branch (git branch --show-current)
+            if not git diff --quiet --ignore-submodules
+                set_color red
+                set git_icon "✗"
+            else
+                set_color brpurple
+                set git_icon "✔"
+            end
+            echo -n " ("$branch" "$git_icon")"
+        end
 
-      set_color brblack
-      echo -n "@"
+        set_color red
+        echo -n " ❯ "
 
-      set_color brblue
-      echo -n (hostname)
-
-      set_color brblack
-      echo -n " in "
-
-      set_color yellow
-      echo -n (prompt_pwd)
-
-      if git rev-parse --is-inside-work-tree >/dev/null 2>&1
-          set branch (git branch --show-current)
-          if not git diff --quiet --ignore-submodules
-              set_color red
-              set git_icon "✗"
-          else
-              set_color brpurple
-              set git_icon "✔"
-          end
-          echo -n " ("$branch" "$git_icon")"
-      end
-
-      echo
-      set_color red
-      echo -n "❯ "
-      set_color normal
+        set_color normal
       end
     '';
     shellAliases = {};
@@ -72,7 +63,6 @@
     withPython3 = true;
     withNodeJs = true;
     withRuby = true;
-    withJava = true;
   };
 
 
@@ -108,7 +98,7 @@
     # Programming
     python3
     nodejs
-    jdk17
+    openjdk21
     ruby
     
     # GUI
@@ -122,8 +112,6 @@
     # Audio Visual
     onlyoffice-desktopeditors
     krita
-    obs-studio
-    kdePackages.kdenlive
 
     # Hyprland utilities
     kitty
@@ -151,6 +139,7 @@
     nwg-look
 
   ];
+
 
   # Hide desktop icons
   home.file.".local/share/applications/nvim.desktop".text = ''
