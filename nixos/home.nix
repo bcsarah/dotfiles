@@ -100,6 +100,7 @@
     nodejs
     openjdk21
     ruby
+    maven
     
     # GUI
     firefox
