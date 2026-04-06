@@ -98,8 +98,8 @@
     # Programming
     python3
     nodejs
-    openjdk21
     ruby
+    openjdk21
     maven
     
     # GUI
