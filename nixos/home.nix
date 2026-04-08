@@ -10,10 +10,6 @@
   # Fish
   programs.fish = {
     enable = true;
-    shellInit = ''
-      clear
-      fastfetch
-    '';
     interactiveShellInit = ''
       function fish_prompt
         echo
