@@ -12,7 +12,6 @@
     enable = true;
     interactiveShellInit = ''
       function fish_prompt
-        echo
         set_color yellow
         echo -n (prompt_pwd)
 
@@ -62,34 +61,40 @@
   };
 
 
+  # Firefox
+  programs.firefox = {
+    enable = true;
+  };
+
+
   # Unfree Software
   nixpkgs.config.allowUnfree = true;
 
   # Home Packages
   home.packages = with pkgs; [
-    
     # CLI
     wget
     zip
     unzip
-    unrar
     btop
-    bluetui
-    tmux
-    ncdu
     tree
-    yazi
+    bluetui
+    fastfetch
+    cmatrix
+    asciiquarium
+    
+    # GUI
+    nautilus
+    discord
+    spotify
+    obsidian
+    pavucontrol
 
-    # Neovim Dependencies
-    gcc
-    gnumake
-    ripgrep
-    fd
-    fzf
-    tree-sitter
-    stylua
-    prettierd
-    eslint_d
+    # Audio Visual
+    onlyoffice-desktopeditors
+    krita
+    kdePackages.kdenlive
+    obs-studio
 
     # Programming
     python3
@@ -97,20 +102,19 @@
     ruby
     openjdk21
     maven
-    
-    # GUI
-    firefox
-    discord
-    spotify
-    zapzap
-    pavucontrol
-    nautilus
 
-    # Audio Visual
-    onlyoffice-desktopeditors
-    krita
+    # Neovim
+    tree-sitter
+    prettierd
+    eslint_d
+    gnumake
+    ripgrep
+    stylua
+    gcc
+    fzf
+    fd
 
-    # Hyprland utilities
+    # Hyprland
     kitty
     wofi
     waybar
@@ -121,24 +125,14 @@
     brightnessctl
     wl-clipboard
 
-    # Better CLI
-    fastfetch
-    sl
-    cmatrix
-    asciiquarium
-    pipes
-    cava
-    cowsay
-
-    # Others
+    # Icons
     papirus-icon-theme
     google-cursor
     nwg-look
-
   ];
 
 
-  # Hide desktop icons
+  # Hide .desktop
   home.file.".local/share/applications/nvim.desktop".text = ''
   [Desktop Entry]
   Hidden=true
@@ -147,15 +141,11 @@
   [Desktop Entry]
   Hidden=true
   '';
-  home.file.".local/share/applications/yazi.desktop".text = ''
+  home.file.".local/share/applications/nwg-look.desktop".text = ''
   [Desktop Entry]
   Hidden=true
   '';
   home.file.".local/share/applications/blueman-manager.desktop".text = ''
-  [Desktop Entry]
-  Hidden=true
-  '';
-  home.file.".local/share/applications/nwg-look.desktop".text = ''
   [Desktop Entry]
   Hidden=true
   '';
