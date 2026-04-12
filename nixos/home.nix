@@ -89,6 +89,8 @@
     spotify
     obsidian
     pavucontrol
+    easyeffects
+    syncthing
 
     # Audio Visual
     onlyoffice-desktopeditors
