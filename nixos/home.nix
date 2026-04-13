@@ -10,29 +10,6 @@
   # Fish
   programs.fish = {
     enable = true;
-    interactiveShellInit = ''
-      function fish_prompt
-        set_color yellow
-        echo -n (prompt_pwd)
-
-        if git rev-parse --is-inside-work-tree >/dev/null 2>&1
-            set branch (git branch --show-current)
-            if not git diff --quiet --ignore-submodules
-                set_color red
-                set git_icon "✗"
-            else
-                set_color brpurple
-                set git_icon "✔"
-            end
-            echo -n " ("$branch" "$git_icon")"
-        end
-
-        set_color red
-        echo -n " ❯ "
-
-        set_color normal
-      end
-    '';
     shellAliases = {};
   };
 
@@ -61,49 +38,45 @@
   };
 
 
-  # Firefox
-  programs.firefox = {
-    enable = true;
-  };
-
-
   # Unfree Software
   nixpkgs.config.allowUnfree = true;
 
   # Home Packages
   home.packages = with pkgs; [
     # CLI
+    bat
+    tree
+    fzf
+    yazi
     wget
     zip
     unzip
     btop
-    tree
     bluetui
     fastfetch
     cmatrix
     asciiquarium
     
     # GUI
-    nautilus
+    qutebrowser
     discord
     spotify
     obsidian
+    syncthing
     pavucontrol
     easyeffects
-    syncthing
 
     # Audio Visual
     onlyoffice-desktopeditors
     krita
-    kdePackages.kdenlive
-    obs-studio
+    mpv
 
     # Programming
     python3
-    nodejs
-    ruby
     openjdk21
     maven
+    nodejs
+    ruby
 
     # Neovim
     tree-sitter
@@ -113,7 +86,6 @@
     ripgrep
     stylua
     gcc
-    fzf
     fd
 
     # Hyprland
@@ -121,11 +93,11 @@
     wofi
     waybar
     grim
+    hyprsunset
     slurp
     swaybg
-    hyprsunset
-    brightnessctl
     wl-clipboard
+    brightnessctl
 
     # Icons
     papirus-icon-theme
@@ -148,6 +120,10 @@
   Hidden=true
   '';
   home.file.".local/share/applications/blueman-manager.desktop".text = ''
+  [Desktop Entry]
+  Hidden=true
+  '';
+  home.file.".local/share/applications/yazi.desktop".text = ''
   [Desktop Entry]
   Hidden=true
   '';
