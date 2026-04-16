@@ -8,7 +8,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 5;
 
-
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -18,11 +17,9 @@
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-
   # Network
   networking.networkmanager.enable = true;
   networking.hostName = "nixos";
-
 
   # Locales
   time.timeZone = "America/Maceio";
@@ -43,14 +40,12 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-
   # Greeter
   services.displayManager.ly.enable = true;
   
   # Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
 
   # Users
   users.users.bcsarah = {	# i :3
@@ -64,27 +59,27 @@
   # Shell
   programs.fish.enable = true;
   
-
-  
-  # Gnome / Hyprland
-  services.desktopManager.gnome.enable = true;
+  # Hyprland
   programs.hyprland.enable = true;
-
-  services.gnome.core-apps.enable = false;
-  services.gnome.rygel.enable = false;
-  i18n.inputMethod.enable = false;
-  programs.seahorse.enable = false;
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-color-manager
-  ];
-
-
 
   # Unfree
   nixpkgs.config.allowUnfree = true;
 
+  # Steam
+  programs.steam = {
+    enable = true;
+  };
+
   # Flatpak
-  services.flatpak.enable = true;
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "org.vinegarhq.Sober"
+      "io.mrarm.mcpelauncher"
+      "com.mojang.Minecraft"
+      "sh.ppy.osu"
+    ];
+  };
 
   # System Packages
   environment.systemPackages = with pkgs; [
@@ -97,8 +92,6 @@
     texlivePackages.noto-emoji
   ];
 
-
   # End of the File :3
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }

@@ -6,5 +6,10 @@
 
 config_version: 2
 settings:
+  content.geolocation:
+    https://shopee.com.br: true
   content.javascript.clipboard:
+    https://chat.deepseek.com: access-paste
     https://chatgpt.com: access-paste
+  scrolling.bar:
+    global: always
