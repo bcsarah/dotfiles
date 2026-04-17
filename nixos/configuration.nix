@@ -8,7 +8,6 @@
     ./modules/users.nix
     ./modules/shell.nix
     ./modules/wm.nix
-    ./modules/games.nix
     ./modules/fonts.nix
   ];
 

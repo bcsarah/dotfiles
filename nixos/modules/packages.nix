@@ -40,6 +40,12 @@
     mpv
     eog
 
+    # Games
+    steam
+    lutris
+    wine
+    flatpak
+
     # Programming
     python3
     openjdk21
@@ -68,6 +74,10 @@
     swaybg
     wl-clipboard
     brightnessctl
+
+    # Niri
+    allacritty
+    fuzzel
 
     # Icons
     papirus-icon-theme
