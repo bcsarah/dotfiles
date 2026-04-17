@@ -18,15 +18,8 @@
       inherit system;
 
       modules = [
-        ./configuration.nix
-        ./modules/wm.nix
-        ./modules/shell.nix
-        ./modules/nvim.nix
-        ./modules/git.nix
-        ./modules/fonts.nix
-        ./modules/games.nix
-        ./modules/hide-desktop.nix
         home-manager.nixosModules.home-manager
+        ./configuration.nix
         nix-flatpak.nixosModules.nix-flatpak
         {
           home-manager.extraSpecialArgs = { inherit inputs ; };

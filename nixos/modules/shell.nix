@@ -1,4 +1,4 @@
-{ config, pkgs, ... }
+{ config, pkgs, ... }:
 
 {
   programs.fish = {
@@ -29,7 +29,8 @@
             set_color normal
         end
     '';
-  shellAliases = {
-    img = "kitty +kitten icat";
+    shellAliases = {
+      img = "kitty +kitten icat";
+    };
   };
 }
