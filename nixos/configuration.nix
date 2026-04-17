@@ -56,42 +56,6 @@
   };
   users.defaultUserShell = pkgs.fish;
 
-  # Shell
-  programs.fish.enable = true;
-  
-  # Hyprland
-  programs.hyprland.enable = true;
-
-  # Unfree
-  nixpkgs.config.allowUnfree = true;
-
-  # Steam
-  programs.steam = {
-    enable = true;
-  };
-
-  # Flatpak
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "org.vinegarhq.Sober"
-      "io.mrarm.mcpelauncher"
-      "com.mojang.Minecraft"
-      "sh.ppy.osu"
-    ];
-  };
-
-  # System Packages
-  environment.systemPackages = with pkgs; [
-    noto-fonts-cjk-sans
-  ];
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    texlivePackages.noto-emoji
-  ];
-
   # End of the File :3
   system.stateVersion = "25.11"; # Did you read the comment?
 }

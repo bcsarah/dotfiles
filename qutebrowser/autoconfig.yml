@@ -11,5 +11,6 @@ settings:
   content.javascript.clipboard:
     https://chat.deepseek.com: access-paste
     https://chatgpt.com: access-paste
+    https://github.com: access-paste
   scrolling.bar:
     global: always
