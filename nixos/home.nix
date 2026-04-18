@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./modules/packages.nix
-    ./modules/nvim.nix
-    ./modules/git.nix
-    ./modules/yazi.nix
-    ./modules/hide-desktop.nix
+    ./modules/config/nvim.nix
+    ./modules/config/git.nix
+    ./modules/config/yazi.nix
+    ./modules/config/hide-desktop.nix
+    ./modules/packages/packages.nix
   ];
   
   # User
