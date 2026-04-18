@@ -24,8 +24,6 @@
     yazi
     bluetui
     youtube-tui
-    discordo
-    nchat
     spotify-player
     
     # GUI
@@ -35,7 +33,7 @@
     pavucontrol
 
     # Audio Visual
-    libreoffice
+    onlyoffice-desktopeditors
     krita
     mpv
     eog
@@ -74,10 +72,6 @@
     swaybg
     wl-clipboard
     brightnessctl
-
-    # Niri
-    allacritty
-    fuzzel
 
     # Icons
     papirus-icon-theme

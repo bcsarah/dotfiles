@@ -5,7 +5,6 @@
     ./modules/packages.nix
     ./modules/git.nix
     ./modules/nvim.nix
-    ./modules/noctalia.nix
     ./modules/hide-desktop.nix
   ];
   
