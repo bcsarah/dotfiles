@@ -21,7 +21,6 @@
     asciiquarium
 
     # TUI
-    yazi
     bluetui
     youtube-tui
     spotify-player
