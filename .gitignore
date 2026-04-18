@@ -1,5 +1,7 @@
-__pycache__/
-quickmarks/
+autoconfig.yml
+bookmarks/
+greasemonkey/
+quickmarks
 urls
 
 .stfolder
