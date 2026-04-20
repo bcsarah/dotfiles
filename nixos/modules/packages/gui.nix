@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     # GUI
+    firefox
     qutebrowser
     discord
     syncthing
