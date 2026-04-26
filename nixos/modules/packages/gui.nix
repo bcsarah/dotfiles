@@ -4,8 +4,8 @@
   home.packages = with pkgs; [
     # GUI
     firefox
-    qutebrowser
-    discord
+    nautilus
+    obsidian
     syncthing
     pavucontrol
 

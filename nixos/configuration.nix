@@ -12,8 +12,8 @@
   ];
 
   # Others
-  programs.steam.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
+  programs.steam.enable = true;
   system.stateVersion = "25.11"; # Did you read the comment?
 }

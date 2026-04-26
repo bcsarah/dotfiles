@@ -3,12 +3,12 @@
 {
   home.packages = with pkgs; [
     # CLI
+    tmux
+    tree
+    fzf
     bat
     glow
     md2pdf
-    tree
-    fzf
-    wget
     zip
     unzip
 
@@ -21,7 +21,7 @@
     btop
     bluetui
     youtube-tui
-    spotify-player
+    ani-cli
   ];
 }
 

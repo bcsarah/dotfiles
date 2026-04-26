@@ -7,7 +7,7 @@
   boot.loader.systemd-boot.configurationLimit = 5;
 
   # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   # ZRAM
   zramSwap.enable = true;
