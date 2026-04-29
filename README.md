@@ -1,6 +1,6 @@
-# ❄️ Dotfiles - NixOS + Hyprland
+# Dotfiles
 
-This repository contains my **dotfiles**, focused on a modern, minimal, and consistent environment using the **Gruvbox theme** across the entire system, running on the famous **Hyprland**.
+This repository contains my **dotfiles** since February 2026, focused on a modern, minimal, and consistent environment using the **Gruvbox theme** across the entire system, running **i3wm**.
 
 ---
 ## 🎨 Theme
@@ -17,29 +17,27 @@ Uses **Gruvbox**, with an aesthetic that is:
 ---
 ## 🧰 Tools
 
-- **WM:** Hyprland  
-- **Terminal:** kitty  
-- **Shell:** fish  
-- **Editor:** Neovim  
-- **Bar:** Waybar  
-- **Launcher:** Wofi  
-- **File Manager:** Yazi  
-- **Fetch:** Fastfetch  
-- **Git UI:** Lazygit  
-- **System:** NixOS, or any distro (just link it, without nixos/)
+- **WM:** i3wm
+- **Terminal:** kitty
+- **Shell:** zsh
+- **Editor:** vim
+- **Bar:** i3status
+- **Launcher:** dmenu
+- **File Manager:** thunar
+- **Fetch:** fastfetch
+- **Git UI:** lazygit
+- **System:** archlinux
 
 ---
 ## ✨ Customization
 
 You can easily tweak:
 - Gruvbox color tones  
-- Hyprland keybinds  
-- Waybar styling  
-- Neovim plugins  
-- System configuration via Nix  
+- i3 binds and settings
+- Vim plugins
 
 ---
 ## ❤️ Made with love
 
 This theme was crafted with a lot of love and care for those who want a setup similar to mine. Pull requests are welcome!  
-> Use and abuse it as much as you want — beauty is never enough.
+> Better use linux btw.
