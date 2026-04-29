@@ -1,0 +1,107 @@
+set $mod Mod4
+
+# visual
+font pango:JetBrainsMono Nerd Font 10
+default_border pixel 2
+
+# startup
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id feh --bg-fil ~/dotfiles/wallpaper.png
+
+# focus the child container
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# move window by click
+tiling_drag modifier titlebar
+
+# main binds
+bindsym $mod+q exec kitty
+bindsym $mod+w kill
+bindsym $mod+e exec thunar
+bindsym $mod+r exec --no-startup-id dmenu_run
+
+bindsym $mod+b exec firefox
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal/vertical
+bindsym $mod+c split h
+bindsym $mod+x split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+y layout stacking
+bindsym $mod+u layout tabbed
+bindsym $mod+i layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+v floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent/child container
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+
+# workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+bindsym $mod+Ctrl+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+j resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+l resize grow width 10 px or 10 ppt
+
+# i3status
+bar {
+	status_command i3status
+    colors {
+        background #282828
+        statusline #ebdbb2
+        separator #928374
+
+        focused_workspace  #cc241d #282828 #ebdbb2
+        active_workspace   #458588 #282828 #ebdbb2
+        inactive_workspace #928374 #282828 #ebdbb2
+        binding_mode       #fabd2f #282828 #ebdbb2
+    }
+
+    strip_workspace_numbers yes
+    workspace_buttons yes
+    binding_mode_indicator yes
+}
