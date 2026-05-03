@@ -28,8 +28,7 @@ set $aqua       "#689d6a"
 set $gray       "#a89984"
 set $bg_highlight "#3c3836"
 
-client.focused          $red $bg_highlight $fg $red $red
-client.focused_inactive $gray $bg $fg $gray $gray
+client.focused          $blue $bg_highlight $fg $blue $blue
 client.urgent           $red $red $bg $red $red
 client.placeholder      $gray $bg $fg $gray $gray
 client.background       $bg
