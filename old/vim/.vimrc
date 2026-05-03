@@ -6,6 +6,7 @@ call plug#begin()
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
   Plug 'prabirshrestha/vim-lsp-settings'
+  Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " gruvbox
@@ -29,7 +30,6 @@ set hlsearch
 
 set ignorecase
 set smartcase
-set clipboard=unnamedplus
 
 nnoremap j gj
 nnoremap k gk

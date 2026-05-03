@@ -22,7 +22,7 @@
     "title",
     "break",
 
-    { "type": "os", "key": " OS" },
+    { "type": "os", "key": " OS" },
     { "type": "kernel", "key": "󰌢 Kernel" },
     { "type": "uptime", "key": "󱫐 Uptime" },
     { "type": "packages", "key": "󰏖 Packages" },
@@ -42,7 +42,7 @@
 
     "separator",
 
-    { "type": "desktop-environment", "key": "󰧨 DE" },
+    { "type": "de", "key": "󰧨 DE" },
     { "type": "wm", "key": "󰖯 WM" },
     { "type": "theme", "key": "󰉼 Theme" },
     { "type": "icons", "key": "󰀻 Icons" },
