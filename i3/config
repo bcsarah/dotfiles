@@ -16,6 +16,24 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 focus_follows_mouse yes
 
+# colors
+set $bg         "#282828"
+set $fg         "#ebdbb2"
+set $red        "#cc241d"
+set $green      "#98971a"
+set $yellow     "#d79921"
+set $blue       "#458588"
+set $purple     "#b16286"
+set $aqua       "#689d6a"
+set $gray       "#a89984"
+set $bg_highlight "#3c3836"
+
+client.focused          $red $bg_highlight $fg $red $red
+client.focused_inactive $gray $bg $fg $gray $gray
+client.urgent           $red $red $bg $red $red
+client.placeholder      $gray $bg $fg $gray $gray
+client.background       $bg
+
 # binds
 bindsym $mod+q exec kitty
 bindsym $mod+w kill
