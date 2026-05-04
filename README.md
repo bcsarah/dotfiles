@@ -10,7 +10,8 @@ Uses **Gruvbox**, with an aesthetic that is:
 
 ---
 ## 📸 Preview
-~~Still need to take a screenshot~~
+![preview1.jpg](preview1.jpg)
+![preview2.jpg](preview2.jpg)
 
 ---
 ## 🧰 Tools
