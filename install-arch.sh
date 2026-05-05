@@ -45,7 +45,6 @@ ln -sf ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 
 # others
 chsh -s /bin/zsh
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 rm ~/.bash*
 grep -qxF 'QT_QPA_PLATFORMTHEME=qt6ct' /etc/environment || echo 'QT_QPA_PLATFORMTHEME=qt6ct' | sudo tee -a /etc/environment
 
@@ -55,6 +54,10 @@ cd ~/yay || exit
 makepkg -si --noconfirm
 cd ~
 rm -rf ~/yay
+
+# flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.vinegarhq.Sober sh.ppy.osu org.prismlauncher.PrismLauncher
 
 # final reboot
 sudo reboot
