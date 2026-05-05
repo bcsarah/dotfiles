@@ -38,6 +38,7 @@ bindsym $mod+q exec kitty
 bindsym $mod+w kill
 bindsym $mod+e exec thunar
 bindsym $mod+r exec i3-dmenu-desktop
+bindsym $mod+Shift+r exec dmenu_run
 
 bindsym $mod+a exec obsidian
 bindsym $mod+b exec firefox
@@ -91,5 +92,4 @@ bindsym $mod+Shift+4 move container to workspace 4; workspace 4
 bindsym $mod+Shift+5 move container to workspace 5; workspace 5
 
 # reload
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c restart
