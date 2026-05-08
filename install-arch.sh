@@ -32,10 +32,11 @@ rm -rf ~/yay
 
 if [[ "$additional" == "y" || "$additional" == "yes" ]]; then
     sudo pacman -S --needed --noconfirm \
+        steam lutris \
         libreoffice krita obs-studio kdenlive \
-        obsidian discord spotify syncthing
+        obsidian discord syncthing
 
-    yay -S whatsie --noconfirm
+    yay -S whatsie spotify --noconfirm
 fi
 
 # .config directory modification (and others)

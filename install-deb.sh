@@ -39,6 +39,7 @@ cargo install stylua
 # addiotional
 if [[ "$additional" == "y" || "$additional" == "yes" ]]; then
     sudo apt install -y \
+        steam lutris \
         libreoffice krita obs-studio kdenlive \
         whatsie discord spotify syncthing
 fi
