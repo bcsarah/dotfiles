@@ -40,7 +40,10 @@ bindsym $mod+e exec thunar
 bindsym $mod+r exec i3-dmenu-desktop
 bindsym $mod+Shift+r exec dmenu_run
 
-bindsym $mod+a exec obsidian
+bindsym $mod+a exec whatsie
+bindsym $mod+s exec spotify
+bindsym $mod+d exec discord 
+bindsym $mod+n exec obsidian
 bindsym $mod+b exec firefox
 
 # focus
