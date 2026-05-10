@@ -11,37 +11,38 @@ echo "if u want to exit, press CTRL + C"
 echo "do you want to install additional packages? (y/n)"
 read -e additional
 
-# installing softwares
+# fastfetch
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+
+# system update
 sudo apt update -y
 sudo apt upgrade -y
+
+# installing softwares
 sudo apt install -y \
-    i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar \
+    i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar gvfs \
+    lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings \
     build-essential tree fzf fd-find bat zip unzip ripgrep \
-    git flatpak htop snapd \
+    git fastfetch cmatrix flatpak htop snapd \
     firefox pavucontrol mpv eog \
-    python3 openjdk-21-jdk maven nodejs npm ruby gcc cargo \
+    python3 openjdk-21-jdk maven nodejs npm ruby gcc \
     zsh tmux \
     gnome-tweaks papirus-icon-theme
 
 # snaps
-sudo snap install lazygit glow
-
-# fastfetch
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
-sudo apt update
-sudo apt install fastfetch
-
-# neovim dependencies
+sudo snap install lazygit glow asciiquarium
 sudo snap install nvim --classic
-sudo npm install -g eslint_d tree-sitter-cli
-cargo install stylua
 
 # addiotional
 if [[ "$additional" == "y" || "$additional" == "yes" ]]; then
     sudo apt install -y \
-        steam lutris \
         libreoffice krita obs-studio kdenlive \
-        whatsie discord spotify syncthing
+        obsidian syncthing \
+        steam lutris
+
+    sudo snap install \
+        whatsie discord spotify \
+        youtube-tui ani-cli
 fi
 
 # fonts

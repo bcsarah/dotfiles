@@ -14,12 +14,13 @@ read -e additional
 # installing softwares
 sudo pacman -Syu --noconfirm
 sudo pacman -S --needed --noconfirm \
-    i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar \
+    i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar gvfs \
+    lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings \
     base-devel tree fzf fd bat glow zip unzip \
-    git flatpak fastfetch htop bluetui \
+    git flatpak cmatrix fastfetch htop bluetui \
     firefox pavucontrol mpv eog \
     tree-sitter eslint_d ripgrep stylua \
-    python3 jdk21-openjdk maven nodejs npm ruby gcc go cargo \
+    python3 jdk21-openjdk maven nodejs npm ruby gcc go \
     zsh neovim tmux lazygit \
     nwg-look qt6ct qt5ct adw-gtk-theme papirus-icon-theme ttf-jetbrains-mono-nerd
 
@@ -32,11 +33,13 @@ rm -rf ~/yay
 
 if [[ "$additional" == "y" || "$additional" == "yes" ]]; then
     sudo pacman -S --needed --noconfirm \
-        steam lutris \
         libreoffice krita obs-studio kdenlive \
-        obsidian discord syncthing
+        obsidian syncthing \
+        steam lutris
 
-    yay -S whatsie spotify --noconfirm
+    yay -S asciiquarium --noconfirm
+    yay -S whatsie spotify discord --noconfirm
+    yay -S youtube-tui ani-cli --noconfirm
 fi
 
 # .config directory modification (and others)
