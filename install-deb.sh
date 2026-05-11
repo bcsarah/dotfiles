@@ -21,7 +21,6 @@ sudo apt upgrade -y
 # installing softwares
 sudo apt install -y \
     i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar gvfs \
-    lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings \
     build-essential tree fzf fd-find bat zip unzip ripgrep \
     git fastfetch cmatrix flatpak htop snapd \
     firefox pavucontrol mpv eog \
@@ -37,8 +36,7 @@ sudo snap install nvim --classic
 if [[ "$additional" == "y" || "$additional" == "yes" ]]; then
     sudo apt install -y \
         libreoffice krita obs-studio kdenlive \
-        obsidian syncthing \
-        steam lutris
+        obsidian syncthing steam
 
     sudo snap install \
         whatsie discord spotify \
