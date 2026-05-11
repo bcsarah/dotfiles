@@ -5,6 +5,7 @@ font pango:JetBrainsMono Nerd Font 10
 default_border pixel 2
 
 # startup
+exec --no-startup-id setxkbmap -layout br -variant abnt2
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id feh --bg-fil ~/dotfiles/wallpaper.png
@@ -43,6 +44,7 @@ bindsym $mod+Shift+r exec dmenu_run
 bindsym $mod+a exec whatsie
 bindsym $mod+s exec spotify
 bindsym $mod+d exec discord 
+bindsym $mod+z exec pavucontrol 
 bindsym $mod+n exec obsidian
 bindsym $mod+b exec firefox
 

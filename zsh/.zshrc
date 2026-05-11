@@ -24,9 +24,7 @@ alias tar-unpack='tar -xvf'
 alias lg='lazygit'
 alias vi='nvim'
 alias vim='nvim'
-
-alias yt='youtube-tui'
-alias ani='ani-cli'
+alias reboot='sudo reboot'
 
 # pacman
 alias pi='sudo pacman -S'
@@ -34,22 +32,21 @@ alias pr='sudo pacman -R'
 alias pu='sudo pacman -Syu'
 alias prm='sudo pacman -Rns $(pacman -Qtdq)'
 alias pq='sudo pacman -Ss'
-
 alias yi='yay -S'
 
 # apt
-#alias ai='sudo apt install'
-#alias ar='sudo apt remove'
-#alias au='sudo apt update && sudo apt upgrade'
-#alias arm='sudo apt autoremove'
-#alias aq='sudo apt search'
+alias ai='sudo apt install'
+alias ar='sudo apt remove'
+alias au='sudo apt update && sudo apt upgrade'
+alias arm='sudo apt autoremove'
+alias aq='sudo apt search'
 
 # xbps
-#alias xi='xbps-install'
-#alias xr='xbps-remove -R'
-#alias xu='xbps-install -Su'
-#alias xrm='xbps-remove -oO'
-#alias xq='xbps-query -Rs'
+alias xi='sudo xbps-install'
+alias xr='sudo xbps-remove -R'
+alias xu='sudo xbps-install -Su'
+alias xrm='sudo xbps-remove -oO'
+alias xq='sudo xbps-query -Rs'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
