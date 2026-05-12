@@ -25,26 +25,11 @@ alias lg='lazygit'
 alias vi='nvim'
 alias vim='nvim'
 alias reboot='sudo reboot'
+alias poweroff='sudo poweroff'
 
-# pacman
-alias pi='sudo pacman -S'
-alias pr='sudo pacman -R'
-alias pu='sudo pacman -Syu'
-alias prm='sudo pacman -Rns $(pacman -Qtdq)'
-alias pq='sudo pacman -Ss'
-alias yi='yay -S'
-
-# apt
-alias ai='sudo apt install'
-alias ar='sudo apt remove'
-alias au='sudo apt update && sudo apt upgrade'
-alias arm='sudo apt autoremove'
-alias aq='sudo apt search'
-
-# xbps
 alias xi='sudo xbps-install'
 alias xr='sudo xbps-remove -R'
-alias xu='sudo xbps-install -Su'
+alias xu='sudo xbps-install xbps -u && sudo xbps-install -Su'
 alias xrm='sudo xbps-remove -oO'
 alias xq='sudo xbps-query -Rs'
 
