@@ -22,7 +22,6 @@ voidPackages() {
     sudo xbps-install -Syu -y
     sudo xbps-install -y \
         i3 i3lock polybar dmenu dunst feh xclip maim brightnessctl kitty Thunar gvfs \
-        lightdm lightdm-mini-greeter lightdm-gtk-greeter-settings \
         base-devel curl wget tree fzf fd bat glow zip unzip \
         git flatpak cmatrix asciiquarium fastfetch htop bluetui \
         firefox pavucontrol mpv eog \
@@ -51,7 +50,7 @@ voidPackages() {
             com.ktechpit.whatsie \
             com.discordapp.Discord \
             com.spotify.Client
-        
+
         # flatpak wrappers
         echo 'flatpak run md.obsidian.Obsidian' | sudo tee /usr/sbin/obsidian
         sudo chmod +x /usr/sbin/obsidian
@@ -90,7 +89,6 @@ archPackages() {
         makepkg -si --noconfirm
         cd ~
         rm -rf ~/yay
-    else
     fi
 
     # additional
@@ -146,7 +144,6 @@ homeModifications() {
     for config in i3 polybar kitty fastfetch nvim lazygit tmux; do
         rm -rf ~/.config/$config
     done
-    sudo rm -rf /etc/lightdm/lightdm-mini-greeter.conf
 
     # symbolic links
     for config in i3 polybar kitty fastfetch nvim lazygit tmux; do
@@ -157,7 +154,6 @@ homeModifications() {
     ln -sfnv ~/dotfiles/zsh/.oh-my-zsh/ ~/.oh-my-zsh
     ln -sfnv ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 
-    sudo cp ~/dotfiles/lightdm/lightdm-mini-greeter.conf /etc/lightdm/lightdm-mini-greeter.conf
 }
 
 # install jetbrainsmono
@@ -192,7 +188,7 @@ askDistro() {
     echo "3) void"
     echo ""
     read -p "whats your distro? (1, 2, 3): " distro_choice
-    
+
     # Usando if/else para determinar a distribuição
     if [ "$distro_choice" = "1" ]; then
         echo "arch"
