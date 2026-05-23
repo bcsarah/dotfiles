@@ -8,7 +8,7 @@ default_border pixel 2
 exec --no-startup-id setxkbmap -layout br -variant abnt2
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id feh --bg-fil ~/dotfiles/wallpaper.png
+exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
 exec --no-startup-id syncthing --no-browser
 exec --no-startup-id polybar
 
@@ -79,7 +79,6 @@ bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 # layout
-bindsym $mod+y layout stacking
 bindsym $mod+u layout tabbed
 bindsym $mod+i layout toggle split
 

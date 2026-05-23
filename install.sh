@@ -22,10 +22,10 @@ voidPackages() {
     sudo xbps-install -Syu -y
     sudo xbps-install -y \
         i3 i3lock polybar dmenu dunst feh xclip maim brightnessctl kitty Thunar gvfs \
-        base-devel curl wget tree fzf fd bat glow zip unzip \
-        git flatpak cmatrix asciiquarium fastfetch htop bluetui \
-        firefox pavucontrol mpv eog \
-        python3 python3-pip openjdk21 apache-maven nodejs ruby gcc rust cargo \
+        base-devel curl wget tree fzf fd bat zip unzip \
+        git flatpak fastfetch bluetui \
+        firefox pavucontrol mpv \
+        python3 openjdk21 apache-maven gcc \
         zsh neovim tmux lazygit \
         pulseaudio pulseaudio-utils \
         nwg-look qt6ct qt5ct papirus-icon-theme noto-fonts-cjk noto-fonts-emoji
@@ -36,32 +36,14 @@ voidPackages() {
 
     ln -sf $(which lua-language-server) ~/.local/share/nvim/mason/packages/lua-language-server/bin/lua-language-server
 
-    # Flatpak
+    # additional
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-    # additional
     if [[ "$additional" == "y" || "$additional" == "yes" ]]; then
         sudo xbps-install -y \
             libreoffice krita obs kdenlive syncthing
 
-        flatpak install flathub -y \
-            md.obsidian.Obsidian \
-            com.valvesoftware.Steam \
-            com.ktechpit.whatsie \
-            com.discordapp.Discord \
-            com.spotify.Client
-
-        # flatpak wrappers
-        echo 'flatpak run md.obsidian.Obsidian' | sudo tee /usr/sbin/obsidian
-        sudo chmod +x /usr/sbin/obsidian
-        echo 'flatpak run com.valvesoftware.Steam' | sudo tee /usr/sbin/steam
-        sudo chmod +x /usr/sbin/steam
-        echo 'flatpak run com.ktechpit.whatsie' | sudo tee /usr/sbin/whatsie
-        sudo chmod +x /usr/sbin/whatsie
-        echo 'flatpak run com.discordapp.Discord' | sudo tee /usr/sbin/discord
-        sudo chmod +x /usr/sbin/discord
-        echo 'flatpak run com.spotify.Client' | sudo tee /usr/sbin/spotify
-        sudo chmod +x /usr/sbin/spotify
+        flatpakPackages
     fi
 }
 
@@ -74,11 +56,11 @@ archPackages() {
     sudo pacman -Syu --noconfirm
     sudo pacman -S --needed --noconfirm \
         i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar gvfs \
-        base-devel tree fzf fd bat glow zip unzip \
-        git flatpak cmatrix fastfetch htop bluetui \
-        firefox pavucontrol mpv eog \
+        base-devel tree fzf fd bat zip unzip \
+        git flatpak fastfetch bluetui \
+        firefox pavucontrol mpv \
         tree-sitter eslint_d ripgrep stylua \
-        python3 jdk21-openjdk maven nodejs npm ruby gcc go \
+        python3 jdk21-openjdk maven gcc go \
         zsh neovim tmux lazygit \
         nwg-look qt6ct qt5ct adw-gtk-theme papirus-icon-theme
 
@@ -94,45 +76,54 @@ archPackages() {
     # additional
     if [[ "$additional" == "y" || "$additional" == "yes" ]]; then
         sudo pacman -S --needed --noconfirm \
-            libreoffice krita obs-studio kdenlive \
-            obsidian syncthing steam
+            libreoffice krita obs-studio kdenlive syncthing
 
-        yay -S --noconfirm \
-            asciiquarium whatsie spotify discord
+        flatpakPackages
     fi
 }
 
 # install debian packages
 debianPackages() {
-    # fastfetch
-    sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
-
     # apt
     sudo apt update -y
     sudo apt upgrade -y
     sudo apt install -y \
         i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar gvfs \
         build-essential tree fzf fd-find bat zip unzip ripgrep \
-        git fastfetch cmatrix flatpak htop snapd \
-        firefox pavucontrol mpv eog \
-        python3 openjdk-21-jdk maven nodejs npm ruby gcc \
+        git fastfetch flatpak snapd \
+        firefox pavucontrol mpv \
+        python3 openjdk-21-jdk maven gcc \
         zsh tmux \
         gnome-tweaks papirus-icon-theme \
         pulseaudio pavucontrol
 
     # snaps
-    sudo snap install lazygit glow asciiquarium
+    sudo snap install lazygit
     sudo snap install nvim --classic
 
     # additional packages
     if [[ "$additional" == "y" || "$additional" == "yes" ]]; then
         sudo apt install -y \
-            libreoffice krita obs-studio kdenlive \
-            obsidian syncthing steam
+            libreoffice krita obs-studio kdenlive syncthing
 
-        sudo snap install \
-            whatsie discord spotify
+        flatpakPackages
     fi
+}
+
+flatpakPackages() {
+    flatpak install flathub --noninteractive -y \
+        md.obsidian.Obsidian \
+        com.valvesoftware.Steam \
+        com.ktechpit.whatsie \
+        com.discordapp.Discord \
+        com.spotify.Client
+}
+
+ohMyZsh() {
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 }
 
 # home modifications
@@ -151,9 +142,8 @@ homeModifications() {
     done
 
     ln -sfnv ~/dotfiles/zsh/.zshrc ~/.zshrc
-    ln -sfnv ~/dotfiles/zsh/.oh-my-zsh/ ~/.oh-my-zsh
     ln -sfnv ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
-
+    ohMyZsh
 }
 
 # install jetbrainsmono
