@@ -21,7 +21,7 @@ Uses **Gruvbox**, with an aesthetic that is:
 - **Launcher:** dmenu
 - **Terminal:** kitty
 - **Shell:** zsh
-- **Editor:** nvim
+- **Editor:** codium/vim
 - **Git UI:** lazygit
 - **Fetch:** fastfetch
 
@@ -32,8 +32,7 @@ Just run install.sh and see what you need to do. **This script is under developm
 
 ### ⚙️ What the scripts do
 1. Updates the system
-2. Install core packages (i3, nvim, lazygit etc)
-3. Install additional packages (if you want)
+2. Install core packages (i3, vim, lazygit etc)
 4. Install configures flathub
 5. Creates symbolic links from ~/dotfiles
 6. Changes your default shell to `zsh`
@@ -46,16 +45,10 @@ The scripts expect the repository to be exactly at `~/dotfiles`
 git clone https://github.com/bcsarah/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
-bash install.sh
+./install.sh
 ```
 
 - After the installation is finished, i3wm, polybar, kitty, shell and other configurations will be active after you log out and back in the right environment (i3)
-
-### ⚠️ Notes
-- **replace existing configs** - The scripts replace existing configuration folders (i3, polybar, kitty, nvim, lazygit, tmux). If you have configurations you want to keep, back them up first
-- **YAY** - The Arch script installs the yay AUR helper
-- **SNAP** - The Debian script installs snap and uses it for lazygit and nvim
-- **All scripts run with sudo** - you will be asked for your password and others during the installation
 
 ---
 ## ❤️ Made with love

@@ -41,12 +41,16 @@ bindsym $mod+e exec thunar
 bindsym $mod+r exec i3-dmenu-desktop
 bindsym $mod+Shift+r exec dmenu_run
 
-bindsym $mod+a exec whatsie
-bindsym $mod+s exec spotify
-bindsym $mod+d exec discord 
-bindsym $mod+z exec pavucontrol 
-bindsym $mod+n exec obsidian
+bindsym $mod+a exec flatpak run com.ktechpit.whatsie
+bindsym $mod+s exec flatpak run com.spotify.Client
+bindsym $mod+d exec flatpak run com.discordapp.Discord
+
+bindsym $mod+g exec flatpak run com.valvesoftware.Steam
+bindsym $mod+n exec flatpak run com.vscodium.codium
+bindsym $mod+m exec flatpak run md.obsidian.Obsidian
 bindsym $mod+b exec firefox
+
+bindsym $mod+z exec pavucontrol
 
 # focus
 bindsym $mod+h focus left
@@ -67,9 +71,13 @@ bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
 bindsym $mod+Ctrl+l resize shrink width 5 px or 5 ppt
 
 # split
-bindsym $mod+c split h
-bindsym $mod+x split v
+bindsym $mod+o split h
+bindsym $mod+p split v
 bindsym $mod+v floating toggle
+
+# layout
+bindsym $mod+u layout tabbed
+bindsym $mod+i layout toggle split
 
 # fullscreen
 bindsym $mod+f fullscreen toggle
@@ -78,9 +86,6 @@ bindsym $mod+f fullscreen toggle
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
-# layout
-bindsym $mod+u layout tabbed
-bindsym $mod+i layout toggle split
 
 # workspaces
 bindsym $mod+1 workspace 1
