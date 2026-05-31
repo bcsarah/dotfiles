@@ -22,14 +22,12 @@ alias img='kitty +kitten icat'
 alias tar-unpack='tar -xvf'
 
 alias lg='lazygit'
-alias reboot='sudo reboot'
-alias poweroff='sudo poweroff'
 
-alias xi='sudo xbps-install'
-alias xr='sudo xbps-remove -R'
-alias xu='sudo xbps-install xbps -u && sudo xbps-install -Su'
-alias xrm='sudo xbps-remove -oO'
-alias xq='xbps-query -Rs'
+alias pi='sudo pacman -S'
+alias pr='sudo pacman -R'
+alias pu='sudo pacman -Syu'
+alias prm='sudo pacman -Rns $(pacman -Qtdq)'
+alias pq='pacman -Ss'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
