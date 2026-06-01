@@ -16,12 +16,20 @@ installArchPackages() {
         git fastfetch \
         firefox pavucontrol mpv \
         zsh vim tmux lazygit \
-        python3 jdk21-openjdk maven gcc g++ \
+        python3 jdk21-openjdk maven gcc \
         papirus-icon-theme ttf-jetbrains-mono-nerd
 }
 
 # install yay packages
 installYayPackages() {
+    # install yay
+    sudo pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay.git ~
+    cd ~/yay
+    makepkg -si
+    cd ~
+
+    # packages
     yay -S discord whatsie spotify obsidian vscodium-bin --noconfirm
 }
 
@@ -34,7 +42,7 @@ installDebianPackages() {
         git fastfetch snapd \
         firefox pavucontrol mpv \
         zsh vim tmux \
-        python3 openjdk-21-jdk maven gcc g++ \
+        python3 openjdk-21-jdk maven gcc \
         papirus-icon-theme jetbrains-mono-nerd
 }
 
@@ -78,38 +86,39 @@ ohMyZsh() {
     git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 }
 
-# ask your linux distro
-askDistro() {
-    echo "1) arch / manjaro / endeavour"
-    echo "2) debian / ubuntu / mint / zorin"
-    echo ""
-    read -p "whats your distro? (1, 2): " distro_choice
-
-    if [ "$distro_choice" = "1" ]; then
-        echo "arch"
-    elif [ "$distro_choice" = "2" ]; then
-        echo "debian"
-    else
-        echo "invalid option"
-        exit 1
-    fi
-}
-
 # main
 main() {
     checkDotfiles
-    distro=$(askDistro)
 
-    if [ "$distro" = "arch" ]; then
-        installArchPackages
-        installYayPackages
-    elif [ "$distro" = "debian" ]; then
-        installDebianPackages
-        installSnapPackages
-    fi
+    # ask whats your distro
+    echo
+    echo "1) arch / manjaro / endeavour"
+    echo "2) debian / ubuntu / mint / zorin\n"
+    echo
+    read -p "whats your distro? (1, 2): " distro
+
+    case "$distro" in
+        1)
+            installArchPackages
+            installYayPackages
+            ;;
+        2)
+            installDebianPackages
+            installSnapPackages
+            ;;
+        *)
+            echo "invalid option" >&2
+            exit 1
+            ;;
+    esac
 
     homeModifications
-    sudo reboot
+
+    # reboot
+    read -p "do you want to reboot system? (y/n): " reboot
+    if [ "$reboot" = "y" ]; then
+        sudo reboot
+    fi
 }
 
 main
