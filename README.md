@@ -9,19 +9,10 @@ Uses **Gruvbox**, with an aesthetic that is:
 - Consistent across all tools
 
 ---
-## 📸 Preview
-![preview1.png](preview1.png)
-![preview2.png](preview2.png)
-![preview3.png](preview3.png)
-
----
 ## 🧰 Tools
-- **WM:** i3wm
-- **Bar:** polybar
-- **Launcher:** dmenu
 - **Terminal:** kitty
 - **Shell:** zsh
-- **Editor:** codium/vim
+- **Editor:** vim
 - **Git UI:** lazygit
 - **Fetch:** fastfetch
 
@@ -30,10 +21,9 @@ Uses **Gruvbox**, with an aesthetic that is:
 Just run install.sh and see what you need to do. **This script is under development and testing.**
 **THIS SCRIPT DOESNT DO A BACKUP! Make sure to backup everything before using the script**
 
-### ⚙️ What the scripts do
+### ⚙️  What the scripts do
 1. Updates the system
-2. Install core packages (i3, vim, lazygit etc)
-4. Install configures flathub
+2. Install core packages (vim, lazygit etc)
 5. Creates symbolic links from ~/dotfiles
 6. Changes your default shell to `zsh`
 - (personally, i recommend you view the entire install.sh to make sure what this script can do)
@@ -47,8 +37,6 @@ cd ~/dotfiles
 chmod +x install.sh
 ./install.sh
 ```
-
-- After the installation is finished, i3wm, polybar, kitty, shell and other configurations will be active after you log out and back in the right environment (i3)
 
 ---
 ## ❤️ Made with love

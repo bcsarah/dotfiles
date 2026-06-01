@@ -9,55 +9,38 @@ checkDotfiles() {
 }
 
 # install arch packages
-archPackages() {
+installArchPackages() {
     sudo pacman -Syu --noconfirm
     sudo pacman -S --needed --noconfirm \
-        i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar gvfs \
-        base-devel tree fzf fd bat zip unzip \
-        git flatpak fastfetch bluetui \
-        firefox pavucontrol mpv eog \
-        python3 jdk21-openjdk maven gcc \
+        kitty tree fzf fd bat zip unzip \
+        git fastfetch \
+        firefox pavucontrol mpv \
         zsh vim tmux lazygit \
-        nwg-look qt6ct qt5ct adw-gtk-theme papirus-icon-theme
+        python3 jdk21-openjdk maven gcc g++ \
+        papirus-icon-theme ttf-jetbrains-mono-nerd
+}
+
+# install yay packages
+installYayPackages() {
+    yay -S discord whatsie spotify obsidian vscodium-bin --noconfirm
 }
 
 # install debian packages
-debianPackages() {
-    # apt
+installDebianPackages() {
     sudo apt update -y
     sudo apt upgrade -y
     sudo apt install -y \
-        i3 polybar dmenu dunst feh xclip maim brightnessctl kitty thunar gvfs \
-        build-essential tree fzf fd-find bat zip unzip ripgrep \
-        git fastfetch flatpak snapd \
-        firefox pavucontrol mpv eog \
-        python3 openjdk-21-jdk maven gcc \
+        kitty tree fzf fd-find bat zip unzip ripgrep \
+        git fastfetch snapd \
+        firefox pavucontrol mpv \
         zsh vim tmux \
-        gnome-tweaks papirus-icon-theme \
-        pulseaudio pavucontrol
-
-    # snaps
-    sudo snap install lazygit
+        python3 openjdk-21-jdk maven gcc g++ \
+        papirus-icon-theme jetbrains-mono-nerd
 }
 
-# install flatpak packages
-flatpakPackages() {
-    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-    flatpak install flathub -y \
-        md.obsidian.Obsidian \
-        com.vscodium.codium \
-        com.valvesoftware.Steam \
-        com.ktechpit.whatsie \
-        com.discordapp.Discord \
-        com.spotify.Client
-}
-
-ohMyZsh() {
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+# install snap packages
+installSnapPackages() {
+    sudo snap install lazygit discord whatsie spotify obsidian codium -y
 }
 
 # home modifications
@@ -66,46 +49,41 @@ homeModifications() {
     mkdir -p ~/.config
 
     # remove old configurations
-    for config in i3 polybar kitty fastfetch lazygit; do
+    for config in kitty fastfetch lazygit; do
         rm -rf ~/.config/$config
     done
-    rm -rf ~/.vim
-    rm -rf ~/.zshrc
-    rm -rf ~/.p10k.zsh
+
+    for config in vim zshrc p10k.zsh; do
+        rm -rf ~/.$config
+    done
 
     # symbolic links
-    for config in i3 polybar kitty fastfetch lazygit; do
-        ln -sfnv ~/dotfiles/$config ~/.config/$config
+    for config in kitty fastfetch lazygit; do
+        ln -sfnv ~/dotfiles/$config ~/.config
     done
-    ln -sfnv ~/dotfiles/vim ~/.vim
 
-    ln -sfnv ~/dotfiles/zsh/.zshrc ~/.zshrc
-    ln -sfnv ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
+    for config in vim zshrc p10k.zsh; do
+        ln -sfnv ~/dotfiles/.$config ~
+    done
+
+    # install zsh plugins
     ohMyZsh
 }
 
-# install jetbrainsmono
-jetbrainsMono() {
-    mkdir -p ~/.local/share/fonts
-    cd /tmp
-    wget -q https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-    unzip -q JetBrainsMono.zip -d ~/.local/share/fonts
-    fc-cache -fv
-    cd ~
-}
-
-# other configuration
-others() {
-    chsh -s /bin/zsh
+# install zsh plugins
+ohMyZsh() {
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 }
 
 # ask your linux distro
 askDistro() {
-    echo ""
     echo "1) arch / manjaro / endeavour"
     echo "2) debian / ubuntu / mint / zorin"
     echo ""
-    read -p "whats your distro? (1, 2, 3): " distro_choice
+    read -p "whats your distro? (1, 2): " distro_choice
 
     if [ "$distro_choice" = "1" ]; then
         echo "arch"
@@ -123,15 +101,14 @@ main() {
     distro=$(askDistro)
 
     if [ "$distro" = "arch" ]; then
-        archPackages
+        installArchPackages
+        installYayPackages
     elif [ "$distro" = "debian" ]; then
-        debianPackages
-        fi
+        installDebianPackages
+        installSnapPackages
+    fi
 
-    flatpakPackages
-    jetbrainsMono
     homeModifications
-    others
     sudo reboot
 }
 

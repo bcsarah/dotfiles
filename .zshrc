@@ -22,6 +22,8 @@ alias img='kitty +kitten icat'
 alias tar-unpack='tar -xvf'
 
 alias lg='lazygit'
+alias javac='javac -d bin $(find src -name "*.java")'
+alias java='java -cp bin App'
 
 alias pi='sudo pacman -S'
 alias pr='sudo pacman -R'
