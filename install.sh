@@ -3,7 +3,7 @@
 # verify if dotfiles existis
 checkDotfiles() {
     if [ ! -d ~/dotfiles ]; then
-        echo "~/dotfiles not found"
+        echo "$HOME/dotfiles not found"
         exit 1
     fi
 }
@@ -25,9 +25,9 @@ installYayPackages() {
     # install yay
     sudo pacman -S --needed git base-devel
     git clone https://aur.archlinux.org/yay.git ~
-    cd ~/yay
+    cd ~/yay || exit
     makepkg -si
-    cd ~
+    cd ~ || exit
 
     # packages
     yay -S discord whatsie spotify obsidian vscodium-bin --noconfirm
@@ -81,9 +81,9 @@ homeModifications() {
 # install zsh plugins
 ohMyZsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM"/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM"/plugins/zsh-syntax-highlighting
+        git clone https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM"/themes/powerlevel10k
 }
 
 # main
@@ -93,9 +93,9 @@ main() {
     # ask whats your distro
     echo
     echo "1) arch / manjaro / endeavour"
-    echo "2) debian / ubuntu / mint / zorin\n"
+    echo "2) debian / ubuntu / mint / zorin"
     echo
-    read -p "whats your distro? (1, 2): " distro
+    read -pr "whats your distro? (1, 2): " distro
 
     case "$distro" in
         1)
@@ -115,7 +115,7 @@ main() {
     homeModifications
 
     # reboot
-    read -p "do you want to reboot system? (y/n): " reboot
+    read -pr "do you want to reboot system? (y/n): " reboot
     if [ "$reboot" = "y" ]; then
         sudo reboot
     fi
