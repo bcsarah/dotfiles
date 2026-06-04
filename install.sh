@@ -12,25 +12,28 @@ checkDotfiles() {
 installArchPackages() {
     sudo pacman -Syu --noconfirm
     sudo pacman -S --needed --noconfirm \
-        kitty tree fzf fd bat zip unzip \
-        git fastfetch \
-        firefox pavucontrol mpv \
-        zsh vim tmux lazygit \
-        python3 jdk21-openjdk maven gcc \
+        xfce4 xfce4-goodies xfce4-docklike-plugin gvfs \
+        kitty tree fzf bat zip unzip blueman \
+        base-devel git flatpak vim zsh tmux fastfetch \
+        firefox pavucontrol mpv libreoffice-fresh-pt-br \
+        python3 jdk21-openjdk maven \
         papirus-icon-theme ttf-jetbrains-mono-nerd
 }
 
 # install yay packages
 installYayPackages() {
     # install yay
-    sudo pacman -S --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git ~
+    cd ~
+    git clone https://aur.archlinux.org/yay.git
     cd ~/yay || exit
     makepkg -si
     cd ~ || exit
+    rm -rf ~/yay
 
     # packages
-    yay -S discord whatsie spotify obsidian vscodium-bin --noconfirm
+    yay -S discord whatsie spotify steam --noconfirm
+    yay -S vscodium-bin github-desktop obsidian proton-vpn-gtk-app  --noconfirm
+    yay -S ttf-ms-fonts --noconfirm
 }
 
 # install debian packages
@@ -38,17 +41,17 @@ installDebianPackages() {
     sudo apt update -y
     sudo apt upgrade -y
     sudo apt install -y \
-        kitty tree fzf fd-find bat zip unzip ripgrep \
-        git fastfetch snapd \
+        kitty tree fzf bat zip unzip \
+        vim git zsh tmux fastfetch snapd \
         firefox pavucontrol mpv \
-        zsh vim tmux \
-        python3 openjdk-21-jdk maven gcc \
+        python3 openjdk-21-jdk maven \
         papirus-icon-theme jetbrains-mono-nerd
 }
 
 # install snap packages
 installSnapPackages() {
-    sudo snap install lazygit discord whatsie spotify obsidian codium -y
+    sudo snap install discord whatsie spotify -y
+    sudo snap isntall obsidian codium --classic -y
 }
 
 # home modifications
@@ -57,7 +60,7 @@ homeModifications() {
     mkdir -p ~/.config
 
     # remove old configurations
-    for config in kitty fastfetch lazygit; do
+    for config in kitty fastfetch; do
         rm -rf ~/.config/$config
     done
 
@@ -66,7 +69,7 @@ homeModifications() {
     done
 
     # symbolic links
-    for config in kitty fastfetch lazygit; do
+    for config in kitty fastfetch; do
         ln -sfnv ~/dotfiles/$config ~/.config
     done
 
@@ -83,7 +86,7 @@ ohMyZsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM"/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM"/plugins/zsh-syntax-highlighting
-        git clone https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM"/themes/powerlevel10k
+    git clone https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM"/themes/powerlevel10k
 }
 
 # main
@@ -91,11 +94,11 @@ main() {
     checkDotfiles
 
     # ask whats your distro
-    echo
+    echo ""
     echo "1) arch / manjaro / endeavour"
     echo "2) debian / ubuntu / mint / zorin"
-    echo
-    read -pr "whats your distro? (1, 2): " distro
+    echo ""
+    read -p "whats your distro? (1, 2): " distro
 
     case "$distro" in
         1)
