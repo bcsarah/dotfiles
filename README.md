@@ -13,7 +13,6 @@ Uses **Gruvbox**, with an aesthetic that is:
 - **Terminal:** kitty
 - **Shell:** zsh
 - **Editor:** vim
-- **Git UI:** lazygit
 - **Fetch:** fastfetch
 
 ---
@@ -23,9 +22,10 @@ Just run install.sh and see what you need to do. **This script is under developm
 
 ### ⚙️  What the scripts do
 1. Updates the system
-2. Install core packages (vim, lazygit etc)
+2. Install core packages (vim, zhs, kitty etc)
 5. Creates symbolic links from ~/dotfiles
 6. Changes your default shell to `zsh`
+
 - (personally, i recommend you view the entire install.sh to make sure what this script can do)
 
 ### 🚀 Installation steps

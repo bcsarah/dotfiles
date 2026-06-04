@@ -12,7 +12,6 @@ checkDotfiles() {
 installArchPackages() {
     sudo pacman -Syu --noconfirm
     sudo pacman -S --needed --noconfirm \
-        xfce4 xfce4-goodies xfce4-docklike-plugin gvfs \
         kitty tree fzf bat zip unzip blueman \
         base-devel git flatpak vim zsh tmux fastfetch \
         firefox pavucontrol mpv libreoffice-fresh-pt-br \
@@ -118,7 +117,7 @@ main() {
     homeModifications
 
     # reboot
-    read -pr "do you want to reboot system? (y/n): " reboot
+    read -p "do you want to reboot system? (y/n): " reboot
     if [ "$reboot" = "y" ]; then
         sudo reboot
     fi
