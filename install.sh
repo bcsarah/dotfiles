@@ -14,7 +14,7 @@ installArchPackages() {
     sudo pacman -S --needed --noconfirm \
         kitty tree fzf bat zip unzip blueman \
         base-devel git flatpak vim zsh tmux fastfetch \
-        firefox pavucontrol mpv libreoffice-fresh-pt-br \
+        firefox pavucontrol libreoffice-fresh-pt-br \
         python3 jdk21-openjdk maven \
         papirus-icon-theme ttf-jetbrains-mono-nerd
 }
@@ -42,7 +42,7 @@ installDebianPackages() {
     sudo apt install -y \
         kitty tree fzf bat zip unzip \
         vim git zsh tmux fastfetch snapd \
-        firefox pavucontrol mpv \
+        firefox pavucontrol \
         python3 openjdk-21-jdk maven \
         papirus-icon-theme jetbrains-mono-nerd
 }

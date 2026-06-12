@@ -17,12 +17,12 @@ Uses **Gruvbox**, with an aesthetic that is:
 
 ---
 ## 🛠️ Installation
-Just run install.sh and see what you need to do. **This script is under development and testing.**
+Just run install.sh and see what you need to do. **This script is under development and testing. Some features may fail.**
 **THIS SCRIPT DOESNT DO A BACKUP! Make sure to backup everything before using the script**
 
 ### ⚙️  What the scripts do
 1. Updates the system
-2. Install core packages (vim, zhs, kitty etc)
+2. Install core packages (vim, zsh, kitty etc)
 5. Creates symbolic links from ~/dotfiles
 6. Changes your default shell to `zsh`
 
