@@ -4,16 +4,13 @@
   "logo": {
     "type": "small",
     "padding": {
-      "top": 8,
+          "top": 7,
       "left": 3
     }
   },
 
   "display": {
-    "separator": "",
-    "key": {
-      "width": 14
-    },
+    "separator": " ",
     "color": "#a89984"
   },
 
@@ -22,27 +19,25 @@
     "title",
     "break",
 
-    { "type": "os", "key": " OS" },
-    { "type": "host", "key": "󰌢 Host" },
-    { "type": "kernel", "key": "󰌢 Kernel" },
-    { "type": "uptime", "key": "󱫐 Uptime" },
-    { "type": "packages", "key": "󰏖 Packages" },
-    { "type": "shell", "key": " Shell" },
-    { "type": "terminal", "key": " Terminal" },
+    { "type": "os", "key": " " },
+    { "type": "host", "key": "󰌢 " },
+    { "type": "kernel", "key": "󰇺 " },
+    { "type": "packages", "key": "󰏖 " },
+    { "type": "shell", "key": " " },
 
-    "separator",
+    "break",
 
-    { "type": "cpu", "key": "󰍛 CPU"},
-    { "type": "gpu", "key": "󰢮 GPU" },
-    { "type": "memory", "key": "󰑭 Memory" },
-    { "type": "disk", "key": "󰋊 Disk", "folders": ["/"] },
+    { "type": "cpu", "key": "󰍛 "},
+    { "type": "gpu", "key": "󰢮 " },
+    { "type": "memory", "key": " " },
+    { "type": "disk", "key": "󱛟 ", "folders": ["/"] },
 
-    "separator",
+    "break",
 
-    { "type": "wm", "key": "󰖯 WM" },
-    { "type": "theme", "key": "󰉼 Theme" },
-    { "type": "icons", "key": "󰀻 Icons" },
-    { "type": "font", "key": "󰛖 Font" },
+    { "type": "de", "key": " " },
+    { "type": "wm", "key": " " },
+    { "type": "theme", "key": " " },
+    { "type": "icons", "key": "󱗼 " },
 
     "break",
 
