@@ -19,11 +19,5 @@ alias tar-unpack='tar -xvf'
 alias javac='javac -d bin $(find src -name "*.java")'
 alias java='java -cp bin App'
 
-alias pi='sudo pacman -S'
-alias pr='sudo pacman -R'
-alias pu='sudo pacman -Syu'
-alias prm='sudo pacman -Rns $(pacman -Qtdq)'
-alias pq='pacman -Ss'
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
