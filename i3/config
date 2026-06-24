@@ -1,0 +1,100 @@
+set $mod Mod4
+
+# visual
+font pango:JetBrainsMono Nerd Font 10
+default_border pixel 2
+
+# startup
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
+exec --no-startup-id setxkbmap br -variant abnt2
+
+# mods
+floating_modifier $mod
+tiling_drag modifier titlebar
+focus_follows_mouse yes
+
+# colors
+set $bg         "#282828"
+set $fg         "#ebdbb2"
+set $red        "#cc241d"
+set $green      "#98971a"
+set $yellow     "#d79921"
+set $blue       "#458588"
+set $purple     "#b16286"
+set $aqua       "#689d6a"
+set $gray       "#a89984"
+set $bg_highlight "#3c3836"
+
+client.focused          $blue $bg_highlight $fg $blue $blue
+client.urgent           $red $red $bg $red $red
+client.placeholder      $gray $bg $fg $gray $gray
+client.background       $bg
+
+# binds
+bindsym $mod+q exec kitty
+bindsym $mod+w kill
+bindsym $mod+e exec thunar
+bindsym $mod+r exec dmenu_run
+
+bindsym $mod+s exec rhythymbox
+
+bindsym $mod+g exec steam
+bindsym $mod+v exec obsidian
+bindsym $mod+b exec firefox
+bindsym $mod+n exec codium
+bindsym $mod+m exec github-desktop
+
+bindsym $mod+z exec pavucontrol
+
+# focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# resize
+bindsym $mod+Ctrl+h resize grow width 5 px or 5 ppt
+bindsym $mod+Ctrl+j resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+l resize shrink width 5 px or 5 ppt
+
+# split
+bindsym $mod+o split h
+bindsym $mod+p split v
+bindsym $mod+x floating toggle
+
+# layout
+bindsym $mod+u layout tabbed
+bindsym $mod+i layout toggle split
+
+# fullscreen
+bindsym $mod+f fullscreen toggle
+
+# screenshot
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
+
+# workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+
+# reload
+bindsym $mod+Shift+c restart
