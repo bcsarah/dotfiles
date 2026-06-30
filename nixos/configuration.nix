@@ -12,10 +12,14 @@
   ];
 
   # Others
-  #
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   programs.steam.enable = true;
+  services.flatpak.enable = true;
+
+  environment.systemPackages = [
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+  ];
 
   system.stateVersion = "26.05"; # Did you read the comment?
 }

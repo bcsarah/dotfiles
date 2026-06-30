@@ -26,7 +26,6 @@
   };
 
 
-
   # Packages
   home.packages = with pkgs; [
     # CLI
@@ -67,7 +66,6 @@
 
 
     # GUI
-    firefox
     discord
     zapzap
     rhythmbox
