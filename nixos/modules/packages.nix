@@ -69,7 +69,7 @@
     # GUI
     firefox
     discord
-    whatsie
+    zapzap
     rhythmbox
     obsidian
 
@@ -90,7 +90,7 @@
     slurp
     hyprsunset
     swaybg
-    xfce.thunar
+    thunar
     gvfs
     wl-clipboard
     brightnessctl
@@ -106,5 +106,7 @@
     gruvbox-dark-gtk
 
     nwg-look
+    kdePackages.qt6ct
+    libsForQt5.qt5ct
   ];
 }
