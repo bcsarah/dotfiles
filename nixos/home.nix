@@ -2,10 +2,7 @@
 
 {
   imports = [
-    ./modules/config/nvim.nix
-    ./modules/config/git.nix
-    ./modules/config/yazi.nix
-    ./modules/packages/packages.nix
+    ./modules/packages.nix
   ];
   
   # User
