@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 {
@@ -10,9 +9,12 @@
     enable = true;
     settings.user = {
       name = "Better Call Sarah";
-      email = "sarahalencar6409@gmail.com";
+      email = "bcsarah@proton.me";
     };
   };
+
+  programs.lazygit.enable = true;
+
 
   # Nvim
   programs.neovim = {
@@ -24,7 +26,7 @@
   };
 
 
-  programs.lazygit.enable = true;
+
   # Packages
   home.packages = with pkgs; [
     # CLI
@@ -39,6 +41,7 @@
     unzip
     btop
     bluetui
+    yazi
 
     fastfetch
     cmatrix
@@ -87,7 +90,7 @@
     slurp
     hyprsunset
     swaybg
-    thunar
+    xfce.thunar
     gvfs
     wl-clipboard
     brightnessctl
@@ -103,7 +106,5 @@
     gruvbox-dark-gtk
 
     nwg-look
-    kdePackages.qt6ct
-    libsForQt5.qt5ct
   ];
 }
