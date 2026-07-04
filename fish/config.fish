@@ -1,4 +1,4 @@
 function fish_greeting
-    fastfetch
-    echo
+	fastfetch
+	echo
 end
