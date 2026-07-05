@@ -14,4 +14,3 @@ This repository contains my **dotfiles** since February 2026.
 
 
 > Better use linux btw 🐧
-
