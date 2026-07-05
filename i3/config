@@ -10,6 +10,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
 exec --no-startup-id polybar
 exec --no-startup-id autotiling
+exec --no-startup-id syncthing --nobrowser
 exec --no-startup-id setxkbmap br -variant abnt2
 
 # mods
@@ -43,14 +44,12 @@ bindsym $mod+e exec thunar
 bindsym $mod+r exec i3-dmenu-desktop
 bindsym $mod+Shift+r exec dmenu_run
 
-bindsym $mod+a exec flatpak run com.ktechpit.whatsie
 bindsym $mod+s exec rhythmbox
-bindsym $mod+d exec flatpak run com.discordapp.Discord
 bindsym $mod+z exec pavucontrol
 
-bindsym $mod+b exec flatpak run app.zen_browser.zen
-bindsym $mod+g exec flatpak run com.valvesoftware.Steam
-bindsym $mod+o exec flatpak run md.obsidian.Obsidian
+bindsym $mod+b exec zen-browser
+bindsym $mod+g exec steam
+bindsym $mod+o exec obsidian
 
 
 # focus
@@ -72,13 +71,11 @@ bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
 bindsym $mod+Ctrl+l resize shrink width 5 px or 5 ppt
 
 # split
-bindsym $mod+n split v
-bindsym $mod+m split h
 bindsym $mod+x floating toggle
 
 # layout
-bindsym $mod+u layout tabbed
-bindsym $mod+i layout toggle split
+bindsym $mod+y layout tabbed
+bindsym $mod+u layout toggle split
 
 # fullscreen
 bindsym $mod+f fullscreen toggle
@@ -95,11 +92,11 @@ bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 
-bindsym $mod+Shift+1 move container to workspace 1; workspace 1
-bindsym $mod+Shift+2 move container to workspace 2; workspace 2
-bindsym $mod+Shift+3 move container to workspace 3; workspace 3
-bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
 
 # reload
 bindsym $mod+Shift+c restart
