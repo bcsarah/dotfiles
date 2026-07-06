@@ -5,7 +5,7 @@ This repository contains my **dotfiles** since February 2026.
 **Use your favorite package manager to install these packages. These are my opinated packages to use my setup.**
 
 - tree fzf fd ripgrep bat glow tmux zip unzip
-- i3 i3lock polybar dmenu thunar autotiling feh maim xclip
+- dwm dmenu thunar feh maim xclip
 - neovim fish git lazygit fastfetch
 - python3 python3-pip openjdk21 maven gcc ruby nodejs npm
 - tree-sitter-cli imagemagick ghostscript texlive-bin luarocks
