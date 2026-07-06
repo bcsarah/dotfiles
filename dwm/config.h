@@ -1,12 +1,11 @@
 /* appearance */
 static const unsigned int borderpx  = 2;
 static const unsigned int snap      = 32;
-static const int showbar            = 1;
+static const int showbar            = 0;
 static const int topbar             = 1;
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=12";
 
-/* colors - cores da Polybar */
 static const char col_bg[]          = "#282828";
 static const char col_bg_alt[]      = "#3c3836";
 static const char col_fg[]          = "#ebdbb2";
@@ -30,8 +29,9 @@ static const char *colors[][3] = {
 static const char *tags[] = { "  ", "  ", "  ", " 󰖣 " };
 
 static const Rule rules[] = {
-    /* class      instance    title       tags mask     isfloating   monitor */
-    { "emojify",  NULL,       NULL,       0,            1,           -1 },
+    /* class         instance    title       tags mask     isfloating   monitor */
+    { "emojify",      NULL,       NULL,       0,            1,           -1 },
+    { "pavucontrol",  NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -100,6 +100,7 @@ static const Key keys[] = {
 
     { MODKEY,                       XK_y,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_u,      setlayout,      {.v = &layouts[0]} },
+    { MODKEY,                       XK_i,      togglebar,      {0} },
 
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)

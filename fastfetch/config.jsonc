@@ -23,6 +23,7 @@
     { "type": "kernel", "key": "󰇺 " },
     { "type": "packages", "key": "󰏖 " },
     { "type": "shell", "key": " " },
+    { "type": "datetime", "key": " " },
 
     "break",
 
