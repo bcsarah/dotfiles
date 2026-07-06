@@ -9,8 +9,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
 exec --no-startup-id polybar
-exec --no-startup-id autotiling
-exec --no-startup-id syncthing --nobrowser
+exec --no-startup-id syncthing
 exec --no-startup-id setxkbmap br -variant abnt2
 
 # mods
@@ -35,7 +34,7 @@ client.urgent           $red $red $bg $red $red
 client.placeholder      $gray $bg $fg $gray $gray
 client.background       $bg
 
-gaps inner 7
+gaps inner 10
 
 # binds
 bindsym $mod+q exec kitty
@@ -43,13 +42,12 @@ bindsym $mod+w kill
 bindsym $mod+e exec thunar
 bindsym $mod+r exec i3-dmenu-desktop
 bindsym $mod+Shift+r exec dmenu_run
-
-bindsym $mod+s exec rhythmbox
-bindsym $mod+z exec pavucontrol
+bindsym $mod+m exec emojify
 
 bindsym $mod+b exec zen-browser
 bindsym $mod+g exec steam
 bindsym $mod+o exec obsidian
+bindsym $mod+z exec pavucontrol
 
 
 # focus
@@ -71,7 +69,7 @@ bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
 bindsym $mod+Ctrl+l resize shrink width 5 px or 5 ppt
 
 # split
-bindsym $mod+x floating toggle
+bindsym $mod+v floating toggle
 
 # layout
 bindsym $mod+y layout tabbed
@@ -97,6 +95,9 @@ bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
+
+# Faz o emojify abrir sempre como uma janela flutuante
+for_window [class="emojify"] floating enable
 
 # reload
 bindsym $mod+Shift+c restart
