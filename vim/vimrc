@@ -1,5 +1,0 @@
-source ~/.vim/plugins.vim
-source ~/.vim/config.vim
-source ~/.vim/binds.vim
-source ~/.vim/lsp.vim
-source ~/.vim/colors.vim
