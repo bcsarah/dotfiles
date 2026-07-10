@@ -19,7 +19,6 @@
     "break",
 
     { "type": "os", "key": " " },
-    { "type": "host", "key": "󰌢 " },
     { "type": "kernel", "key": "󰇺 " },
     { "type": "packages", "key": "󰏖 " },
     { "type": "shell", "key": " " },

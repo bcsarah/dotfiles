@@ -90,13 +90,13 @@ static const Key keys[] = {
     { 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
     { ShiftMask,                    XK_Print,  spawn,          {.v = screenshotfullcmd } },
 
-    { MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
-    { MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-
-    { MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
-    { MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
+    { MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
+    { MODKEY|ControlMask,           XK_h,      setmfact,       {.f = -0.05} },
+    { MODKEY|ControlMask,           XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_Return, zoom,           {0} },
 
     { MODKEY,                       XK_y,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_u,      setlayout,      {.v = &layouts[0]} },
