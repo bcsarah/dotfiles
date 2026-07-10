@@ -24,6 +24,7 @@
     { "type": "packages", "key": "󰏖 " },
     { "type": "shell", "key": " " },
     { "type": "datetime", "key": " " },
+    { "type": "battery", "key": " " },
 
     "break",
 
