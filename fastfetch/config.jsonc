@@ -4,7 +4,7 @@
   "logo": {
     "type": "small",
     "padding": {
-          "top": 7,
+          "top": 5,
       "left": 3
     }
   },
@@ -22,8 +22,6 @@
     { "type": "kernel", "key": "󰇺 " },
     { "type": "packages", "key": "󰏖 " },
     { "type": "shell", "key": " " },
-    { "type": "datetime", "key": " " },
-    { "type": "battery", "key": " " },
 
     "break",
 
