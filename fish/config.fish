@@ -95,8 +95,11 @@ function fish_greeting
 end
 
 alias pi="sudo pacman -S"
+alias yi="yay -S"
 alias pr="sudo pacman -Rns"
+alias pq="pacman -Qe"
 alias pu="sudo pacman -Syu"
 alias prm="sudo pacman -Rns $(pacman -Qtdq)"
 
-alias dwm-reload="cd ~/dotfiles/dwm/ && sudo make clean install"
+# opencode
+fish_add_path /home/bcsarah/.opencode/bin
