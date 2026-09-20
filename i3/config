@@ -6,11 +6,7 @@ default_border pixel 2
 
 # startup
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
-exec --no-startup-id polybar
-exec --no-startup-id syncthing
-exec --no-startup-id setxkbmap br -variant abnt2
 
 # mods
 floating_modifier $mod
@@ -42,10 +38,8 @@ bindsym $mod+w kill
 bindsym $mod+e exec thunar
 bindsym $mod+r exec i3-dmenu-desktop
 bindsym $mod+Shift+r exec dmenu_run
-bindsym $mod+m exec emojify
 
-bindsym $mod+b exec zen-browser
-bindsym $mod+g exec steam
+bindsym $mod+b exec firefox
 bindsym $mod+o exec obsidian
 bindsym $mod+z exec pavucontrol
 
@@ -95,9 +89,6 @@ bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
-
-# Faz o emojify abrir sempre como uma janela flutuante
-for_window [class="emojify"] floating enable
 
 # reload
 bindsym $mod+Shift+c restart
