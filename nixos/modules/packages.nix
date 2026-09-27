@@ -2,8 +2,6 @@
 
 {
   # Enables
-  services.displayManager.ly.enable = true;
-
   programs.git.enable = true;
   programs.lazygit.enable = true;
   programs.neovim.enable = true;

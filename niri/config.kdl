@@ -94,16 +94,14 @@ animations {
 
 // Window Rules
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+    match title="Firefox"
+    open-maximized true
 }
 
-// Rounded Window Corners
-/-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
+window-rule {
+    match title="Code"
+    open-maximized true
 }
-
 
 // Binds
 binds {
