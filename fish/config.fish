@@ -95,3 +95,4 @@ function fish_greeting
 end
 
 alias lg="lazygit"
+alias y="yazi"

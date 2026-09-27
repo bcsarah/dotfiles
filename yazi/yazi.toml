@@ -1,0 +1,35 @@
+[mgr]
+ratio          = [2, 3, 4]
+show_hidden    = false
+show_symlink   = true
+scrolloff      = 5
+sort_dir_first = true
+linemode       = "size"
+
+[preview]
+tab_size      = 2
+max_width     = 1000
+max_height    = 1000
+image_filter  = "triangle"
+image_quality = 90
+
+
+# Como abrir cada tipo de arquivo
+[opener]
+edit    = [{ run = 'nvim "$@"',          desc = "Editar com nvim",   block = true, for = "unix" }]
+play    = [{ run = 'mpv "$@"',           desc = "Reproduzir",        for = "unix" }]
+image   = [{ run = 'eog "$@"',           desc = "Ver imagem",        for = "linux" }]
+extract = [{ run = 'unzip "$0" -d "$1"', desc = "Extrair zip",       for = "linux" }]
+
+[open]
+rules = [
+  { mime = "image/*", use = ["image"] },
+  { mime = "video/*", use = ["play"] },
+  { mime = "audio/*", use = ["play"] },
+
+  { mime = "application/zip", use = ["extract"] },
+  { mime = "application/x-*",  use = ["extract"] },
+
+  { mime = "text/*", use = ["edit"] },
+  { url = "*.{md,txt,log,conf,toml,yaml,yml,json,sh,lua,py,rs,go,js,ts,tsx,jsx,html,css}", use = ["edit"] },
+]
