@@ -94,7 +94,4 @@ function fish_greeting
     echo
 end
 
-alias nix-rebuild="sudo nixos-rebuild switch --flake ~/dotfiles/nixos#nixos"
-alias nix-garbage="sudo nix-collect-garbage -d"
-
 alias lg="lazygit"

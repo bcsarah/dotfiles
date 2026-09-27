@@ -8,24 +8,32 @@
   programs.lazygit.enable = true;
   programs.neovim.enable = true;
   programs.niri.enable = true;
+  services.gvfs.enable = true;
 
   # QT_QPA_PLATFORMTHEME
   environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
+  # Unfree Softwares
+  nixpkgs.config.allowUnfree = true;
+
   
   # Packages
   environment.systemPackages = with pkgs; [
+
     # CLI
     tmux
     tree
     fzf
     fd
     bat
-    btop
     ripgrep
-    yazi
     zip
     unzip
+
+    ncdu
+    btop
+    yazi
+    bluetui
 
     fastfetch
     cmatrix
@@ -39,6 +47,7 @@
     nodejs
     gcc
 
+
     # LazyVim
     tree-sitter
     prettierd
@@ -48,10 +57,14 @@
 
     # GUI
     firefox
+    obsidian
     libreoffice
     pavucontrol
     mpv
     eog
+
+    vscode
+    github-desktop
 
 
     # Niri
@@ -61,7 +74,7 @@
     dunst
     swaybg
     thunar
-    gvfs
+    thunar-volman
     wl-clipboard
     brightnessctl
 

@@ -107,15 +107,17 @@ window-rule {
 
 // Binds
 binds {
-    Mod+Shift+Slash { show-hotkey-overlay; }
-
     // Bind apps
     Mod+Q { spawn "kitty"; }
-    Mod+W repeat=false { close-window; }
+    Mod+W { close-window; }
     Mod+E { spawn "thunar"; }
     Mod+R { spawn "wofi"; }
 
     Mod+B { spawn "firefox"; }
+    Mod+O { spawn "obsidian"; }
+    Mod+N { spawn "code"; }
+    Mod+G { spawn "github-desktop"; }
+    Mod+M { spawn-sh "libreoffice --writer"; }
 
     // Window Management
     Mod+H     { focus-column-left; }
@@ -152,6 +154,7 @@ binds {
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
     Mod+4 { focus-workspace 4; }
+
     Mod+Shift+1 { move-window-to-workspace 1; }
     Mod+Shift+2 { move-window-to-workspace 2; }
     Mod+Shift+3 { move-window-to-workspace 3; }
@@ -163,7 +166,6 @@ binds {
 
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
-    Mod+M { maximize-window-to-edges; }
 
     Mod+C { center-column; }
     Mod+V { toggle-window-floating; }
@@ -182,8 +184,8 @@ binds {
 
     // Printscreen
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Mod+Print { screenshot-screen; }
+    Mod+Shift+Print { screenshot-window; }
 
     // Quit
     Ctrl+Alt+Delete { quit; }
