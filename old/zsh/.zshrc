@@ -21,12 +21,12 @@ source $ZSH/oh-my-zsh.sh
 alias img='kitty +kitten icat'
 alias tar-unpack='tar -xvf'
 
-alias xi='sudo xbps-install'
-alias xr='sudo xbps-remove -R'
-alias xu='sudo xbps-install -Su'
-alias xs='xbps-query -Rs'
-alias xq='xbps-query -m'
-alias xrm='sudo xbps-remove -o'
+alias pi='sudo pacman -S'
+alias pr='sudo pacman -Rns'
+alias pu='sudo pacman -Syu'
+alias ps='pacman -Ss'
+alias pq='pacman -Qe'
+alias prm='sudo pacman -Rns $(pacman -Qtdq)'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
