@@ -2,8 +2,6 @@
 
 {
   # Enables
-  programs.git.enable = true;
-  programs.neovim.enable = true;
   programs.niri.enable = true;
   programs.fish.enable = true;
   services.gvfs.enable = true;
@@ -19,6 +17,8 @@
   environment.systemPackages = with pkgs; [
 
     # CLI
+    wget
+    git
     tmux
     tree
     fzf
@@ -28,6 +28,7 @@
     zip
     unzip
 
+    neovim
     lazygit
     ncdu
     btop

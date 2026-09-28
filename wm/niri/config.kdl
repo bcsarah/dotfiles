@@ -108,6 +108,7 @@ binds {
     // Bind apps
     Mod+Q { spawn "kitty"; }
     Mod+W { close-window; }
+    Mod+P { close-window; }
     Mod+E { spawn "thunar"; }
     Mod+R { spawn "wofi"; }
 
