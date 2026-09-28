@@ -5,9 +5,7 @@
     ./hardware-configuration.nix
     ./modules/loader.nix
     ./modules/locales.nix
-    ./modules/shell.nix
     ./modules/users.nix
-    ./modules/fonts.nix
     ./modules/packages.nix
   ];
 

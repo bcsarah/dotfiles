@@ -3,9 +3,9 @@
 {
   # Enables
   programs.git.enable = true;
-  programs.lazygit.enable = true;
   programs.neovim.enable = true;
   programs.niri.enable = true;
+  programs.fish.enable = true;
   services.gvfs.enable = true;
 
   # QT_QPA_PLATFORMTHEME
@@ -28,6 +28,7 @@
     zip
     unzip
 
+    lazygit
     ncdu
     btop
     yazi
@@ -43,6 +44,7 @@
     openjdk21
     maven
     nodejs
+    ruby
     gcc
 
 
@@ -63,6 +65,7 @@
 
     vscode
     github-desktop
+    netbeans
 
 
     # Niri
@@ -72,7 +75,6 @@
     dunst
     swaybg
     thunar
-    thunar-volman
     wl-clipboard
     brightnessctl
 
@@ -89,5 +91,14 @@
     nwg-look
     kdePackages.qt6ct
     libsForQt5.qt5ct
+
+    # Fonts
+    noto-fonts-cjk-sans
+  ];
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    texlivePackages.noto-emoji
   ];
 }
