@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, opencode, zen-browser, ... }:
 
 {
   # Enables
@@ -35,10 +35,11 @@
     ncdu
     btop
     yazi
-    ranger
+    #ranger
     cmus
     bluetui
 
+    opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
     fastfetch
     cmatrix
     asciiquarium
@@ -63,18 +64,19 @@
 
 
     # GUI
-    firefox
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #firefox
     obsidian
-    localsend
-    syncthing
+    #localsend
+    #syncthing
     libreoffice
     pavucontrol
     mpv
-    eog
+    #eog
 
-    vscode
-    github-desktop
-    netbeans
+    #vscode
+    #github-desktop
+    #netbeans
 
 
     # Niri
