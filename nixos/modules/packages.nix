@@ -25,14 +25,18 @@
     fd
     bat
     ripgrep
+    bc
     zip
     unzip
 
     neovim
+    vim
     lazygit
     ncdu
     btop
     yazi
+    ranger
+    cmus
     bluetui
 
     fastfetch
@@ -46,7 +50,9 @@
     maven
     nodejs
     ruby
+    clang-tools
     gcc
+    gnumake
 
 
     # LazyVim
@@ -59,6 +65,8 @@
     # GUI
     firefox
     obsidian
+    localsend
+    syncthing
     libreoffice
     pavucontrol
     mpv

@@ -1,3 +1,4 @@
+# prompt
 function fish_prompt
     set -l __last_command_exit_status $status
 
@@ -94,5 +95,17 @@ function fish_greeting
     echo
 end
 
+# sair do yazi no diretório que estava
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    command yazi $argv --cwd-file="$tmp"
+
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and test -d "$cwd"
+        builtin cd -- "$cwd"
+    end
+
+    rm -f -- "$tmp"
+end
+
+alias r="ranger"
 alias lg="lazygit"
-alias y="yazi"
