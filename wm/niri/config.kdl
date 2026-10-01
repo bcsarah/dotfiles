@@ -91,6 +91,11 @@ window-rule {
     open-maximized true
 }
 
+window-rule {
+    geometry-corner-radius 6
+    clip-to-geometry true
+}
+
 // Binds
 binds {
     // Bind apps
@@ -177,3 +182,5 @@ binds {
     // Overview
     Mod+Tab repeat=false { toggle-overview; }
 }
+
+include "noctalia.kdl"

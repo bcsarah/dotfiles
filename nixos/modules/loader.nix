@@ -22,6 +22,9 @@
   zramSwap.enable = true;
 
   # Audio
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -33,7 +36,11 @@
   # Network
   networking.networkmanager.enable = true;
   networking.hostName = "nixos";
+  networking.firewall.enable = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;
+
+  # Battery
+  services.power-profiles-daemon.enable = true;
 }

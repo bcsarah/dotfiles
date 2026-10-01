@@ -8,6 +8,12 @@
   programs.fish.enable = true;
   services.gvfs.enable = true;
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "gtk";
+  };
+
   # QT_QPA_PLATFORMTHEME
   environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
@@ -65,7 +71,6 @@
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     obsidian
     libreoffice
-    pavucontrol
     mpv
 
 
@@ -80,15 +85,9 @@
     # Icons
     papirus-icon-theme
     google-cursor
-    adwaita-qt
-    adwaita-qt6
-
     gruvbox-kvantum
     gruvbox-dark-gtk
-
     nwg-look
-    kdePackages.qt6ct
-    libsForQt5.qt5ct
 
     # Fonts
     noto-fonts-cjk-sans
