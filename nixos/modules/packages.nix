@@ -3,6 +3,8 @@
 {
   # Enables
   programs.niri.enable = true;
+  programs.git.enable = true;
+  programs.neovim.enable = true;
   programs.fish.enable = true;
   services.gvfs.enable = true;
 
@@ -18,7 +20,6 @@
 
     # CLI
     wget
-    git
     tmux
     tree
     fzf
@@ -29,20 +30,17 @@
     zip
     unzip
 
-    neovim
-    vim
     lazygit
     ncdu
     btop
     yazi
-    #ranger
     cmus
-    bluetui
 
     opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
     fastfetch
     cmatrix
     asciiquarium
+    vitetris
 
 
     # Coding
@@ -65,27 +63,16 @@
 
     # GUI
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    #firefox
     obsidian
-    #localsend
-    #syncthing
     libreoffice
     pavucontrol
     mpv
-    #eog
-
-    #vscode
-    #github-desktop
-    #netbeans
 
 
     # Niri
     kitty
-    wofi
-    waybar
-    dunst
-    swaybg
-    thunar
+    noctalia
+    nautilus
     wl-clipboard
     brightnessctl
 

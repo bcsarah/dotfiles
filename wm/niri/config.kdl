@@ -75,8 +75,7 @@ layout {
 
 
 // Startup
-spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpaper.png"
-spawn-at-startup "waybar"
+spawn-sh-at-startup "noctalia"
 
 hotkey-overlay {
     skip-at-startup
@@ -85,21 +84,10 @@ hotkey-overlay {
 // No CSD
 prefer-no-csd
 
-// Animations
-animations {
-    // off
-    // slowdown 3.0
-}
-
 
 // Window Rules
 window-rule {
-    match title="Firefox"
-    open-maximized true
-}
-
-window-rule {
-    match title="Code"
+    match title="Zen"
     open-maximized true
 }
 
@@ -108,14 +96,11 @@ binds {
     // Bind apps
     Mod+Q { spawn "kitty"; }
     Mod+W { close-window; }
-    Mod+P { close-window; }
-    Mod+E { spawn "thunar"; }
-    Mod+R { spawn "wofi"; }
+    Mod+E { spawn "nautilus"; }
+    Mod+R { spawn-sh "noctalia msg panel-toggle launcher"; }
 
-    Mod+B { spawn "firefox"; }
+    Mod+B { spawn "zen"; }
     Mod+O { spawn "obsidian"; }
-    Mod+N { spawn "code"; }
-    Mod+G { spawn "github-desktop"; }
     Mod+M { spawn-sh "libreoffice --writer"; }
 
     // Window Management
