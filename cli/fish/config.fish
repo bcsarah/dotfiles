@@ -107,5 +107,6 @@ function y
     rm -f -- "$tmp"
 end
 
+alias img="kitty +kitten icat"
 alias r="ranger"
 alias lg="lazygit"
