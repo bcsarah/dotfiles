@@ -5,6 +5,7 @@
   programs.niri.enable = true;
   programs.git.enable = true;
   programs.neovim.enable = true;
+  programs.vim.enable = true;
   programs.fish.enable = true;
   services.gvfs.enable = true;
 
@@ -26,14 +27,12 @@
 
     # CLI
     wget
-    tmux
     tree
+    ripgrep
     fzf
     fd
     bat
-    ripgrep
-    bc
-    zip
+    fent
     unzip
 
     lazygit
@@ -42,7 +41,6 @@
     yazi
     cmus
 
-    opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
     fastfetch
     cmatrix
     asciiquarium
@@ -51,26 +49,22 @@
 
     # Coding
     python3
+    nodejs
     openjdk21
     maven
-    nodejs
-    ruby
-    clang-tools
     gcc
     gnumake
 
 
     # LazyVim
     tree-sitter
-    prettierd
     eslint_d
-    stylua
 
 
     # GUI
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    obsidian
     libreoffice
+    obsidian
     mpv
 
 
@@ -84,9 +78,9 @@
 
     # Icons
     papirus-icon-theme
-    google-cursor
     gruvbox-kvantum
     gruvbox-dark-gtk
+    google-cursor
     nwg-look
 
     # Fonts
@@ -97,5 +91,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     texlivePackages.noto-emoji
+    corefonts
   ];
 }
