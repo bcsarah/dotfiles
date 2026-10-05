@@ -1,13 +1,13 @@
-{ config, pkgs, opencode, zen-browser, ... }:
+{ config, pkgs, ... }:
 
 {
   # Enables
   programs.niri.enable = true;
-  programs.git.enable = true;
   programs.neovim.enable = true;
   programs.vim.enable = true;
   programs.fish.enable = true;
   services.gvfs.enable = true;
+  services.flatpak.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -27,12 +27,14 @@
 
     # CLI
     wget
+    git
     tree
     ripgrep
     fzf
     fd
     bat
-    fent
+    fend
+    tmux
     unzip
 
     lazygit
@@ -44,7 +46,10 @@
     fastfetch
     cmatrix
     asciiquarium
+    claude-code
     vitetris
+    clock-rs
+    tomato-c
 
 
     # Coding
@@ -52,17 +57,19 @@
     nodejs
     openjdk21
     maven
+    clang-tools
     gcc
     gnumake
-
 
     # LazyVim
     tree-sitter
     eslint_d
+    prettierd
+    stylua
 
 
     # GUI
-    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    firefox
     libreoffice
     obsidian
     mpv
@@ -70,8 +77,8 @@
 
     # Niri
     kitty
-    noctalia
     nautilus
+    noctalia
     wl-clipboard
     brightnessctl
 
