@@ -1,4 +1,70 @@
-source ~/.vim/plugins.vim
-source ~/.vim/config.vim
-source ~/.vim/binds.vim
-source ~/.vim/colors.vim
+" plugins 
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin()
+  Plug 'gruvbox-community/gruvbox'
+  Plug 'itchyny/lightline.vim'
+
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'mbbill/undotree'
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
+call plug#end()
+
+
+" general
+set number
+set relativenumber
+
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smartindent
+
+set incsearch
+set hlsearch
+
+set ignorecase
+set smartcase
+
+nnoremap j gj
+nnoremap k gk
+
+
+" custom binds
+let mapleader = " "
+
+noremap <leader>e :Ex<CR>
+noremap <leader>r :source ~/.vim/vimrc<CR>
+
+noremap <leader>ff :Files<CR>
+noremap <leader>fo :History<CR>
+noremap <leader>fg :Rg<CR>
+
+
+" persistent undo
+if has('persistent_undo')
+  set undofile
+
+  if !isdirectory($HOME . '/.vim/undo')
+    call mkdir($HOME . '/.vim/undo', 'p')
+  endif
+
+  set undodir=$HOME/.vim/undo
+endif
+
+
+
+" gruvbox
+syntax on
+set laststatus=2
+set termguicolors
+set background=dark
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'medium'
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
