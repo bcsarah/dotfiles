@@ -101,6 +101,7 @@ binds {
     // Bind apps
     Mod+Q { spawn "kitty"; }
     Mod+W { close-window; }
+    Mod+P { close-window; }
     Mod+E { spawn "nautilus"; }
     Mod+R { spawn-sh "noctalia msg panel-toggle launcher"; }
 

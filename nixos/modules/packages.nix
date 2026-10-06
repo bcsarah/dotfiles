@@ -46,9 +46,7 @@
     fastfetch
     cmatrix
     asciiquarium
-    claude-code
     vitetris
-    clock-rs
     tomato-c
 
 
@@ -64,8 +62,6 @@
     # LazyVim
     tree-sitter
     eslint_d
-    prettierd
-    stylua
 
 
     # GUI
