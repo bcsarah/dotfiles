@@ -64,11 +64,9 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *dmenudesk[] = { "j4-dmenu-desktop", NULL };
 static const char *term[]  = { "kitty", NULL };
 static const char *file[]  = { "thunar", NULL };
-static const char *browser[]  = { "zen-browser", NULL };
+static const char *browser[]  = { "firefox", NULL };
 static const char *notes[]  = { "obsidian", NULL };
-static const char *game[]  = { "steam", NULL };
 static const char *volume[]  = { "pavucontrol", NULL };
-static const char *emoji[]  = { "emojify", NULL };
 
 static const char *screenshotcmd[]  = { "sh", "-c", "maim --select | xclip -selection clipboard -t image/png", NULL };
 static const char *screenshotfullcmd[]  = { "sh", "-c", "maim | xclip -selection clipboard -t image/png", NULL };
@@ -82,10 +80,8 @@ static const Key keys[] = {
     { MODKEY,                       XK_v,      togglefloating, {0} },
 
     { MODKEY,                       XK_b,      spawn,          {.v = browser } },
-    { MODKEY,                       XK_g,      spawn,          {.v = game } },
     { MODKEY,                       XK_o,      spawn,          {.v = notes } },
     { MODKEY,                       XK_z,      spawn,          {.v = volume } },
-    { MODKEY,                       XK_m,      spawn,          {.v = emoji } },
 
     { 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
     { ShiftMask,                    XK_Print,  spawn,          {.v = screenshotfullcmd } },

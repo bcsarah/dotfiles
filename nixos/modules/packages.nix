@@ -8,13 +8,18 @@
   programs.fish.enable = true;
   services.gvfs.enable = true;
   services.flatpak.enable = true;
- 
+
+  services.displayManager.ly.enable = true;
+
+  services.xserver.windowManager.dwm = {
+      enable = true;
+      package = pkgs.dwm.overrideAttrs {
+          src = ../../wm/dwm/;
+      }
+  }
+
   services.xserver = {
     enable = true;
-
-    displayManager.startx.enable = true;
-    displayManager.lightdm.enable = false;
-
     desktopManager = {
       xterm.enable = false;
       xfce.enable = true;
@@ -77,6 +82,12 @@
     noctalia
     wl-clipboard
     brightnessctl
+
+    # DWM
+    dmenu
+    feh
+    xclip
+    pavucontrol
 
 
     # Icons
