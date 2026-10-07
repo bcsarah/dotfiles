@@ -102,7 +102,7 @@ binds {
     Mod+Q { spawn "kitty"; }
     Mod+W { close-window; }
     Mod+P { close-window; }
-    Mod+E { spawn "nautilus"; }
+    Mod+E { spawn "thunar"; }
     Mod+R { spawn-sh "noctalia msg panel-toggle launcher"; }
 
     Mod+B { spawn "firefox"; }

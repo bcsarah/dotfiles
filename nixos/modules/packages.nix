@@ -7,19 +7,22 @@
   programs.vim.enable = true;
   programs.fish.enable = true;
   services.gvfs.enable = true;
+  services.flatpak.enable = true;
  
   services.xserver = {
     enable = true;
+
+    displayManager.startx.enable = true;
+    displayManager.lightdm.enable = false;
+
     desktopManager = {
       xterm.enable = false;
       xfce.enable = true;
     };
-  }; services.flatpak.enable = true;
-
+  };
 
   # Unfree Softwares
   nixpkgs.config.allowUnfree = true;
-
   
   # Packages
   environment.systemPackages = with pkgs; [
@@ -71,7 +74,6 @@
 
     # Niri
     kitty
-    nautilus
     noctalia
     wl-clipboard
     brightnessctl
