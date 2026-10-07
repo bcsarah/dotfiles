@@ -7,16 +7,15 @@
   programs.vim.enable = true;
   programs.fish.enable = true;
   services.gvfs.enable = true;
-  services.flatpak.enable = true;
-
-  xdg.portal = {
+ 
+  services.xserver = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config.common.default = "gtk";
-  };
+    desktopManager = {
+      xterm.enable = false;
+      xfce.enable = true;
+    };
+  }; services.flatpak.enable = true;
 
-  # QT_QPA_PLATFORMTHEME
-  environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
   # Unfree Softwares
   nixpkgs.config.allowUnfree = true;
@@ -47,7 +46,6 @@
     cmatrix
     asciiquarium
     vitetris
-    tomato-c
 
 
     # Coding
@@ -81,10 +79,7 @@
 
     # Icons
     papirus-icon-theme
-    gruvbox-kvantum
-    gruvbox-dark-gtk
     google-cursor
-    nwg-look
 
     # Fonts
     noto-fonts-cjk-sans
