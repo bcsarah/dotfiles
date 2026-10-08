@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  # Unfree Softwares
+  nixpkgs.config.allowUnfree = true;
+
   # Enables
   programs.niri.enable = true;
   programs.neovim.enable = true;
@@ -8,23 +11,13 @@
   programs.fish.enable = true;
   services.gvfs.enable = true;
   services.flatpak.enable = true;
-
-  services.displayManager.ly.enable = true;
-  services.xserver = {
-    enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
-  };
-
-  # Unfree Softwares
-  nixpkgs.config.allowUnfree = true;
   
   # Packages
   environment.systemPackages = with pkgs; [
 
     # CLI
+    tree-sitter
+    eslint_d
     wget
     git
     tree
@@ -33,11 +26,11 @@
     fd
     bat
     fend
+    ncdu
     tmux
     unzip
 
     lazygit
-    ncdu
     btop
     yazi
     cmus
@@ -47,47 +40,43 @@
     asciiquarium
     vitetris
 
-
     # Coding
     python3
+    pipx
     nodejs
     openjdk21
     maven
     clang-tools
     gcc
     gnumake
-
-    # LazyVim
-    tree-sitter
-    eslint_d
-
+    ncurses
 
     # GUI
     firefox
     libreoffice
     obsidian
+    localsend
+    syncthing
+    emojify
     mpv
-
 
     # Niri
     kitty
     noctalia
+    thunar
     wl-clipboard
     brightnessctl
-
 
     # Icons
     papirus-icon-theme
     google-cursor
-
-    # Fonts
-    noto-fonts-cjk-sans
   ];
 
   # Fonts
   fonts.packages = with pkgs; [
+    noto-fonts-cjk-sans
     nerd-fonts.jetbrains-mono
-    texlivePackages.noto-emoji
+    noto-fonts-color-emoji
     corefonts
   ];
 }
