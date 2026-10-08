@@ -43,4 +43,7 @@
 
   # Battery
   services.power-profiles-daemon.enable = true;
+
+  # Environment
+  environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
 }

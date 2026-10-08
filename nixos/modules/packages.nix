@@ -11,7 +11,8 @@
   programs.fish.enable = true;
   services.gvfs.enable = true;
   services.flatpak.enable = true;
-  
+  programs.steam.enable = true;
+
   # Packages
   environment.systemPackages = with pkgs; [
 
@@ -57,7 +58,6 @@
     obsidian
     localsend
     syncthing
-    emojify
     mpv
 
     # Niri
@@ -70,6 +70,13 @@
     # Icons
     papirus-icon-theme
     google-cursor
+
+    nwg-look
+    libsForQt5.qt5ct
+    kdePackages.qt6ct
+    adw-gtk3
+    adwaita-qt
+    adwaita-qt6
   ];
 
   # Fonts
