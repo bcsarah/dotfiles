@@ -26,16 +26,9 @@
     "break",
 
     { "type": "cpu", "key": "󰍛 "},
-    { "type": "gpu", "key": "󰢮 " },
     { "type": "memory", "key": " " },
     { "type": "disk", "key": "󱛟 ", "folders": ["/"] },
-
-    "break",
-
-    { "type": "de", "key": " " },
     { "type": "wm", "key": " " },
-    { "type": "theme", "key": " " },
-    { "type": "icons", "key": "󱗼 " },
 
     "break",
 
