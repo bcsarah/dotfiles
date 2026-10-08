@@ -10,14 +10,6 @@
   services.flatpak.enable = true;
 
   services.displayManager.ly.enable = true;
-
-  services.xserver.windowManager.dwm = {
-      enable = true;
-      package = pkgs.dwm.overrideAttrs {
-          src = ../../wm/dwm/;
-      }
-  }
-
   services.xserver = {
     enable = true;
     desktopManager = {
@@ -82,12 +74,6 @@
     noctalia
     wl-clipboard
     brightnessctl
-
-    # DWM
-    dmenu
-    feh
-    xclip
-    pavucontrol
 
 
     # Icons
