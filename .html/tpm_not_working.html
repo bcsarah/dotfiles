@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<title>tpm_not_working</title>
+<link rel="stylesheet" href="file:///home/bcsarah/.config/rucola/default_dark.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+<h1>Help, tpm not working!</h1>
+<p>Here's the list of issues users had with <code>tpm</code>:</p>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>Nothing works. <code>tpm</code> key bindings <code>prefix + I</code>, <code>prefix + U</code> not even
+defined.</p>
+</blockquote>
+<p>Related <a href="https://github.com/tmux-plugins/tpm/issues/22">issue #22</a></p>
+<ul>
+<li>
+<p>Do you have required <code>tmux</code> version to run <code>tpm</code>?<!-- raw HTML omitted -->
+Check <code>tmux</code> version with <code>$ tmux -V</code> command and make sure it's higher or
+equal to the required version for <code>tpm</code> as stated in the readme.</p>
+</li>
+<li>
+<p>ZSH tmux plugin might be causing issues.<!-- raw HTML omitted -->
+If you have it installed, try disabling it and see if <code>tpm</code> works then.</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>Help, I'm using custom config file with <code>tmux -f /path/to/my_tmux.conf</code>
+to start Tmux and for some reason plugins aren't loaded!?</p>
+</blockquote>
+<p>Related <a href="https://github.com/tmux-plugins/tpm/issues/57">issue #57</a></p>
+<p><code>tpm</code> has a known issue when using custom config file with <code>-f</code> option.
+The solution is to use alternative plugin definition syntax. Here are the steps
+to make it work:</p>
+<ol>
+<li>
+<p>remove all <code>set -g @plugin</code> lines from tmux config file</p>
+</li>
+<li>
+<p>in the config file define the plugins in the following way:</p>
+<pre><code> # List of plugins
+ set -g @tpm_plugins '          \
+   tmux-plugins/tpm             \
+   tmux-plugins/tmux-sensible   \
+   tmux-plugins/tmux-resurrect  \
+ '
+
+ # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+ run '~/.tmux/plugins/tpm/tpm'
+</code></pre>
+</li>
+<li>
+<p>Reload TMUX environment so TPM is sourced: <code>$ tmux source /path/to/my_tmux.conf</code></p>
+</li>
+</ol>
+<p>The plugins should now be working.</p>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>Weird sequence of characters show up when installing or updating plugins</p>
+</blockquote>
+<p>Related: <a href="https://github.com/tmux-plugins/tpm/issues/25">issue #25</a></p>
+<ul>
+<li>This could be caused by <a href="https://github.com/edkolev/tmuxline.vim">tmuxline.vim</a>
+plugin. Uninstall it and see if things work.</li>
+</ul>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>&quot;failed to connect to server&quot; error when sourcing .tmux.conf</p>
+</blockquote>
+<p>Related: <a href="https://github.com/tmux-plugins/tpm/issues/48">issue #48</a></p>
+<ul>
+<li>Make sure <code>tmux source ~/.tmux.conf</code> command is ran from inside <code>tmux</code>.</li>
+</ul>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>tpm not working: '~/.tmux/plugins/tpm/tpm' returned 2 (Windows / Cygwin)</p>
+</blockquote>
+<p>Related: <a href="https://github.com/tmux-plugins/tpm/issues/81">issue #81</a></p>
+<p>This issue is most likely caused by Windows line endings. For example, if you
+have git's <code>core.autocrlf</code> option set to <code>true</code>, git will automatically convert
+all the files to Windows line endings which might cause a problem.</p>
+<p>The solution is to convert all line ending to Unix newline characters. This
+command handles that for all files under <code>.tmux/</code> dir (skips <code>.git</code>
+subdirectories):</p>
+<pre><code class="language-bash">find ~/.tmux -type d -name '.git*' -prune -o -type f -print0 | xargs -0 dos2unix
+</code></pre>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>'~/.tmux/plugins/tpm/tpm' returned 127 (on macOS, w/ tmux installed using brew)</p>
+</blockquote>
+<p>Related: <a href="https://github.com/tmux-plugins/tpm/issues/67">issue #67</a></p>
+<p>This problem is because tmux's <code>run-shell</code> command runs a shell which doesn't read from user configs, thus tmux installed in a brew prefix (e.g. <code>/usr/local/bin</code>) will not be found.</p>
+<p>The solution is to find your brew prefix</p>
+<pre><code class="language-sh">&gt; echo &quot;$(brew --prefix)/bin&quot;
+/opt/homebrew/bin
+</code></pre>
+<p>And prepend it to the <code>PATH</code> environment variable</p>
+<pre><code>set-environment -g PATH &quot;/opt/homebrew/bin:/bin:/usr/bin&quot;
+</code></pre>
+<p>before any <code>run-shell</code>/<code>run</code> commands in <code>~/.tmux.conf</code>.</p>

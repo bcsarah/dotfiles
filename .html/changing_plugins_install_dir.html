@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<title>changing_plugins_install_dir</title>
+<link rel="stylesheet" href="file:///home/bcsarah/.config/rucola/default_dark.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+<h1>Changing plugins install dir</h1>
+<p>By default, TPM installs plugins in a subfolder named <code>plugins/</code> inside
+<code>$XDG_CONFIG_HOME/tmux/</code> if a <code>tmux.conf</code> file was found at that location, or
+inside <code>~/.tmux/</code> otherwise.</p>
+<p>You can change the install path by putting this in <code>.tmux.conf</code>:</p>
+<pre><code>set-environment -g TMUX_PLUGIN_MANAGER_PATH '/some/other/path/'
+</code></pre>
+<p>Tmux plugin manager initialization in <code>.tmux.conf</code> should also be updated:</p>
+<pre><code># initializes TMUX plugin manager in a new path
+run /some/other/path/tpm/tpm
+</code></pre>
+<p>Please make sure that the <code>run</code> line is at the very bottom of <code>.tmux.conf</code>.</p>

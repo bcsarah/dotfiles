@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<title>migration-guide-from-v1-to-v2</title>
+<link rel="stylesheet" href="file:///home/bcsarah/.config/rucola/default_dark.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+<h1>Migration guide from v1 to v2</h1>
+<p>Hello there!</p>
+<p>I am so happy to see you here and are interested in using the new version of tmux-gruvbox theme.</p>
+<p>I really try to do all my best giving you new, interesting features that you probably always wanted to have.</p>
+<p>In here I also wanted to thank you all people involved in contributing to this theme 🙏🙇. Especially for adding all suggestions, or reporting problems if they occurred - this helped a lot!</p>
+<h2>What's new?</h2>
+<p>There are couple of great things ahead:</p>
+<ul>
+<li>new themes supporting 16-bit color palette</li>
+<li>new fully customizable spaces A, X, Y, Z for your disposal</li>
+<li>support for transparency (experimental)</li>
+<li>and many more</li>
+</ul>
+<p>See what's new in <a href="../CHANGELOG.md">CHANGELOG</a>.</p>
+<h2>Breaking changes</h2>
+<p>I planned to have best possible user experience between migrating from v1 and v2, therefore tried to build new changes this way to keep the breaking changes as low as possible. This was not ideal, although I believe for many this would not require many changes and for some none.</p>
+<h3>Theme names changes</h3>
+<p>|         v1          |     v2     | description                                                             |
+| :-----------------: | :--------: | ----------------------------------------------------------------------- |
+|       <code>dark</code>        | <code>dark256</code>  | 256-colors theme                                                        |
+|       <code>light</code>       | <code>light256</code> | 256-colors theme                                                        |
+| <code>dark-transparent</code>  |     ∅      | set <code>dark</code> or <code>dark256</code> theme and add <code>@tmux-gruvbox-statusbar-alpha</code>   |
+| <code>light-transparent</code> |     ∅      | set <code>light</code> or <code>light256</code> theme and add <code>@tmux-gruvbox-statusbar-alpha</code> |</p>
+<p>In v2 we've introduced a 16-bit color themes that should give the users more happiness utilizing a greater amount of supported colors (full gruvbox palette).</p>
+<p>Therefore in v2 themes <code>light</code> &amp; <code>dark</code> has been simply renamed and <code>256</code> postfix has been added to indicate used palette. In v2 <code>light</code> &amp; <code>dark</code> themes will be refering to 16-bit versions.</p>
+<blockquote>
+<p>[!NOTE]
+While implementing 16-bit colors I realized that many users (including me) had problems with setting up correct the color interpretation in their workspace to support multiple colors.</p>
+<p>Here is the page <a href="https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6">True Color (24-bit) and italics with alacritty + tmux + vim (neovim)</a> where I found great wisdom how to adjust my terminal, especially when used alacritty, tmux &amp; neovim.</p>
+</blockquote>
+<h3>Fallback theme name</h3>
+<p>|   v1   |    v2     |
+| :----: | :-------: |
+| <code>dark</code> | <code>dark256</code> |</p>
+<p>Continuing topic of introducing 16-bit colors, we have make slight change in fallback theme name. We love idea adding new colors to our theme, although during those changes we cannot forget about users whose terminals might not support more then basic 256 colors. Therefore the fallback theme name also has to be adapted and in v2 it's <code>dark256</code>.</p>
+<h2>FAQ</h2>
+<h3>Plugin not upgrading automatically with tmux update</h3>
+<p>Error (<a href="https://github.com/egel/tmux-gruvbox/issues/21#issuecomment-2373794273">source</a>):</p>
+<pre><code>&quot;tmux-gruvbox&quot; update fail
+    | fatal: couldn't find remote ref refs/heads/master
+</code></pre>
+<p>Solution:</p>
+<p>We recently migrate from <code>master</code> to <code>main</code> as the primary branch, therefore tmux plugin manager using old reference to master and it's not possible to pull.</p>
+<p>The simplest way would be to:</p>
+<ol>
+<li>remove the plugin <code>rm -rf ~/.tmux/plugins/tmux-gruvbox</code></li>
+<li>and reinstall it again via tpm key-binding <code>&lt;prefix&gt;</code> + <code>I</code>.</li>
+</ol>

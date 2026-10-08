@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<title>how_to_create_plugin</title>
+<link rel="stylesheet" href="file:///home/bcsarah/.config/rucola/default_dark.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+<h1>How to create Tmux plugins</h1>
+<p>Creating a new plugin is easy.</p>
+<p>For demonstration purposes we'll create a simple plugin that lists all
+installed TPM plugins. Yes, a plugin that lists plugins :) We'll bind that to
+<code>prefix + T</code>.</p>
+<p>The source code for this example plugin can be found
+<a href="https://github.com/tmux-plugins/tmux-example-plugin">here</a>.</p>
+<h3>1. create a new git project</h3>
+<p>TPM depends on git for downloading and updating plugins.</p>
+<p>To create a new git project:</p>
+<pre><code>$ mkdir tmux_my_plugin
+$ cd tmux_my_plugin
+$ git init
+</code></pre>
+<h3>2. create a <code>*.tmux</code> plugin run file</h3>
+<p>When it sources a plugin, TPM executes all <code>*.tmux</code> files in your plugins'
+directory. That's how plugins are run.</p>
+<p>Create a plugin run file in plugin directory:</p>
+<pre><code>$ touch my_plugin.tmux
+$ chmod u+x my_plugin.tmux
+</code></pre>
+<p>You can have more than one <code>*.tmux</code> file, and all will get executed. However, usually
+you'll need just one.</p>
+<h3>3. create a plugin key binding</h3>
+<p>We want the behavior of the plugin to trigger when a user hits <code>prefix + T</code>.</p>
+<p>Key <code>T</code> is chosen because:</p>
+<ul>
+<li>it's &quot;kind of&quot; a mnemonic for <code>TPM</code></li>
+<li>the key is not used by Tmux natively. Tmux man page, KEY BINDINGS section
+contains a list of all the bindings Tmux uses. There's plenty of unused keys
+and we don't want to override any of Tmux default key bindings.</li>
+</ul>
+<p>Open the plugin run file in your favorite text editor:</p>
+<pre><code>$ vim my_plugin.tmux
+# or
+$ subl my_plugin.tmux
+</code></pre>
+<p>Put the following content in the file:</p>
+<pre><code>#!/usr/bin/env bash
+
+CURRENT_DIR=&quot;$( cd &quot;$( dirname &quot;${BASH_SOURCE[0]}&quot; )&quot; &amp;&amp; pwd )&quot;
+tmux bind-key T run-shell &quot;$CURRENT_DIR/scripts/tmux_list_plugins.sh&quot;
+</code></pre>
+<p>As you can see, plugin run file is a simple bash script that sets up the binding.</p>
+<p>When pressed, <code>prefix + T</code> will execute another shell script:
+<code>tmux_list_plugins.sh</code>. That script should be in <code>scripts/</code> directory -
+relative to the plugin run file.</p>
+<h3>4. listing plugins</h3>
+<p>Now that we have the binding, let's create a script that's invoked with
+<code>prefix + T</code>.</p>
+<pre><code>$ mkdir scripts
+$ touch scripts/tmux_list_plugins.sh
+$ chmod u+x scripts/tmux_list_plugins.sh
+</code></pre>
+<p>And here's the script content:</p>
+<pre><code>#!/usr/bin/env bash
+
+# fetching the directory where plugins are installed
+plugin_path=&quot;$(tmux show-env -g TMUX_PLUGIN_MANAGER_PATH | cut -f2 -d=)&quot;
+
+# listing installed plugins
+ls -1 &quot;$plugin_path&quot;
+</code></pre>
+<h3>5. try it out</h3>
+<p>To see if this works, execute the plugin run file:</p>
+<pre><code>$ ./my_plugin.tmux
+</code></pre>
+<p>That should set up the key binding. Now hit <code>prefix + T</code> and see if it works.</p>
+<h3>6. publish the plugin</h3>
+<p>When everything is ready, push the plugin to an online git repository,
+preferably GitHub.</p>
+<p>Other users can install your plugin by just adding plugin git URL to the
+<code>@plugin</code> list in their <code>.tmux.conf</code>.</p>
+<p>If the plugin is on GitHub, your users will be able to use the shorthand of
+<code>github_username/repository</code>.</p>
+<h3>Conclusion</h3>
+<p>Hopefully, that was easy. As you can see, it's mostly shell scripting.</p>
+<p>You can use other scripting languages (ruby, python etc) but plain old shell
+is preferred because of portability.</p>

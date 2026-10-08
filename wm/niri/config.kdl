@@ -67,6 +67,7 @@ layout {
 
 // Startup
 spawn-sh-at-startup "noctalia"
+spawn-sh-at-startup "syncthing --no-browser"
 
 hotkey-overlay {
     skip-at-startup

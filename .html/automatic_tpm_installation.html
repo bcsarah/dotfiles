@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title>automatic_tpm_installation</title>
+<link rel="stylesheet" href="file:///home/bcsarah/.config/rucola/default_dark.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+<h1>Automatic tpm installation</h1>
+<p>One of the first things we do on a new machine is cloning our dotfiles. Not everything comes with them though, so for example <code>tpm</code> most likely won't be installed.</p>
+<p>If you want to install <code>tpm</code> and plugins automatically when tmux is started, put the following snippet in <code>.tmux.conf</code> before the final <code>run '~/.tmux/plugins/tpm/tpm'</code>:</p>
+<pre><code>if &quot;test ! -d ~/.tmux/plugins/tpm&quot; \
+   &quot;run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm &amp;&amp; ~/.tmux/plugins/tpm/bin/install_plugins'&quot;
+</code></pre>
+<p>This useful tip was submitted by @acr4 and narfman0.</p>

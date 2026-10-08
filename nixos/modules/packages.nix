@@ -26,6 +26,7 @@
     fzf
     fd
     bat
+    glow
     fend
     ncdu
     tmux
@@ -41,6 +42,7 @@
     asciiquarium
     vitetris
 
+
     # Coding
     python3
     pipx
@@ -50,7 +52,7 @@
     clang-tools
     gcc
     gnumake
-    ncurses
+
 
     # GUI
     firefox
@@ -59,6 +61,8 @@
     localsend
     syncthing
     mpv
+    osu-lazer-bin
+
 
     # Niri
     kitty
@@ -66,6 +70,8 @@
     thunar
     wl-clipboard
     brightnessctl
+    xwayland-satellite
+
 
     # Icons
     papirus-icon-theme
