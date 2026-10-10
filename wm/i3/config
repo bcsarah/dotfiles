@@ -7,11 +7,15 @@ default_border pixel 2
 # startup
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
+exec_always --no-startup-id autotiling --limit 2
+exec --no-startup-id polybar
+exec --no-startup-id syncthing --no-browser
 
 # mods
 floating_modifier $mod
 tiling_drag modifier titlebar
 focus_follows_mouse yes
+mouse_warping output
 
 # look and feel
 set $bg         "#282828"
@@ -84,11 +88,11 @@ bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
 
 # reload
-bindsym $mod+Shift+c restart
+bindsym $mod+Shift+c restart; autotiling
