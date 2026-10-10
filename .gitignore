@@ -1,4 +1,6 @@
 .netrwbook
 .netrwhist
-plugged
-autoload
+plugged/
+autoload/
+undo/
+plugins/
