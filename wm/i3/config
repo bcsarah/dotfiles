@@ -7,7 +7,8 @@ default_border pixel 2
 # startup
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
-exec_always --no-startup-id autotiling --limit 2
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id picom
 exec --no-startup-id polybar
 exec --no-startup-id syncthing --no-browser
 
@@ -72,6 +73,7 @@ bindsym $mod+v floating toggle
 # layout
 bindsym $mod+y layout tabbed
 bindsym $mod+u layout toggle split
+bindsym $mod+i split toggle
 
 # fullscreen
 bindsym $mod+f fullscreen toggle
@@ -95,4 +97,4 @@ bindsym $mod+Shift+4 move container to workspace 4; workspace 4
 bindsym $mod+Shift+5 move container to workspace 5; workspace 5
 
 # reload
-bindsym $mod+Shift+c restart; autotiling
+bindsym $mod+Shift+c restart

@@ -95,10 +95,10 @@ function fish_greeting
     echo
 end
 
-# sair do yazi no diretório que estava
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    command yazi $argv --cwd-file="$tmp"
+# sair do ranger no diretório que estava
+function r
+    set tmp (mktemp -t "ranger-cwd.XXXXXX")
+    command ranger $argv --choosedir="$tmp"
 
     if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and test -d "$cwd"
         builtin cd -- "$cwd"
@@ -108,5 +108,4 @@ function y
 end
 
 alias img="kitty +kitten icat"
-alias r="ranger"
 alias lg="lazygit"

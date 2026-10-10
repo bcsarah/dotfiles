@@ -23,8 +23,6 @@
         };
 
         windowManager.i3.enable = true;
-        displayManager.lightdm.enable = false;
-        desktopManager.xterm.enable = false;
     };
 
 
@@ -49,7 +47,7 @@
 
         lazygit
         btop
-        yazi
+        ranger
         cmus
 
         fastfetch
@@ -88,6 +86,7 @@
         i3lock
         feh
         xclip
+        dunst
         autotiling
         brightnessctl
         pavucontrol
