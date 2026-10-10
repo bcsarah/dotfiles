@@ -11,6 +11,14 @@
     services.gvfs.enable = true;
     programs.steam.enable = true;
 
+    nixpkgs.overlays = [
+        (final: prev: {
+            steam = prev.steam.override {
+            extraArgs = "-cef-disable-gpu-compositing";
+            };
+        })
+    ];
+
 
     # Display Manager / Window Manager
     services.displayManager.ly.enable = true;

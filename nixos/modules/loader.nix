@@ -29,6 +29,10 @@
         # jack.enable = true;
     };
 
+    # Controller
+    services.udev.packages = with pkgs; [ game-devices-udev-rules ];
+    hardware.uinput.enable = true;
+
 
     # Network
     networking.networkmanager.enable = true;
@@ -37,6 +41,7 @@
 
 
     # Others
+    nix.settings.warn-dirty = false;
     hardware.bluetooth.enable = true;
     services.power-profiles-daemon.enable = true;
     zramSwap.enable = true;
