@@ -69,6 +69,7 @@
         rar
         unrar
         wine64
+        id3v2
 
         lazygit
         btop
