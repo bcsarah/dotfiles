@@ -44,7 +44,6 @@
         };
 
         windowManager.i3.enable = true;
-        windowManager.awesome.enable = true;
     };
 
 
