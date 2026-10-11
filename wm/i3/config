@@ -10,7 +10,8 @@ exec --no-startup-id syncthing --no-browser
 exec_always --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom
-exec_always --no-startup-id pkill polybar && polybar
+exec_always --no-startup-id redshift -O 4500 -P
+exec_always --no-startup-id pkill polybar; polybar
 
 # mods
 floating_modifier $mod

@@ -101,6 +101,7 @@
         xclip
         dunst
         autotiling
+        redshift
         brightnessctl
         pavucontrol
 
