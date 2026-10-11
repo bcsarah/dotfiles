@@ -57,7 +57,7 @@ window {
     padding:          12px;
     border:           2px;
     border-color:     @green;
-    border-radius:    2px;
+    border-radius:    0px;
     background-color: @bg;
     location:         center;
     anchor:           center;
@@ -81,7 +81,7 @@ inputbar {
     children:   [ "prompt", "entry" ];
     background-color: @bg-alt;
     border:           0px;
-    border-radius:    2px;
+    border-radius:    0px;
     padding:          10px;
     spacing:          10px;
 }
@@ -121,7 +121,7 @@ element {
     padding:          8px 12px;
     background-color: transparent;
     text-color:       @fg;
-    border-radius:    2px;
+    border-radius:    0px;
     spacing:          12px;
 }
 
@@ -151,7 +151,7 @@ element normal.normal {
 element selected.normal {
     background-color: @green;
     text-color:       @bg;
-    border-radius:    2px;
+    border-radius:    0px;
 }
 
 /* Estado alternado (linhas pares) */
@@ -191,7 +191,7 @@ button {
     padding:          6px 10px;
     background-color: @bg-alt;
     text-color:       @fg-alt;
-    border-radius:    2px;
+    border-radius:    0px;
     border:           0px;
 }
 
@@ -207,7 +207,7 @@ message {
     background-color: @bg-alt;
     border:           2px;
     border-color:     @red;
-    border-radius:    2px;
+    border-radius:    0px;
     padding:          10px;
 }
 

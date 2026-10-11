@@ -112,17 +112,19 @@
         rofi
         polybar
         picom
+        libnotify
         dunst
         thunar
         pavucontrol
 
+        i3-auto-layout
+        i3-volume
         i3lock
         xautolock
         feh
         maim
         xclip
         haskellPackages.greenclip
-        autotiling
         playerctl
         redshift
         brightnessctl

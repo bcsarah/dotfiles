@@ -5,7 +5,7 @@ font pango:JetBrainsMono Nerd Font 10
 default_border pixel 2
 
 # startup
-exec_always --no-startup-id autotiling
+exec_always --no-startup-id i3-auto-layout
 exec_always --no-startup-id picom
 exec_always --no-startup-id pkill polybar; polybar
 exec --no-startup-id xautolock -time 10 -locker "i3lock -c 2d2d2d" -detectsleep
@@ -18,7 +18,6 @@ exec --no-startup-id syncthing --no-browser
 floating_modifier $mod
 tiling_drag modifier titlebar
 focus_follows_mouse yes
-mouse_warping output
 
 # look and feel
 set $bg         "#282828"
@@ -66,21 +65,16 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # resize
-bindsym $mod+Ctrl+h resize grow width 5 px or 5 ppt
-bindsym $mod+Ctrl+j resize shrink height 5 px or 5 ppt
-bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
-bindsym $mod+Ctrl+l resize shrink width 5 px or 5 ppt
-
-# float 
-bindsym $mod+v floating toggle
+bindsym $mod+plus resize grow width 5 px or 5 ppt
+bindsym $mod+minus resize shrink width 5 px or 5 ppt
+bindsym $mod+Shift+minus resize shrink height 5 px or 5 ppt
+bindsym $mod+Shift+plus resize grow height 5 px or 5 ppt
 
 # layout
-bindsym $mod+y layout tabbed
-bindsym $mod+u layout toggle split
-bindsym $mod+i split toggle
-
-# fullscreen
+bindsym $mod+v floating toggle
 bindsym $mod+f fullscreen toggle
+bindsym $mod+y layout tabbed
+bindsym $mod+u split toggle
 
 # screenshot
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
@@ -102,13 +96,14 @@ bindsym $mod+Shift+5 move container to workspace 5; workspace 5
 
 
 # midia
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86AudioPlay exec         playerctl play-pause
+bindsym XF86AudioNext exec         playerctl next
+bindsym XF86AudioPrev exec         playerctl previous
+bindsym XF86AudioRaiseVolume exec  i3-volume -n up 10
+bindsym XF86AudioLowerVolume exec  i3-volume -n down 10
+bindsym XF86AudioMute exec         i3-volume -n mute
+bindsym XF86AudioMicMute exec      i3-volume -n mic mute
+bindsym XF86MonBrightnessUp exec   brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 
