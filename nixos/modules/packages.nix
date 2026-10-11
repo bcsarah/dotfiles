@@ -96,6 +96,7 @@
         picom
         i3lock
         feh
+        maim
         xclip
         dunst
         autotiling
