@@ -51,7 +51,11 @@
         fend
         ncdu
         tmux
+        zip
         unzip
+        rar
+        unrar
+        wine64
 
         lazygit
         btop
