@@ -1,17 +1,10 @@
 {
-    inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    };
+    inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
-    outputs = { self, nixpkgs, ... }:
-        let
+    outputs = { nixpkgs, ... }: {
+        nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-        in {
-            nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-            modules = [
-                ./configuration.nix
-            ];
-            specialArgs = { inherit; };
+            modules = [ ./configuration.nix ];
         };
     };
 }

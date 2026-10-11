@@ -105,19 +105,22 @@
         # i3wm
         kitty
         rofi
-        thunar
         polybar
         picom
+        dunst
+        thunar
+        pavucontrol
+
+        i3lock
+        xautolock
         feh
         maim
         xclip
-        dunst
-        i3lock
-        xautolock
+        haskellPackages.greenclip
         autotiling
+        playerctl
         redshift
         brightnessctl
-        pavucontrol
 
 
         # Icons
