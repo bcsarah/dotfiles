@@ -44,6 +44,7 @@
         };
 
         windowManager.i3.enable = true;
+        windowManager.awesome.enable = true;
     };
 
 
@@ -69,7 +70,8 @@
         rar
         unrar
         wine64
-        id3v2
+        kid3-cli
+        eyed3
 
         lazygit
         btop
