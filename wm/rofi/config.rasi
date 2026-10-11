@@ -1,0 +1,34 @@
+configuration {
+    modi: "drun,run,window,ssh,combi";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    display-drun: "  Apps";
+    display-run: "  Run";
+    display-window: "  Windows";
+    display-combi: "  Combi";
+    display-ssh: "  SSH";
+    font: "JetBrainsMono Nerd Font 11";
+
+    /* Navegação vim-like */
+    kb-row-up: "Up,Control+k";
+    kb-row-down: "Down,Control+j";
+
+    /* Aceitar: só Enter (sem Control) */
+    kb-accept-entry: "Return,KP_Enter";
+
+    /* Cancelar */
+    kb-cancel: "Escape,Control+g";
+
+    /* Troca de modo */
+    kb-mode-next: "Tab";
+
+    /* Limpar binds padrão que conflitam com os acima */
+    kb-remove-to-eol: "";
+    kb-mode-complete: "";
+    kb-element-next: "";
+    kb-element-prev: "";
+}
+
+@theme "~/.config/rofi/theme.rasi"

@@ -1,0 +1,236 @@
+/* ============================
+   GRUVBOX THEME — combina com Polybar
+   ============================ */
+
+* {
+    /* Cores base (iguais ao seu Polybar) */
+    bg:        #282828;
+    bg-alt:    #3c3836;
+    fg:        #ebdbb2;
+    fg-alt:    #928374;
+
+    green:     #98971a;
+    yellow:    #fabd2f;
+    blue:      #458588;
+    red:       #cc241d;
+    aqua:      #83a598;
+    purple:    #b16286;
+    orange:    #d79921;
+
+    /* Extras */
+    bg-hover:  #3c3836;
+    bg-urgent: #cc241d;
+
+    /* Layout */
+    background-color: @bg;
+    text-color:       @fg;
+    border-color:     @green;
+    separatorcolor:   @bg-alt;
+    selected-normal-background: @green;
+    selected-normal-foreground: @bg;
+    selected-active-background: @yellow;
+    selected-active-foreground: @bg;
+    selected-urgent-background: @red;
+    selected-urgent-foreground: @bg;
+    alternate-normal-background: @bg;
+    alternate-normal-foreground: @fg;
+    alternate-active-background: @bg-alt;
+    alternate-active-foreground: @fg;
+    alternate-urgent-background: @bg;
+    alternate-urgent-foreground: @red;
+    normal-background: @bg;
+    normal-foreground: @fg;
+    urgent-background: @bg;
+    urgent-foreground: @red;
+    active-background: @bg-alt;
+    active-foreground: @fg;
+
+    /* Fonte */
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+/* ============================
+   JANELA PRINCIPAL
+   ============================ */
+window {
+    width:            600px;
+    padding:          12px;
+    border:           2px;
+    border-color:     @green;
+    border-radius:    2px;
+    background-color: @bg;
+    location:         center;
+    anchor:           center;
+    x-offset:         0;
+    y-offset:         0;
+}
+
+/* Container principal */
+mainbox {
+    border:           0px;
+    padding:          0px;
+    background-color: transparent;
+    children:         [ "inputbar", "listview" ];
+    spacing:          10px;
+}
+
+/* ============================
+   INPUT BAR (linha de busca)
+   ============================ */
+inputbar {
+    children:   [ "prompt", "entry" ];
+    background-color: @bg-alt;
+    border:           0px;
+    border-radius:    2px;
+    padding:          10px;
+    spacing:          10px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @green;
+    padding:          0 6px 0 0;
+    font:             "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @fg;
+    placeholder:      "  Type to search...";
+    placeholder-color: @fg-alt;
+    cursor:           text;
+}
+
+/* ============================
+   LISTVIEW
+   ============================ */
+listview {
+    lines:            10;
+    columns:          1;
+    background-color: transparent;
+    border:           0px;
+    padding:          0px;
+    spacing:          4px;
+    scrollbar:        false;
+    cycle:            true;
+    dynamic:          true;
+}
+
+/* Elementos da lista */
+element {
+    padding:          8px 12px;
+    background-color: transparent;
+    text-color:       @fg;
+    border-radius:    2px;
+    spacing:          12px;
+}
+
+/* Texto do elemento */
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+}
+
+/* Ícone do elemento */
+element-icon {
+    size:             24px;
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+/* Estado normal */
+element normal.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+/* Estado selecionado (o que combina com seu workspace ativo) */
+element selected.normal {
+    background-color: @green;
+    text-color:       @bg;
+    border-radius:    2px;
+}
+
+/* Estado alternado (linhas pares) */
+element alternate.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+/* Urgente */
+element urgent.normal {
+    background-color: @red;
+    text-color:       @bg;
+}
+
+/* ============================
+   SCROLLBAR (desativada, mas pronta)
+   ============================ */
+scrollbar {
+    width:            4px;
+    border:           0px;
+    handle-width:     4px;
+    handle-color:     @green;
+    background-color: @bg-alt;
+    padding:          0px;
+}
+
+/* ============================
+   MODE SWITCHER (modi: drun, run, window...)
+   ============================ */
+mode-switcher {
+    background-color: transparent;
+    spacing:          8px;
+    padding:          6px 0 0 0;
+}
+
+button {
+    padding:          6px 10px;
+    background-color: @bg-alt;
+    text-color:       @fg-alt;
+    border-radius:    2px;
+    border:           0px;
+}
+
+button selected {
+    background-color: @green;
+    text-color:       @bg;
+}
+
+/* ============================
+   MENSAGENS (erro / informação)
+   ============================ */
+message {
+    background-color: @bg-alt;
+    border:           2px;
+    border-color:     @red;
+    border-radius:    2px;
+    padding:          10px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @fg;
+    padding:          6px;
+}
+
+/* ============================
+   CASES ESPECIAIS
+   ============================ */
+/* Quando está em modo "window" */
+element.selected.urgent {
+    background-color: @red;
+    text-color:       @bg;
+}
+
+/* Destaque para match no texto */
+element-text highlight {
+    text-color: @yellow;
+}
+
+element selected highlight {
+    text-color: @bg;
+}

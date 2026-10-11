@@ -90,7 +90,7 @@
 
         # i3wm
         kitty
-        dmenu
+        rofi
         thunar
         polybar
         picom
