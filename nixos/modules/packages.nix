@@ -57,11 +57,14 @@
         btop
         ranger
         cmus
+        bluetui
+        youtube-tui
 
         fastfetch
         cmatrix
         asciiquarium
         vitetris
+        chess-tui
 
 
         # Coding

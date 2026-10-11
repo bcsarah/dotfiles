@@ -29,9 +29,7 @@
         # jack.enable = true;
     };
 
-    # Controller
-    services.udev.packages = with pkgs; [ game-devices-udev-rules ];
-    hardware.uinput.enable = true;
+
 
 
     # Network
@@ -45,6 +43,9 @@
     hardware.bluetooth.enable = true;
     services.power-profiles-daemon.enable = true;
     zramSwap.enable = true;
+
+    services.udev.packages = with pkgs; [ game-devices-udev-rules ];
+    hardware.uinput.enable = true;
 
     environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
 }
