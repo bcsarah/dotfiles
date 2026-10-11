@@ -68,6 +68,7 @@
 
 
         # Coding
+        mistral-vibe
         python3
         pipx
         nodejs
