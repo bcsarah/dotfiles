@@ -12,9 +12,12 @@
     programs.steam.enable = true;
     services.flatpak.enable = true;
 
-    # Portal
+    # XDG Portal
     xdg.portal = {
         enable = true;
+
+        config.common.default = "gtk";
+
         extraPortals = with pkgs; [
             xdg-desktop-portal-gtk
         ];
