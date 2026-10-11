@@ -10,7 +10,17 @@
     programs.fish.enable = true;
     services.gvfs.enable = true;
     programs.steam.enable = true;
+    services.flatpak.enable = true;
 
+    # Portal
+    xdg.portal = {
+        enable = true;
+        extraPortals = with pkgs; [
+            xdg-desktop-portal-gtk
+        ];
+    };
+
+    # Steam config
     nixpkgs.overlays = [
         (final: prev: {
             steam = prev.steam.override {
