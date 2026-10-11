@@ -68,7 +68,6 @@
 
 
         # Coding
-        mistral-vibe
         python3
         pipx
         nodejs
@@ -95,11 +94,12 @@
         thunar
         polybar
         picom
-        i3lock
         feh
         maim
         xclip
         dunst
+        i3lock
+        xautolock
         autotiling
         redshift
         brightnessctl
