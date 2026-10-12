@@ -3,7 +3,6 @@
 {
     nixpkgs.config.allowUnfree = true;
 
-
     # Enables
     programs.neovim.enable = true;
     programs.vim.enable = true;
@@ -15,9 +14,7 @@
     # XDG Portal
     xdg.portal = {
         enable = true;
-
         config.common.default = "gtk";
-
         extraPortals = with pkgs; [
             xdg-desktop-portal-gtk
         ];
@@ -27,7 +24,7 @@
     nixpkgs.overlays = [
         (final: prev: {
             steam = prev.steam.override {
-            extraArgs = "-cef-disable-gpu-compositing";
+                extraArgs = "-cef-disable-gpu-compositing";
             };
         })
     ];
@@ -51,39 +48,31 @@
     environment.systemPackages = with pkgs; [
 
         # CLI
-        tree-sitter
-        eslint_d
         wget
         git
         tree
         ripgrep
         fzf
-        fd
-        bat
-        glow
         fend
         ncdu
         tmux
         zip
         unzip
-        rar
         unrar
-        wine64
         kid3
         eyed3
+        tree-sitter
+        eslint_d
 
         lazygit
-        btop
+        htop
         ranger
         cmus
         bluetui
-        youtube-tui
 
         fastfetch
         cmatrix
         asciiquarium
-        vitetris
-        chess-tui
 
 
         # Coding
@@ -101,10 +90,12 @@
         firefox
         libreoffice
         obsidian
+        mpv
+        eog
         localsend
         syncthing
-        mpv
         osu-lazer-bin
+        netbeans
 
 
         # i3wm
@@ -112,7 +103,6 @@
         rofi
         polybar
         picom
-        libnotify
         dunst
         thunar
         pavucontrol
@@ -125,6 +115,7 @@
         maim
         xclip
         haskellPackages.greenclip
+        libnotify
         playerctl
         redshift
         brightnessctl
