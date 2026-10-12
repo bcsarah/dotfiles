@@ -69,7 +69,7 @@
         rar
         unrar
         wine64
-        kid3-cli
+        kid3
         eyed3
 
         lazygit
