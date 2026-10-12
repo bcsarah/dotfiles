@@ -35,7 +35,11 @@
     # Network
     networking.networkmanager.enable = true;
     networking.hostName = "nixos";
-    networking.firewall.enable = true;
+    networking.firewall = {
+        enable = true;
+        allowedTCPPorts = [ 53317 ];
+        allowedUDPPorts = [ 53317 ];
+    };
 
 
     # Others
