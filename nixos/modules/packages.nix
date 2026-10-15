@@ -107,16 +107,12 @@
         thunar
         pavucontrol
 
-        i3-auto-layout
-        i3-volume
+        autotiling
         i3lock
         xautolock
         feh
         maim
         xclip
-        haskellPackages.greenclip
-        libnotify
-        playerctl
         redshift
         brightnessctl
 

@@ -5,13 +5,12 @@ font pango:JetBrainsMono Nerd Font 10
 default_border pixel 2
 
 # startup
-exec_always --no-startup-id i3-auto-layout
+exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom
 exec_always --no-startup-id pkill polybar; polybar
 exec --no-startup-id xautolock -time 10 -locker "i3lock -c 2d2d2d" -detectsleep
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper.png
 exec --no-startup-id redshift -O 4500 -P
-exec --no-startup-id greenclip daemon
 exec --no-startup-id syncthing --no-browser
 
 # mods
@@ -20,21 +19,21 @@ tiling_drag modifier titlebar
 focus_follows_mouse yes
 
 # look and feel
-set $bg         "#282828"
-set $fg         "#ebdbb2"
-set $red        "#cc241d"
-set $green      "#98971a"
-set $yellow     "#d79921"
-set $blue       "#458588"
-set $purple     "#b16286"
-set $aqua       "#689d6a"
-set $gray       "#a89984"
-set $bg_highlight "#3c3836"
+set $bg            "#282828"
+set $fg            "#ebdbb2"
+set $red           "#cc241d"
+set $green         "#98971a"
+set $yellow        "#d79921"
+set $blue          "#458588"
+set $purple        "#b16286"
+set $aqua          "#689d6a"
+set $gray          "#a89984"
+set $bg_highlight  "#3c3836"
 
-client.focused          $blue $bg_highlight $fg $blue $blue
-client.urgent           $red $red $bg $red $red
-client.placeholder      $gray $bg $fg $gray $gray
-client.background       $bg
+client.focused      $blue $bg_highlight $fg $blue $blue
+client.urgent       $red $red $bg $red $red
+client.placeholder  $gray $bg $fg $gray $gray
+client.background   $bg
 
 gaps inner 10
 
@@ -45,7 +44,6 @@ bindsym $mod+e exec thunar
 bindsym $mod+r exec rofi -show drun
 bindsym $mod+Shift+r exec rofi -show run
 bindsym $mod+Tab exec rofi -show window
-bindsym $mod+Shift+v exec rofi -modi "clipboard:greenclip print" -show clipboard
 
 bindsym $mod+b exec firefox
 bindsym $mod+o exec obsidian
@@ -95,14 +93,13 @@ bindsym $mod+Shift+4 move container to workspace 4; workspace 4
 bindsym $mod+Shift+5 move container to workspace 5; workspace 5
 
 
-# midia
+# media
 bindsym XF86AudioPlay exec         playerctl play-pause
 bindsym XF86AudioNext exec         playerctl next
 bindsym XF86AudioPrev exec         playerctl previous
-bindsym XF86AudioRaiseVolume exec  i3-volume -n up 10
-bindsym XF86AudioLowerVolume exec  i3-volume -n down 10
-bindsym XF86AudioMute exec         i3-volume -n mute
-bindsym XF86AudioMicMute exec      i3-volume -n mic mute
+bindsym XF86AudioRaiseVolume exec  pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec  pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec         pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86MonBrightnessUp exec   brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
