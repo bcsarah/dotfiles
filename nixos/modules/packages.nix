@@ -99,7 +99,7 @@
 
         # i3wm
         kitty
-        rofi
+        dmenu
         polybar
         picom
         dunst
