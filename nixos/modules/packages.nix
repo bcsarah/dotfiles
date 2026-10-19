@@ -91,7 +91,6 @@
         libreoffice
         obsidian
         mpv
-        eog
         localsend
         syncthing
         osu-lazer-bin
@@ -125,8 +124,6 @@
         libsForQt5.qt5ct
         kdePackages.qt6ct
         adw-gtk3
-        adwaita-qt
-        adwaita-qt6
     ];
 
     # Fonts
