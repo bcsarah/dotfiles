@@ -28,6 +28,7 @@
     { "type": "cpu", "key": "󰍛 "},
     { "type": "memory", "key": " " },
     { "type": "disk", "key": "󱛟 ", "folders": ["/"] },
+    { "type": "battery", "key": "󰁹 " },
     { "type": "wm", "key": " " },
 
     "break",
