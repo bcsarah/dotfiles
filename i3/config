@@ -2,7 +2,7 @@ set $mod Mod4
 
 
 # startup
-exec_always --no-startup-id feh --bg-fill ~/dots-nixos/wpp.png
+exec_always --no-startup-id feh --bg-fill ~/dotfiles/wpp.png
 exec_always --no-startup-id picom
 exec_always --no-startup-id autotiling
 exec --no-startup-id xautolock -time 15 -locker "i3lock -c 2d2d2d" -detectsleep
@@ -55,8 +55,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+o exec obsidian
 bindsym $mod+z exec pavucontrol
 
-bindsym $mod+n exec ~/dots-nixos/dmenu/go-dev.sh
-bindsym $mod+Escape exec ~/dots-nixos/dmenu/power-menu.sh
+bindsym $mod+n exec ~/dotfiles/dmenu/go-dev.sh
+bindsym $mod+Escape exec ~/dotfiles/dmenu/power-menu.sh
 
 
 # focus
@@ -118,5 +118,4 @@ bindsym XF86MonBrightnessUp exec   brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 
-# reload/quit
-bindsym $mod+Shift+c restart
+# reload/quit bindsym $mod+Shift+c restart
