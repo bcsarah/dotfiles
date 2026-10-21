@@ -3,31 +3,12 @@
 {
     nixpkgs.config.allowUnfree = true;
 
+
     # Enables
-    programs.neovim.enable = true;
     programs.vim.enable = true;
-    programs.fish.enable = true;
+    programs.zsh.enable = true;
     services.gvfs.enable = true;
     programs.steam.enable = true;
-    services.flatpak.enable = true;
-
-    # XDG Portal
-    xdg.portal = {
-        enable = true;
-        config.common.default = "gtk";
-        extraPortals = with pkgs; [
-            xdg-desktop-portal-gtk
-        ];
-    };
-
-    # Steam config
-    nixpkgs.overlays = [
-        (final: prev: {
-            steam = prev.steam.override {
-                extraArgs = "-cef-disable-gpu-compositing";
-            };
-        })
-    ];
 
 
     # Display Manager / Window Manager
@@ -53,16 +34,13 @@
         tree
         ripgrep
         fzf
-        fend
+        bc
         ncdu
         tmux
         zip
         unzip
         unrar
-        kid3
-        eyed3
-        tree-sitter
-        eslint_d
+        trash-cli
 
         lazygit
         htop
@@ -76,12 +54,9 @@
 
 
         # Coding
-        python3
-        pipx
         nodejs
         openjdk21
         maven
-        clang-tools
         gcc
         gnumake
 
@@ -91,16 +66,13 @@
         libreoffice
         obsidian
         mpv
-        localsend
         syncthing
-        osu-lazer-bin
         netbeans
 
 
         # i3wm
         kitty
         dmenu
-        polybar
         picom
         dunst
         thunar

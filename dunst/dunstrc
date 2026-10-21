@@ -3,9 +3,9 @@ monitor = 0
 follow = none
 
 width = 320
-height = 180
+height = (0, 180)
+offset = (12, 42)
 origin = top-right
-offset = 12x42
 notification_limit = 5
 
 font = "JetBrainsMono Nerd Font 10"
@@ -23,7 +23,6 @@ text_icon_padding = 10
 separator_height = 1
 frame_width = 2
 gap_size = 6
-corner_radius = 6
 
 transparency = 0
 progress_bar = true

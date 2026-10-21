@@ -6,8 +6,8 @@
         isNormalUser = true;
         description = "Better Call Sarah";
         extraGroups = [ "networkmanager" "wheel" ];
-        shell = pkgs.fish;
+        shell = pkgs.zsh;
     };
 
-    users.defaultUserShell = pkgs.fish;
+    users.defaultUserShell = pkgs.zsh;
 }
