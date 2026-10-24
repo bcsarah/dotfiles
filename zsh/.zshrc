@@ -20,11 +20,16 @@ source $ZSH/oh-my-zsh.sh
 
 
 # alias
-alias img='kitty +kitten icat'
-alias lg='lazygit'
-alias r='ranger'
 alias doas='sudo'
+alias img='kitty +kitten icat'
+alias r='ranger'
+alias v='vim'
 
+alias lg='lazygit'
+alias vi='vim'
+alias nvim='vim'
+alias cat='bat'
 alias rm='trash'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

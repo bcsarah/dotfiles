@@ -1,6 +1,8 @@
 #!/bin/sh
 
-input=$(printf "poweroff\nreboot\nexit\nlock" | dmenu -i -p "opt:")
+input=$(printf "poweroff\nreboot\nreload\nexit\nlock" | dmenu -i -p "opt:")
+
+[ -z "$input" ] && exit 0
 
 case "$input" in
     poweroff)
@@ -8,6 +10,9 @@ case "$input" in
         ;;
     reboot)
         kitty -e reboot
+        ;;
+    reload)
+        i3-msg restart
         ;;
     exit)
         i3-msg exit

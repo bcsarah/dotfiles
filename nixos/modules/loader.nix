@@ -11,7 +11,7 @@
             enable = true;
             device = "nodev";
             efiSupport = true;
-            useOSProber = true;
+            # useOSProber = true;
             configurationLimit = 5;
         };
     };
@@ -28,8 +28,6 @@
         pulse.enable = true;
         # jack.enable = true;
     };
-
-
 
 
     # Network

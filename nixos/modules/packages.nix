@@ -31,6 +31,7 @@
         # CLI
         wget
         git
+        bat
         tree
         ripgrep
         fzf
@@ -40,6 +41,7 @@
         zip
         unzip
         unrar
+        lm_sensors
         trash-cli
 
         lazygit
@@ -66,6 +68,7 @@
         libreoffice
         obsidian
         mpv
+        eog
         syncthing
         netbeans
 
@@ -81,7 +84,7 @@
         autotiling
         i3lock
         xautolock
-        feh
+        xwallpaper
         maim
         xclip
         redshift
