@@ -16,9 +16,11 @@ alias b='bat --plain --no-paging'
 alias c='cat'
 alias r='ranger'
 alias v='vim'
-alias dv='doas vim'
+alias sv='sudo vim'
 
 # existing
+alias poweroff='sudo poweroff'
+alias reboot='sudo reboot'
 alias nvim='vim'
 alias vi='vim'
 alias ls='ls --color=auto'
@@ -55,16 +57,16 @@ alias gd='git diff'
 alias gsd='git switch --detach'
 
 # portage
-alias ec='doas emerge -qav'
-alias er='doas emerge -qavC'
+alias ec='sudo emerge -qav'
+alias er='sudo emerge -qavC'
 alias es='emerge -s'
 alias eS='emerge -S'
-alias ep='doas emerge --sync -q'
+alias ep='sudo emerge --sync -q'
 alias ep='emerge -pvuDN @world'
-alias ew='doas emerge -avuDN @world'
-alias erm='doas emerge --depclean'
+alias ew='sudo emerge -avuDN @world'
+alias erm='sudo emerge --depclean'
 alias eq='cat /var/lib/portage/world'
-alias vmake='doas vim /etc/portage/make.conf'
+alias vmake='sudo vim /etc/portage/make.conf'
 
 
 # init

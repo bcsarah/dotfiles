@@ -6,10 +6,10 @@ input=$(printf "poweroff\nreboot\nreload\nexit\nlock" | dmenu -i -p "opt:")
 
 case "$input" in
     poweroff)
-        kitty -e doas poweroff
+        kitty -e sudo poweroff
         ;;
     reboot)
-        kitty -e doas reboot
+        kitty -e sudo reboot
         ;;
     reload)
         i3-msg restart
