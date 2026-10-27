@@ -1,35 +1,69 @@
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-# git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-
-# powerlevel10k
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 
-# theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# plugins
+# themes & plugins
+ZSH_THEME="af-magic"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 
-# alias
-alias doas='sudo'
-alias img='kitty +kitten icat'
+# mini
+alias b='bat --plain --no-paging'
+alias c='cat'
 alias r='ranger'
 alias v='vim'
+alias dv='doas vim'
 
-alias lg='lazygit'
-alias vi='vim'
+# existing
 alias nvim='vim'
-alias cat='bat'
+alias vi='vim'
+alias ls='ls --color=auto'
+alias la='ls -lah'
+alias cat='bat --plain --no-paging'
+alias bat='bat --plain --no-paging'
 alias rm='trash'
+alias ping='ping -c 3'
+alias df='df -h'
+alias du='du -sh'
+alias free='free -h'
+alias psg='ps aux | grep -i'
+alias tree='tree -a -L 2'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# new
+alias lg='lazygit'
+alias img='kitty +kitten icat'
+alias now='date +"%d/%m/%Y %H:%M:%S"'
+alias today='date +"%d/%m/%Y"'
+alias clock='date +"%H:%M:%S"'
+alias untar='tar -xvf'
+alias targz='tar -czvf'
+
+# git
+alias ga='git add .'
+alias gs='git status --short --branch'
+alias gc='git commit -C'
+alias gp='git push'
+alias gP='git pull'
+alias gl='git log --all --oneline --graph'
+alias gd='git diff'
+alias gsd='git switch --detach'
+
+# portage
+alias ec='doas emerge -qav'
+alias er='doas emerge -qavC'
+alias es='emerge -s'
+alias eS='emerge -S'
+alias ep='doas emerge --sync -q'
+alias ep='emerge -pvuDN @world'
+alias ew='doas emerge -avuDN @world'
+alias erm='doas emerge --depclean'
+alias eq='cat /var/lib/portage/world'
+alias vmake='doas vim /etc/portage/make.conf'
+
+
+# init
+fastfetch
