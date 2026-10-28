@@ -33,13 +33,12 @@
     # Network
     networking.networkmanager.enable = true;
     networking.hostName = "nixos";
+    networking.firewall.enable = true;
 
 
     # Others
     nix.settings.warn-dirty = false;
     hardware.bluetooth.enable = true;
-    services.power-profiles-daemon.enable = true;
-    networking.firewall.enable = true;
     zramSwap.enable = true;
 
     services.udev.packages = with pkgs; [ game-devices-udev-rules ];
