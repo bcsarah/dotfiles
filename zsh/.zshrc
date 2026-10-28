@@ -12,8 +12,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 # mini
-alias b='bat --plain --no-paging'
-alias c='cat'
 alias r='ranger'
 alias v='vim'
 alias vs='sudo vim'

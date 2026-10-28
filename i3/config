@@ -56,9 +56,9 @@ bindsym $mod+b exec firefox
 bindsym $mod+o exec obsidian
 bindsym $mod+z exec pavucontrol
 
-bindsym $mod+n exec ~/dotfiles/dmenu/go-dev.sh
-bindsym $mod+Escape exec ~/dotfiles/dmenu/power-menu.sh
-bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/wallpaper.sh
+bindsym $mod+n exec ~/dotfiles/dmenu/go-dev
+bindsym $mod+Escape exec ~/dotfiles/dmenu/power-menu
+bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/wallpaper
 
 
 # focus
