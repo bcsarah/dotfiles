@@ -68,7 +68,7 @@
         libreoffice
         obsidian
         mpv
-        eog
+        imv
         syncthing
         netbeans
 
@@ -85,8 +85,8 @@
         i3lock
         xautolock
         xwallpaper
-        maim
         xclip
+        maim
         redshift
         brightnessctl
 
