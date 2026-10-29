@@ -88,6 +88,7 @@
         # i3wm
         kitty
         dmenu
+        polybar
         picom
         dunst
         thunar

@@ -18,8 +18,6 @@ alias vs='sudo vim'
 
 # existing
 alias doas='sudo'
-alias poweroff='sudo poweroff'
-alias reboot='sudo reboot'
 alias nvim='vim'
 alias vi='vim'
 alias ls='ls --color=auto'
@@ -61,6 +59,14 @@ alias nrs='sudo nixos-rebuild switch --flake ~/dotfiles/nixos#nixos'
 alias nfu='sudo nix flake update'
 alias ncg='sudo nix-collect-garbage -d'
 
+# pacman
+alias pi='sudo pacman -S'
+alias pr='sudo pacman -Rns'
+alias pu='sudo pacman -Syu'
+alias ps='pacman -Ss'
+alias pq='pacman -Qec'
+alias prm='sudo pacman -Rns $(pacman -Qtdq)'
+
 # portage
 alias ec='sudo emerge -qav'
 alias er='sudo emerge -qavC'
@@ -69,8 +75,8 @@ alias eS='emerge -S'
 alias eu='sudo emerge --sync'
 alias ep='emerge -pvuDN @world'
 alias ew='sudo emerge -qavuDN @world'
-alias erm='sudo emerge --depclean'
 alias eq='cat /var/lib/portage/world'
+alias erm='sudo emerge --depclean'
 alias vmake='sudo vim /etc/portage/make.conf'
 
 
