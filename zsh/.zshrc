@@ -56,6 +56,11 @@ alias gl='git log --all --oneline --graph'
 alias gd='git diff'
 alias gsd='git switch --detach'
 
+# nix
+alias nrs='sudo nixos-rebuild switch --flake ~/dotfiles/nixos#nixos'
+alias nfu='sudo nix flake update'
+alias ncg='sudo nix-collect-garbage -d'
+
 # portage
 alias ec='sudo emerge -qav'
 alias er='sudo emerge -qavC'
