@@ -53,6 +53,7 @@ alias gP='git pull'
 alias gl='git log --all --oneline --graph'
 alias gd='git diff'
 alias gsd='git switch --detach'
+alias gsm='git switch main'
 
 # nix
 alias nrs='sudo nixos-rebuild switch --flake ~/dotfiles/nixos#nixos'

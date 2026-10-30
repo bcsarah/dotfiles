@@ -53,7 +53,7 @@ bindsym $mod+r exec i3-dmenu-desktop
 bindsym $mod+Shift+r exec dmenu_run
 
 bindsym $mod+s exec kitty -e cmus
-bindsym $mod+b exec firefox
+bindsym $mod+b exec qutebrowser 
 bindsym $mod+o exec obsidian
 bindsym $mod+z exec pavucontrol
 
