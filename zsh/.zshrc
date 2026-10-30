@@ -46,7 +46,7 @@ alias targz='tar -czvf'
 # git
 alias ga='git add .'
 alias gs='git status --short --branch'
-alias gc='git commit -C'
+alias gc='git commit -m'
 alias gC='git clone'
 alias gp='git push'
 alias gP='git pull'
