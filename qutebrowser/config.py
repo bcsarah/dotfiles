@@ -9,9 +9,12 @@ c.fonts.default_size = '12pt'
 c.fonts.default_family = 'Jetbrains Mono'
 c.url.default_page = 'about:blank'
 c.url.start_pages = 'about:blank'
+c.colors.webpage.preferred_color_scheme = 'dark'
 
 # binds
 config.bind('a', 'mode-enter insert')
+config.bind('J', 'tab-prev')
+config.bind('K', 'tab-next')
 
 # privacy
 # config.set("content.private_browsing", True)
@@ -22,12 +25,6 @@ config.set("content.geolocation", False)
 config.set("content.webrtc_ip_handling_policy", "default-public-interface-only")
 config.set("content.cookies.accept", "all")
 config.set("content.cookies.store", True)
-
-# darkmode
-c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
-c.colors.webpage.darkmode.policy.images = 'never'
-config.set('colors.webpage.darkmode.enabled', False, 'file://*')
 
 # style
 c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 9, 'right': 9}
@@ -66,6 +63,8 @@ dark_purple = "#b16286"
 dark_aqua = "#689d6a"
 dark_gray = "#a89984"
 dark_orange = "#d65d0e"
+
+c.colors.webpage.bg = bg0
 
 # completion
 c.colors.completion.fg = [fg1, bright_aqua, bright_yellow]
