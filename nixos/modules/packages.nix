@@ -77,6 +77,7 @@
 
         # GUI
         firefox
+        qutebrowser
         libreoffice
         obsidian
         mpv
