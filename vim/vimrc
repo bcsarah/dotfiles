@@ -9,6 +9,7 @@ call plug#begin()
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'alvan/vim-closetag'
+  Plug 'ap/vim-css-color'
 call plug#end()
 
 " general
