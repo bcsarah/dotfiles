@@ -1,16 +1,18 @@
 " plugins 
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
-  Plug 'gruvbox-community/gruvbox'
-  Plug 'itchyny/lightline.vim'
+    Plug 'gruvbox-community/gruvbox'
+    Plug 'itchyny/lightline.vim'
 
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'mbbill/undotree'
-  Plug 'junegunn/fzf'
-  Plug 'junegunn/fzf.vim'
-  Plug 'alvan/vim-closetag'
-  Plug 'ap/vim-css-color'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'mbbill/undotree'
+    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
+    Plug 'alvan/vim-closetag'
+    Plug 'ap/vim-css-color'
+    Plug 'vimwiki/vimwiki'
 call plug#end()
+
 
 " general
 set number
@@ -62,6 +64,8 @@ endif
 
 
 " theme
+set nocompatible
+filetype plugin on
 syntax on
 set laststatus=2
 set termguicolors
@@ -71,3 +75,32 @@ colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'medium'
 
 let g:lightline = {'colorscheme': 'wombat'}
+
+" VimWiki
+let g:vimwiki_list = [{
+    \ 'path': '~/notes/*',
+    \ 'syntax': 'markdown',
+    \ 'ext': '.md',
+    \ 'links_space_char': '-'
+\ }]
+
+augroup VimWikiColors
+    autocmd!
+    autocmd FileType vimwiki call s:VimWikiHighlights()
+augroup END
+
+function! s:VimWikiHighlights()
+    highlight VimwikiHeader1 guifg=#fabd2f gui=bold
+    highlight VimwikiHeader2 guifg=#fe8019 gui=bold
+    highlight VimwikiHeader3 guifg=#8ec07c gui=bold
+
+    highlight VimwikiBold guifg=#fabd2f gui=bold
+    highlight VimwikiItalic guifg=#8ec07c gui=italic
+    highlight VimwikiLink guifg=#83a598 gui=underline
+    highlight VimwikiLink2 guifg=#83a598 gui=underline
+    highlight VimwikiURL guifg=#928374 gui=underline
+
+    highlight VimwikiList guifg=#fe8019
+    highlight VimwikiTodo guifg=#fb4934 gui=bold
+    highlight VimwikiCode guifg=#b8bb26
+endfunction

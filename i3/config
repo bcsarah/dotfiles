@@ -53,13 +53,13 @@ bindsym $mod+Shift+r exec dmenu_run
 
 bindsym $mod+s exec kitty -e cmus
 bindsym $mod+b exec qutebrowser 
-bindsym $mod+o exec obsidian
 bindsym $mod+z exec pavucontrol
 
 bindsym $mod+Shift+c restart
 bindsym $mod+n exec ~/dotfiles/dmenu/go-dev
 bindsym $mod+Escape exec ~/dotfiles/dmenu/power-menu
 bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/wallpaper
+bindsym $mod+o exec ~/dotfiles/dmenu/notes
 
 
 # focus

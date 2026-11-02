@@ -1,0 +1,18 @@
+#!/bin/sh
+
+base="$HOME/notes/zettelkasten"
+session="zettelkasten"
+
+note=$(ls "$base" | sort | dmenu -i -p "notes:")
+
+[ -z "$note" ] && exit 0
+
+cleanup() {
+    tmux kill-session -t "$session" 2>/dev/null
+}
+
+trap cleanup EXIT HUP INT TERM
+
+tmux new-session -d -s "$session" -c "$base" "vim $base/$note"
+tmux split-window -h -p 35 -t "$session" cmus
+kitty -e tmux attach-session -t "$session"

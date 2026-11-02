@@ -9,7 +9,6 @@
     programs.zsh.enable = true;
     services.gvfs.enable = true;
     programs.steam.enable = true;
-    services.flatpak.enable = true;
 
 
     # Display Manager / Window Manager
@@ -23,16 +22,6 @@
         };
 
         windowManager.i3.enable = true;
-    };
-
-
-    # XDG
-    xdg.portal = {
-      enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-      ];
-      config.common.default = "*";
     };
 
 
@@ -51,7 +40,6 @@
         zip
         unzip
         unrar
-        trash-cli
         syncthing
 
         lazygit
@@ -66,9 +54,10 @@
 
 
         # Coding
-        nodejs
+        python3
         openjdk21
         maven
+        nodejs
         gcc
         gnumake
 
@@ -76,11 +65,9 @@
         # GUI
         qutebrowser
         libreoffice
-        obsidian
         mpv
         imv
         osu-lazer-bin
-        netbeans
 
 
         # i3wm
