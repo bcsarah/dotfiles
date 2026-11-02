@@ -23,7 +23,6 @@
         };
 
         windowManager.i3.enable = true;
-        windowManager.awesome.enable = true;
     };
 
 
@@ -45,7 +44,6 @@
         git
         bat
         tree
-        ripgrep
         fzf
         bc
         ncdu
@@ -53,7 +51,6 @@
         zip
         unzip
         unrar
-        lm_sensors
         trash-cli
         syncthing
 
@@ -77,7 +74,6 @@
 
 
         # GUI
-        firefox
         qutebrowser
         libreoffice
         obsidian
@@ -90,7 +86,6 @@
         # i3wm
         kitty
         dmenu
-        polybar
         picom
         dunst
         thunar

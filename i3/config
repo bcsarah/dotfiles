@@ -5,7 +5,6 @@ set $mod Mod4
 exec_always --no-startup-id xwallpaper --zoom ~/.xwallpaper
 exec_always --no-startup-id picom
 exec_always --no-startup-id autotiling
-exec --no-startup-id polybar 
 exec --no-startup-id xautolock -time 15 -locker "i3lock -c 2d2d2d" -detectsleep
 exec --no-startup-id redshift -O 4000 -P
 exec --no-startup-id syncthing --no-browser
@@ -57,6 +56,7 @@ bindsym $mod+b exec qutebrowser
 bindsym $mod+o exec obsidian
 bindsym $mod+z exec pavucontrol
 
+bindsym $mod+Shift+c restart
 bindsym $mod+n exec ~/dotfiles/dmenu/go-dev
 bindsym $mod+Escape exec ~/dotfiles/dmenu/power-menu
 bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/wallpaper
@@ -119,7 +119,3 @@ bindsym XF86AudioLowerVolume exec  pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec         pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86MonBrightnessUp exec   brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-
-
-# reload/quit bindsym $mod+Shift+c restart
-bindsym $mod+Shift+c restart
