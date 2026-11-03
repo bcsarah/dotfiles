@@ -3,14 +3,14 @@
 call plug#begin()
     Plug 'gruvbox-community/gruvbox'
     Plug 'itchyny/lightline.vim'
-
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'mbbill/undotree'
+    Plug 'iberianpig/ranger-explorer.vim'
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
+    Plug 'vimwiki/vimwiki'
+    Plug 'mbbill/undotree'
+    Plug 'jiangmiao/auto-pairs'
     Plug 'alvan/vim-closetag'
     Plug 'ap/vim-css-color'
-    Plug 'vimwiki/vimwiki'
 call plug#end()
 
 
@@ -31,6 +31,10 @@ set hlsearch
 set ignorecase
 set smartcase
 
+set wrap
+set linebreak
+set formatoptions+=w
+
 nnoremap j gj
 nnoremap k gk
 
@@ -38,7 +42,7 @@ nnoremap k gk
 " custom binds
 let mapleader = " "
 
-noremap <leader>e :Ex<CR>
+noremap <leader>e :RangerOpenCurrentFile<CR>
 noremap <leader>r :source ~/.vim/vimrc<CR>
 noremap <leader>ff :Files<CR>
 noremap <leader>fo :History<CR>
@@ -64,19 +68,18 @@ endif
 
 
 " theme
-set nocompatible
 filetype plugin on
 syntax on
+set nocompatible
 set laststatus=2
 set termguicolors
 set background=dark
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'medium'
-
 let g:lightline = {'colorscheme': 'wombat'}
 
-" VimWiki
+" vimwiki
 let g:vimwiki_list = [{
     \ 'path': '~/notes/*',
     \ 'syntax': 'markdown',
