@@ -2,8 +2,19 @@
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
+# exports
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
+
+export EDITOR=vim
+export VISUAL=vim
+export PAGER=less
+export MANPAGER='less -R'
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # themes & plugins
 ZSH_THEME="af-magic"
@@ -46,11 +57,11 @@ alias targz='tar -czvf'
 alias ga='git add .'
 alias gs='git status --short --branch'
 alias gc='git commit -m'
-alias gC='git clone'
 alias gp='git push'
 alias gP='git pull'
 alias gl='git log --all --oneline --graph'
 alias gd='git diff'
+alias gcl='git clone'
 alias gsd='git switch --detach'
 alias gsm='git switch master'
 alias gdu='git checkout -- .'
