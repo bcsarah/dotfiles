@@ -57,7 +57,7 @@ bindsym $mod+b exec qutebrowser
 bindsym $mod+z exec pavucontrol
 
 bindsym $mod+Shift+c restart
-bindsym $mod+n exec ~/dotfiles/dmenu/go-dev
+bindsym $mod+n exec ~/dotfiles/dmenu/dev
 bindsym $mod+Escape exec ~/dotfiles/dmenu/power-menu
 bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/wallpaper
 bindsym $mod+o exec ~/dotfiles/dmenu/notes

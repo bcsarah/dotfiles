@@ -6,7 +6,7 @@ base="$HOME/$notes"
 dir=$(ls $base | sort | dmenu -i -p "folder")
 [ -z "$dir" ] && exit 0
 
-note=$(ls $base/$dir | sed 's/\.md$//' | sort | dmenu -i -p "notes")
+note=$(ls $base/$dir | grep .md | sed 's/\.md$//' | sort | dmenu -i -p "notes")
 [ -z "$note" ] && exit 0
 
 file="$base/$dir/$note.md"
