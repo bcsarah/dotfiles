@@ -1,8 +1,15 @@
 #!/bin/sh
+# this script only accepts .png imgs
 
-wpp=$(ls ~/Imagens/wpp | sort | dmenu -i -p "wpp:")
+img="images" # change this if your
+wppfol="wpp" # images folder is another
+base="$HOME/$img/$wppfol"
 
+folder=$(ls $base | sort | dmenu -i -p "folder")
+[ -z "$folder" ] && exit 0
+
+wpp=$(ls $base/$folder | sed 's/\.png$//' | sort | dmenu -i -p "wpp")
 [ -z "$wpp" ] && exit 0
 
-ln -sf ~/Imagens/wpp/$wpp ~/.xwallpaper
+ln -sf $base/$folder/$wpp.png ~/.xwallpaper
 xwallpaper --zoom ~/.xwallpaper

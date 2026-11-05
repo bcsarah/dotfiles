@@ -1,7 +1,8 @@
 #!/bin/sh
 
-input=$(printf "poweroff\nreboot\nreload\nexit\nlock" | dmenu -i -p "opt:")
+prompt=$(printf "poweroff\nreboot\nreload\nexit\nlock")
 
+input=$($prompt | dmenu -i -p "power-menu")
 [ -z "$input" ] && exit 0
 
 case "$input" in

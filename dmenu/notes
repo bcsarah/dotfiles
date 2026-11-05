@@ -1,12 +1,10 @@
 #!/bin/sh
 
-base="$HOME/notes/zettelkasten"
+notes="notes"
+dir="zettelkasten"
+base="$HOME/$notes/$dir"
 
-note=$(find "$base" -maxdepth 1 -type f -name '*.md' -printf '%f\n' |
-    sed 's/\.md$//' |
-    sort |
-    dmenu -i -p "notes:")
-
+note=$(ls $base | sed 's/\.md$//' | sort | dmenu -i -p "notes")
 [ -z "$note" ] && exit 0
 
 file="$base/$note.md"

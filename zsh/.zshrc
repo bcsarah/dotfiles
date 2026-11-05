@@ -8,8 +8,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR=vim
 export VISUAL=vim
-export PAGER=less
-export MANPAGER='less -R'
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -60,7 +58,7 @@ alias gc='git commit -m'
 alias gp='git push'
 alias gP='git pull'
 alias gl='git log --all --oneline --graph'
-alias gd='git diff'
+alias gd='git diff --staged'
 alias gcl='git clone'
 alias gsd='git switch --detach'
 alias gsm='git switch master'

@@ -1,7 +1,9 @@
 #!/bin/sh
 
-dir=$(ls ~/dev | sort | dmenu -i -p "~/dev:")
+dev="dev" # change this if your projects folder is different
+base="$HOME/$dev"
 
+dir=$(ls ~/$dev | sort | dmenu -i -p "projects")
 [ -z "$dir" ] && exit 0
 
-exec kitty -e tmux new-session -c ~/dev/$dir
+exec kitty -e tmux new-session -c $base/$dir
