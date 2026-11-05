@@ -11,5 +11,5 @@ folder=$(ls $base | sort | dmenu -i -p "folder")
 wpp=$(ls $base/$folder | sed 's/\.png$//' | sort | dmenu -i -p "wpp")
 [ -z "$wpp" ] && exit 0
 
-ln -sf $base/$folder/$wpp.png ~/.xwallpaper
-xwallpaper --zoom ~/.xwallpaper
+ln -sf $base/$folder/$wpp.png $HOME/.xwallpaper
+xwallpaper --zoom $HOME/.xwallpaper

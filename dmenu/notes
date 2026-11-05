@@ -1,12 +1,13 @@
 #!/bin/sh
 
 notes="notes"
-dir="zettelkasten"
-base="$HOME/$notes/$dir"
+base="$HOME/$notes"
 
-note=$(ls $base | sed 's/\.md$//' | sort | dmenu -i -p "notes")
+dir=$(ls $base | sort | dmenu -i -p "folder")
+[ -z "$dir" ] && exit 0
+
+note=$(ls $base/$dir | sed 's/\.md$//' | sort | dmenu -i -p "notes")
 [ -z "$note" ] && exit 0
 
-file="$base/$note.md"
-
+file="$base/$dir/$note.md"
 kitty -d $base -e vim $file
