@@ -11,6 +11,7 @@ call plug#begin()
     Plug 'jiangmiao/auto-pairs'
     Plug 'alvan/vim-closetag'
     Plug 'ap/vim-css-color'
+    Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
