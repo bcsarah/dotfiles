@@ -63,7 +63,7 @@
 
 
         # GUI
-        qutebrowser
+        firefox
         libreoffice
         mpv
         imv
