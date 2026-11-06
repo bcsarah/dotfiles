@@ -6,7 +6,9 @@ base="$HOME/$notes"
 dir=$(ls $base | sort | dmenu -i -p "folder")
 [ -z "$dir" ] && exit 0
 
-note=$(ls $base/$dir | grep .md | sed 's/\.md$//' | sort | dmenu -i -p "notes")
+note=$(find "$base/$dir" -maxdepth 1 -type f -name '*.md' -printf '%s\t%f\n' |
+       sort -n | cut -f2- | sed 's/\.md$//' |
+       dmenu -i -p "notes")
 [ -z "$note" ] && exit 0
 
 file="$base/$dir/$note.md"
