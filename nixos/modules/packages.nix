@@ -8,7 +8,6 @@
     programs.vim.enable = true;
     programs.zsh.enable = true;
     services.gvfs.enable = true;
-    programs.steam.enable = true;
 
 
     # Display Manager / Window Manager
@@ -39,14 +38,10 @@
         tmux
         zip
         unzip
-        unrar
-        syncthing
 
-        lazygit
         htop
         ranger
         cmus
-        bluetui
 
         fastfetch
         cmatrix
@@ -72,11 +67,11 @@
 
         # i3wm
         kitty
+        thunar
         dmenu
         polybar
         picom
         dunst
-        thunar
         pavucontrol
 
         autotiling
@@ -91,12 +86,9 @@
 
         # Icons
         papirus-icon-theme
-        google-cursor
-
+        adw-gtk3
         nwg-look
         libsForQt5.qt5ct
-        kdePackages.qt6ct
-        adw-gtk3
     ];
 
     # Fonts

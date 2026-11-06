@@ -41,8 +41,8 @@
     hardware.bluetooth.enable = true;
     zramSwap.enable = true;
 
-    services.udev.packages = with pkgs; [ game-devices-udev-rules ];
-    hardware.uinput.enable = true;
+    #services.udev.packages = with pkgs; [ game-devices-udev-rules ];
+    #hardware.uinput.enable = true;
 
     environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
 }
