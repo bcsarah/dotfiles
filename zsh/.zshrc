@@ -8,6 +8,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR=vim
 export VISUAL=vim
+export TERMINAL="kitty"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
