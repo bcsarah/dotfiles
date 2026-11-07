@@ -65,13 +65,13 @@
         mpv
         imv
         osu-lazer-bin
+        netbeans
 
 
         # i3wm
         kitty
         thunar
         dmenu
-        polybar
         picom
         dunst
         pavucontrol

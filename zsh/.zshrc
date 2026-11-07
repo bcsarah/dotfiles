@@ -31,6 +31,7 @@ alias doas='sudo'
 alias vi='nvim'
 alias vim='nvim'
 alias i3lock='i3lock -c $(cat $HOME/dotfiles/themes/current/i3lock)'
+alias fastfetch='fastfetch --color "red" --logo-color-1 "yellow" --logo-color-2 "red" --logo-color-3 "yellow" --logo-color-4 "red" --logo-color-5 "yellow" --logo-color-6 "red"'
 alias ls='ls --color=auto'
 alias la='ls -lah'
 alias ln='ln -sfnv'
@@ -93,4 +94,4 @@ alias vmake='sudo nvim/etc/portage/make.conf'
 
 
 # init
-fastfetch
+fastfetch --color "red" --logo-color-1 "yellow" --logo-color-2 "red" --logo-color-3 "yellow" --logo-color-4 "red" --logo-color-5 "yellow" --logo-color-6 "red"
