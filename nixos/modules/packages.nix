@@ -6,6 +6,7 @@
 
     # Enables
     programs.vim.enable = true;
+    programs.neovim.enable = true;
     programs.zsh.enable = true;
     services.gvfs.enable = true;
 
@@ -33,6 +34,7 @@
         bat
         tree
         fzf
+        ripgrep
         bc
         ncdu
         tmux

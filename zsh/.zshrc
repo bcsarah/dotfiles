@@ -28,7 +28,6 @@ alias vs='sudo vim'
 
 # existing
 alias doas='sudo'
-alias nvim='vim'
 alias vi='vim'
 alias ls='ls --color=auto'
 alias la='ls -lah'
