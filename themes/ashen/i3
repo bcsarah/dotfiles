@@ -1,0 +1,15 @@
+set $bg            "#121212"
+set $fg            "#f5f5f5"
+set $red           "#B14242"
+set $orange        "#D87C4A"
+set $yellow        "#E49A44"
+set $blue          "#4A8B8B"
+set $purple        "#a7a7a7"
+set $aqua          "#b4b4b4"
+set $gray          "#949494"
+set $bg_highlight  "#292929"
+
+client.focused      $red $bg_highlight $fg $red $red
+client.urgent       $red $red $fg $red $red
+client.placeholder  $gray $bg $fg $gray $gray
+client.background   $bg

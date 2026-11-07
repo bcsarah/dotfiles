@@ -19,24 +19,8 @@ focus_follows_mouse yes
 # look and feel
 font pango:JetBrainsMono Nerd Font 10
 default_border pixel 2
-
-set $bg            "#282828"
-set $fg            "#ebdbb2"
-set $red           "#cc241d"
-set $green         "#98971a"
-set $yellow        "#d79921"
-set $blue          "#458588"
-set $purple        "#b16286"
-set $aqua          "#689d6a"
-set $gray          "#a89984"
-set $bg_highlight  "#3c3836"
-
-client.focused      $blue $bg_highlight $fg $blue $blue
-client.urgent       $red $red $bg $red $red
-client.placeholder  $gray $bg $fg $gray $gray
-client.background   $bg
-
 gaps inner 10
+include ~/dotfiles/themes/current/i3
 
 
 # window rule
@@ -48,8 +32,8 @@ bindsym $mod+q exec kitty
 bindsym $mod+w kill
 bindsym $mod+p kill
 bindsym $mod+e exec thunar
-bindsym $mod+r exec i3-dmenu-desktop
-bindsym $mod+Shift+r exec dmenu_run
+bindsym $mod+r exec i3-dmenu-desktop --dmenu="dmenu $(cat ~/dotfiles/themes/current/dmenu)"
+bindsym $mod+Shift+r exec dmenu_run $(cat ~/dotfiles/themes/current/dmenu)
 
 bindsym $mod+s exec kitty -e cmus
 bindsym $mod+b exec firefox 
@@ -58,7 +42,8 @@ bindsym $mod+z exec pavucontrol
 bindsym $mod+Shift+c restart
 bindsym $mod+n exec ~/dotfiles/dmenu/dev
 bindsym $mod+Escape exec ~/dotfiles/dmenu/power-menu
-bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/wallpaper
+bindsym $mod+Shift+w exec --no-startup-id ~/dotfiles/dmenu/wallpaper
+bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/theme
 bindsym $mod+o exec ~/dotfiles/dmenu/notes
 
 

@@ -1,0 +1,21 @@
+[global]
+    frame_color = "#B14242"
+    separator_color = "#949494"
+
+[urgency_low]
+    background = "#121212"
+    foreground = "#949494"
+    frame_color = "#4A8B8B"
+    timeout = 5
+
+[urgency_normal]
+    background = "#121212"
+    foreground = "#f5f5f5"
+    frame_color = "#B14242"
+    timeout = 8
+
+[urgency_critical]
+    background = "#121212"
+    foreground = "#f5f5f5"
+    frame_color = "#E49A44"
+    timeout = 0

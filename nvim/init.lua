@@ -6,3 +6,5 @@ vim.lsp.enable("clangd")
 require("config.options")
 require("config.lazy")
 require("config.binds")
+
+dofile(vim.fn.expand("~/dotfiles/themes/current/nvim.lua"))
