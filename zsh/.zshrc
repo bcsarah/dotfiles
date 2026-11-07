@@ -29,6 +29,8 @@ alias vs='sudo nvim'
 # existing
 alias doas='sudo'
 alias vi='nvim'
+alias vim='nvim'
+alias i3lock='i3lock -c $(cat $HOME/dotfiles/themes/current/i3lock)'
 alias ls='ls --color=auto'
 alias la='ls -lah'
 alias ln='ln -sfnv'

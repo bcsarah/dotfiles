@@ -5,7 +5,7 @@ set $mod Mod4
 exec_always --no-startup-id xwallpaper --zoom ~/.xwallpaper
 exec_always --no-startup-id picom
 exec_always --no-startup-id autotiling
-exec --no-startup-id xautolock -time 15 -locker "i3lock -c 2d2d2d" -detectsleep
+exec --no-startup-id xautolock -time 15 -locker "i3lock -c $(cat $HOME/dotfiles/themes/current/i3lock)" -detectsleep
 exec --no-startup-id redshift -O 4000 -P
 exec --no-startup-id polybar 
 
@@ -28,23 +28,22 @@ for_window [class="pavucontrol"] floating enable
 
 
 # binds
-bindsym $mod+q exec kitty 
-bindsym $mod+w kill
-bindsym $mod+p kill
-bindsym $mod+e exec thunar
-bindsym $mod+r exec i3-dmenu-desktop --dmenu="dmenu $(cat ~/dotfiles/themes/current/dmenu)"
+bindsym $mod+q       exec kitty 
+bindsym $mod+w       kill
+bindsym $mod+e       exec thunar
+bindsym $mod+r       exec i3-dmenu-desktop --dmenu="dmenu $(cat ~/dotfiles/themes/current/dmenu)"
 bindsym $mod+Shift+r exec dmenu_run $(cat ~/dotfiles/themes/current/dmenu)
 
 bindsym $mod+s exec kitty -e cmus
 bindsym $mod+b exec firefox 
 bindsym $mod+z exec pavucontrol
 
-bindsym $mod+Shift+c restart
-bindsym $mod+n exec ~/dotfiles/dmenu/dev
-bindsym $mod+Escape exec ~/dotfiles/dmenu/power-menu
-bindsym $mod+Shift+w exec --no-startup-id ~/dotfiles/dmenu/wallpaper
+bindsym $mod+Shift+c      restart
+bindsym $mod+n            exec ~/dotfiles/dmenu/dev
+bindsym $mod+Escape       exec ~/dotfiles/dmenu/power-menu
+bindsym $mod+Shift+w      exec ~/dotfiles/dmenu/wallpaper
 bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/theme
-bindsym $mod+o exec ~/dotfiles/dmenu/notes
+bindsym $mod+o            exec ~/dotfiles/dmenu/notes
 
 
 # focus
@@ -60,10 +59,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # resize
-bindsym $mod+plus resize grow width 5 px or 5 ppt
-bindsym $mod+minus resize shrink width 5 px or 5 ppt
+bindsym $mod+plus        resize grow width 5 px or 5 ppt
+bindsym $mod+minus       resize shrink width 5 px or 5 ppt
 bindsym $mod+Shift+minus resize shrink height 5 px or 5 ppt
-bindsym $mod+Shift+plus resize grow height 5 px or 5 ppt
+bindsym $mod+Shift+plus  resize grow height 5 px or 5 ppt
 
 # layout
 bindsym $mod+v floating toggle
@@ -73,8 +72,8 @@ bindsym $mod+u split toggle
 
 
 # screenshot
-bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Print      exec maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
 
 
 # workspaces
@@ -82,25 +81,19 @@ bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
 
 bindsym $mod+Shift+1 move container to workspace 1; workspace 1
 bindsym $mod+Shift+2 move container to workspace 2; workspace 2
 bindsym $mod+Shift+3 move container to workspace 3; workspace 3
 bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-bindsym $mod+Shift+9 move container to workspace 9; workspace 9
-bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
 
 # media
-bindsym XF86AudioPlay exec         playerctl play-pause
-bindsym XF86AudioNext exec         playerctl next
-bindsym XF86AudioPrev exec         playerctl previous
-bindsym XF86AudioRaiseVolume exec  pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec  pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec         pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86MonBrightnessUp exec   brightnessctl set +10%
+bindsym XF86AudioPlay         exec playerctl play-pause
+bindsym XF86AudioNext         exec playerctl next
+bindsym XF86AudioPrev         exec playerctl previous
+bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume  exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute         exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86MonBrightnessUp   exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
