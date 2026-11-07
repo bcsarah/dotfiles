@@ -54,6 +54,7 @@
         openjdk21
         maven
         nodejs
+        clang-tools
         gcc
         gnumake
 
