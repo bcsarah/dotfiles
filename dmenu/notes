@@ -12,4 +12,4 @@ note=$(find "$base/$dir" -maxdepth 1 -type f -name '*.md' -printf '%s\t%f\n' |
 [ -z "$note" ] && exit 0
 
 file="$base/$dir/$note.md"
-kitty -d $base -e vim $file
+kitty -d $base -e nvim $file

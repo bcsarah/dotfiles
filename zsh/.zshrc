@@ -6,8 +6,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export TERMINAL="kitty"
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -23,12 +23,12 @@ source $ZSH/oh-my-zsh.sh
 
 # mini
 alias r='ranger'
-alias v='vim'
-alias vs='sudo vim'
+alias v='nvim'
+alias vs='sudo nvim'
 
 # existing
 alias doas='sudo'
-alias vi='vim'
+alias vi='nvim'
 alias ls='ls --color=auto'
 alias la='ls -lah'
 alias ln='ln -sfnv'
@@ -87,7 +87,7 @@ alias ep='emerge -pvuDN @world'
 alias ew='sudo emerge -qavuDN @world'
 alias eq='cat /var/lib/portage/world'
 alias erm='sudo emerge --depclean'
-alias vmake='sudo vim /etc/portage/make.conf'
+alias vmake='sudo nvim/etc/portage/make.conf'
 
 
 # init
