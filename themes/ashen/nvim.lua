@@ -1,7 +1,7 @@
 vim.cmd.colorscheme("ashen")
 
 vim.api.nvim_set_hl(0, "SignColumn", {
-    bg = "#1b1b1b"
+    bg = "#121212"
 })
 
 require("statusline").setup({
