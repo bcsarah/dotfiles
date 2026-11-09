@@ -32,29 +32,19 @@
         git
         bat
         tree
-        fzf
-        ripgrep
         bc
         ncdu
         tmux
         zip
         unzip
 
+        fastfetch
         htop
         ranger
         cmus
 
-        fastfetch
-        cmatrix
-        asciiquarium
-
 
         # Coding
-        python3
-        openjdk21
-        maven
-        nodejs
-        clang-tools
         gcc
         gnumake
 
@@ -65,7 +55,6 @@
         mpv
         imv
         osu-lazer-bin
-        netbeans
 
 
         # i3wm
@@ -76,9 +65,7 @@
         dunst
         pavucontrol
 
-        autotiling
         i3lock
-        xautolock
         xwallpaper
         xclip
         maim

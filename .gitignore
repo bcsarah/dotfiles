@@ -3,7 +3,7 @@
 plugged/
 autoload/
 undo/
-plugins/
+tmux/plugins/
 quickmarks
 bookmarks/
 autoconfig.yml
