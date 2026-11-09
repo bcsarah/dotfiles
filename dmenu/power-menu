@@ -1,6 +1,7 @@
 #!/bin/sh
 
-input=$(printf "poweroff\nreboot\nreload\nexit\nlock" | dmenu $(cat $HOME/dotfiles/themes/current/dmenu) -i -p "power-menu")
+dmenu="dmenu $(cat $HOME/dotfiles/themes/current/dmenu) -i"
+input=$(printf "poweroff\nreboot\nreload\nexit\nlock" | $dmenu -p "power-menu")
 
 [ -z "$input" ] && exit 0
 

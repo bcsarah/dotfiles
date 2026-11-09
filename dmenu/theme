@@ -1,24 +1,21 @@
 #!/bin/sh
 
+dmenu="dmenu $(cat $HOME/dotfiles/themes/current/dmenu)"
 base="$HOME/dotfiles/themes"
 config="$HOME/.config/dunst"
 img="images"
 wppfol="wpp"
 
-theme=$(ls "$base" | grep -v '^current$' | sort | dmenu $(cat $HOME/dotfiles/themes/current/dmenu) -i -p "theme")
+theme=$(ls "$base" | grep -v '^current$' | $dmenu -p "theme")
 [ -z "$theme" ] && exit 0
 
-# Atualizar tema
+# att
 ln -sfn "$base/$theme" "$base/current"
-
-# Atualizar wallpaper
 ln -sfn "$HOME/$img/$wppfol/$theme/best.jpg" "$HOME/.xwallpaper"
-
-# Configurar Dunst
 mkdir -p "$config/dunstrc.d"
 ln -sfn "$base/current/dunst" "$config/dunstrc.d/99-theme.conf"
 
-# Recarregar configurações
+# reload
 xwallpaper --zoom "$HOME/.xwallpaper"
 pkill -USR1 kitty
 dunstctl reload

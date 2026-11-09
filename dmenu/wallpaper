@@ -1,17 +1,18 @@
 #!/bin/sh
 # this script only accepts .png imgs
 
+dmenu="dmenu $(cat $HOME/dotfiles/themes/current/dmenu)"
 img="images" # change this if your
 wppfol="wpp" # images folder is another
 base="$HOME/$img/$wppfol"
 
-folder=$(ls $base | sort | dmenu $(cat $HOME/dotfiles/themes/current/dmenu) -i -p "folder")
+folder=$(ls $base | $dmenu -p "folder")
 [ -z "$folder" ] && exit 0
 
-wpp=$(ls "$base/$folder" | sed -E 's/\.(png|jpe?g)$//' | sort | dmenu $(cat $HOME/dotfiles/themes/current/dmenu) -i -p "wpp")
+wpp=$(ls "$base/$folder" | sed -E 's/\.(png|jpe?g)$//' | $dmenu -p "wpp")
 [ -z "$wpp" ] && exit 0
 
-wpp=$(ls "$base/$folder" | grep -i "^$wpp\.\(png\|jpg\|jpeg\)$" | head -n 1)
+wpp=$(ls "$base/$folder" | grep "^$wpp\.\(png\|jpg\|jpeg\)$" | head -n 1)
 
 ln -sf "$base/$folder/$wpp" "$HOME/.xwallpaper"
 xwallpaper --zoom $HOME/.xwallpaper
