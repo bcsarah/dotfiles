@@ -32,7 +32,6 @@
         git
         bat
         tree
-        bc
         ncdu
         tmux
         zip

@@ -24,15 +24,7 @@ return {
             "mason-org/mason.nvim",
             "neovim/nvim-lspconfig",
         },
-        opts = {
-            ensure_installed = {
-                "pyright",
-                "html",
-                "cssls",
-                "ts_ls",
-                "clangd"
-            },
-        },
+        opts = {},
     },
 
     -- completion

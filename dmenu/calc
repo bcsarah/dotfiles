@@ -1,0 +1,16 @@
+#!/bin/sh
+
+dmenu="dmenu $(cat "$HOME/dotfiles/themes/current/dmenu") -i"
+
+expression=$(printf '' | $dmenu -p "calc")
+[ -z "$expression" ] && exit 0
+
+case "$expression" in
+    *[!0-9+\-*/%\ \(\)]*)
+        exit 1
+        ;;
+esac
+
+result=$((expression))
+
+echo "$result" | $dmenu -p "result"
