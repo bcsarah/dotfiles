@@ -66,6 +66,7 @@ alias gcl='git clone'
 alias gsd='git switch --detach'
 alias gsm='git switch master'
 alias gdu='git checkout -- .'
+alias gua='git restore --staged .'
 
 # nix
 alias nrs='sudo nixos-rebuild switch --flake ~/dotfiles/nixos#nixos'
