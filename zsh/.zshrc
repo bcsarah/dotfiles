@@ -69,6 +69,7 @@ alias gdu='git checkout -- .'
 
 # nix
 alias nrs='sudo nixos-rebuild switch --flake ~/dotfiles/nixos#nixos'
+alias nrb='sudo nixos-rebuild boot --flake ~/dotfiles/nixos#nixos'
 alias nfu='sudo nix flake update'
 alias ncg='sudo nix-collect-garbage -d'
 

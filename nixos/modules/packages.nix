@@ -50,7 +50,6 @@
 
         # GUI
         firefox
-        libreoffice
         mpv
         imv
         osu-lazer-bin
@@ -76,7 +75,6 @@
         papirus-icon-theme
         adw-gtk3
         nwg-look
-        libsForQt5.qt5ct
     ];
 
     # Fonts
@@ -84,6 +82,5 @@
         noto-fonts-cjk-sans
         nerd-fonts.jetbrains-mono
         noto-fonts-color-emoji
-        corefonts
     ];
 }

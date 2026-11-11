@@ -41,6 +41,7 @@ bindsym $mod+Escape       exec ~/dotfiles/dmenu/power-menu
 bindsym $mod+Shift+w      exec ~/dotfiles/dmenu/wallpaper
 bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/theme
 bindsym $mod+o            exec ~/dotfiles/dmenu/notes
+bindsym $mod+c            exec ~/dotfiles/dmenu/calc
 
 
 # focus
