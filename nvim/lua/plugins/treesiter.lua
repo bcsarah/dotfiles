@@ -1,6 +1,5 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-
     branch = 'master',
     build = ':TSUpdate',
 
@@ -10,7 +9,13 @@ return {
         configs.setup({
             highlight = { enable = true },
             indent = { enable = true },
-            ensure_installed = { "lua", "c", "html", "css", "javascript" },
+            ensure_installed = {
+                "lua",
+                "c",
+                "html",
+                "css",
+                "javascript",
+            },
             auto_install = false
         })
     end

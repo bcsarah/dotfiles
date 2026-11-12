@@ -32,15 +32,17 @@
         git
         bat
         tree
-        ncdu
-        tmux
+        fzf
+        ripgrep
         zip
         unzip
 
         fastfetch
+        tmux
         htop
         ranger
         cmus
+        ncdu
 
 
         # Coding
@@ -50,6 +52,7 @@
 
         # GUI
         firefox
+        libreoffice
         mpv
         imv
         osu-lazer-bin
@@ -82,5 +85,6 @@
         noto-fonts-cjk-sans
         nerd-fonts.jetbrains-mono
         noto-fonts-color-emoji
+        corefonts
     ];
 }
