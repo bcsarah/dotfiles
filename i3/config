@@ -2,6 +2,7 @@ set $mod Mod4
 
 
 # startup
+exec_always --no-startup-id setxkbmap -layout br -variant abnt2
 exec_always --no-startup-id xwallpaper --zoom ~/.xwallpaper
 exec_always --no-startup-id picom
 exec --no-startup-id redshift -O 4000 -P

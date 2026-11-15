@@ -22,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # mini
+alias x='startx'
 alias r='ranger'
 alias v='nvim'
 alias vs='sudo nvim'
@@ -79,7 +80,7 @@ alias pi='sudo pacman -S'
 alias pr='sudo pacman -Rns'
 alias pu='sudo pacman -Syu'
 alias ps='pacman -Ss'
-alias pq='pacman -Qec'
+alias pq='pacman -Qe'
 alias prm='sudo pacman -Rns $(pacman -Qtdq)'
 
 # portage
