@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+#
+# clean_names.sh
+# 1) Remove sufixo "(MP3_160K)"
+# 2) Normaliza underscores que substituem apóstrofos
+#
+set -euo pipefail
+
+root="${1:-.}"
+[[ -d "$root" ]] || { echo "Erro: '$root' não é um diretório válido." >&2; exit 1; }
+
+dry_run="${DRY_RUN:-0}"
+count=0
+
+fix_name() {
+    local base="$1"
+    local out
+
+    # 1) Remove "(MP3_160K)"
+    out=$(printf '%s' "$base" | sed -E 's/[[:space:]]*\(MP3_160K\)//g')
+
+    # 2) Colapsa underscores múltiplos: __+ -> _
+    out=$(printf '%s' "$out" | sed -E 's/__+/_/g')
+
+    # 3) Converte _<sufixo> em '<sufixo>' (contrações/possessivos)
+    out=$(printf '%s' "$out" | sed -E "
+        s/_s\b/'s/g;
+        s/_t\b/'t/g;
+        s/_m\b/'m/g;
+        s/_ll\b/'ll/g;
+        s/_re\b/'re/g;
+        s/_ve\b/'ve/g;
+        s/_d\b/'d/g;
+    ")
+
+    # 4) Converte _ no início ou após espaço quando seguido de alfanumérico
+    #    Ex.: "_Cause" -> "'Cause", "Summer _68" -> "Summer '68"
+    out=$(printf '%s' "$out" | sed -E "s/(^| )_([A-Za-z0-9])/\1'\2/g")
+
+    # 5) Normaliza espaços duplos / sobras
+    out=$(printf '%s' "$out" | sed -E 's/[[:space:]]+/ /g; s/[[:space:]]+$//')
+
+    printf '%s' "$out"
+}
+
+while IFS= read -r -d '' file; do
+    dir=$(dirname "$file")
+    base=$(basename "$file")
+
+    newbase=$(fix_name "$base")
+    [[ "$base" == "$newbase" ]] && continue
+
+    newpath="$dir/$newbase"
+    if [[ -e "$newpath" ]]; then
+        echo "Aviso: '$newpath' já existe, pulando '$base'." >&2
+        continue
+    fi
+
+    if [[ "$dry_run" == "1" ]]; then
+        echo "[dry-run] '$base'  ->  '$newbase'"
+    else
+        mv -- "$file" "$newpath"
+        echo "Renomeado: '$base'  ->  '$newbase'"
+    fi
+    ((count++)) || true
+done < <(find "$root" -type f \( -name '*(MP3_160K)*' -o -name '*__*' -o -name '*_s *' -o -name '*_t *' -o -name '*_m *' -o -name "*_ll *" -o -name "*_re *" -o -name "*_ve *" -o -name "*_d *" \) -print0)
+
+echo
+echo "Total: $count arquivo(s) processado(s)."

@@ -6,6 +6,7 @@ exec_always --no-startup-id setxkbmap -layout br -variant abnt2
 exec_always --no-startup-id xwallpaper --zoom ~/.xwallpaper
 exec_always --no-startup-id picom
 exec --no-startup-id redshift -O 4000 -P
+exec --no-startup-id syncthing --no-browser
 
 
 # mods
@@ -37,12 +38,12 @@ bindsym $mod+b exec firefox
 bindsym $mod+z exec pavucontrol
 
 bindsym $mod+Shift+c      restart
-bindsym $mod+n            exec ~/dotfiles/dmenu/dev
-bindsym $mod+Escape       exec ~/dotfiles/dmenu/power-menu
-bindsym $mod+Shift+w      exec ~/dotfiles/dmenu/wallpaper
-bindsym $mod+Shift+Escape exec ~/dotfiles/dmenu/theme
-bindsym $mod+o            exec ~/dotfiles/dmenu/notes
-bindsym $mod+c            exec ~/dotfiles/dmenu/calc
+bindsym $mod+n            exec ~/dotfiles/scripts/dev
+bindsym $mod+Escape       exec ~/dotfiles/scripts/power-menu
+bindsym $mod+Shift+w      exec ~/dotfiles/scripts/wallpaper
+bindsym $mod+Shift+Escape exec ~/dotfiles/scripts/theme
+bindsym $mod+o            exec ~/dotfiles/scripts/notes
+bindsym $mod+c            exec ~/dotfiles/scripts/calc
 
 
 # focus

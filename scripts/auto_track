@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (($# == 0)); then
+    echo "Uso: $0 arquivo1.mp3 arquivo2.mp3 ..." >&2
+    exit 1
+fi
+
+if ! command -v eyeD3 >/dev/null 2>&1; then
+    echo "Erro: eyeD3 não está instalado." >&2
+    echo "Execute com: nix shell nixpkgs#eyed3" >&2
+    exit 1
+fi
+
+files=("$@")
+total=${#files[@]}
+
+# Validar todos os arquivos antes de alterar qualquer um.
+for file in "${files[@]}"; do
+    if [[ ! -f "$file" ]]; then
+        echo "Erro: arquivo não encontrado: $file" >&2
+        exit 1
+    fi
+done
+
+echo "Prévia da numeração:"
+for i in "${!files[@]}"; do
+    printf '%d/%d  %s\n' "$((i + 1))" "$total" "${files[$i]}"
+done
+
+read -r -p "Aplicar alterações? [s/N] " confirm
+[[ "$confirm" == [sS] ]] || exit 0
+
+for i in "${!files[@]}"; do
+    eyeD3 -n "$((i + 1))" -N "$total" "${files[$i]}"
+done
+
+echo "Numeração concluída."
