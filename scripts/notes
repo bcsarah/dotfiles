@@ -7,7 +7,7 @@ base="$HOME/$notes"
 dir=$(ls $base | $dmenu -p "folder")
 [ -z "$dir" ] && exit 0
 
-note=$(ls "$base/$dir" | sed 's/\.md$//' | $dmenu -p "notes")
+note=$(ls "$base/$dir" | grep ".md" | sed 's/\.md$//' | $dmenu -p "notes")
 [ -z "$note" ] && exit 0
 
 file="$base/$dir/$note.md"
