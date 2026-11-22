@@ -1,8 +1,6 @@
 #!/bin/sh
 
-dmenu="dmenu $(cat $HOME/dotfiles/themes/current/dmenu) -i"
-input=$(printf "poweroff\nreboot\nreload\nexit\nlock" | $dmenu -p "power-menu")
-
+input=$(printf "poweroff\nreboot\nreload\nexit\nlock" | rofi -dmenu -p "power-menu")
 [ -z "$input" ] && exit 0
 
 case "$input" in

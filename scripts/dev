@@ -1,10 +1,9 @@
 #!/bin/sh
 
-dmenu="dmenu $(cat $HOME/dotfiles/themes/current/dmenu) -i"
 dev="dev" # change this if your projects folder is different
 base="$HOME/$dev"
 
-dir=$(ls $base | $dmenu -p "projects")
+dir=$(ls $base | rofi -dmenu -p "projects")
 [ -z "$dir" ] && exit 0
 
 exec kitty -e tmux new-session -c $base/$dir

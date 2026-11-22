@@ -1,13 +1,12 @@
 #!/bin/sh
 
-dmenu="dmenu $(cat $HOME/dotfiles/themes/current/dmenu) -i"
 notes="notes"
 base="$HOME/$notes"
 
-dir=$(ls $base | $dmenu -p "folder")
+dir=$(ls $base | rofi -dmenu -p "folder")
 [ -z "$dir" ] && exit 0
 
-note=$(ls "$base/$dir" | grep ".md" | sed 's/\.md$//' | $dmenu -p "notes")
+note=$(ls "$base/$dir" | grep ".md" | sed 's/\.md$//' | rofi -dmenu -p "notes")
 [ -z "$note" ] && exit 0
 
 file="$base/$dir/$note.md"
