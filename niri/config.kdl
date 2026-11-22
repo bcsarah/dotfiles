@@ -79,6 +79,11 @@ window-rule {
 }
 
 window-rule {
+    match title="Steam"
+    open-maximized true
+}
+
+window-rule {
     geometry-corner-radius 4
     clip-to-geometry true
 }
