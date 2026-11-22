@@ -3,6 +3,10 @@
 
   "logo": {
     "type": "small",
+    "color": {
+      "1": "red",
+      "2": "red"
+    },
     "padding": {
       "top": 4,
       "left": 3
@@ -11,10 +15,20 @@
 
   "display": {
     "separator": " ",
+    "color": {
+      "keys": "red",
+      "title": "red"
+    }
   },
 
   "modules": [
-    "title",
+    {
+      "type": "title",
+      "color": {
+        "user": "red",
+        "host": "red"
+      }
+    },
 
     "break",
 

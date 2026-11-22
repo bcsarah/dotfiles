@@ -22,7 +22,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 # mini
-alias x='startx'
 alias r='ranger'
 alias v='nvim'
 alias vs='sudo nvim'
@@ -31,8 +30,6 @@ alias vs='sudo nvim'
 alias doas='sudo'
 alias vi='nvim'
 alias vim='nvim'
-alias i3lock='i3lock -c $(cat $HOME/dotfiles/themes/current/i3lock)'
-alias fastfetch='fastfetch $(cat $HOME/dotfiles/themes/current/fastfetch)'
 alias ls='ls --color=auto'
 alias la='ls -lah'
 alias ln='ln -sfnv'
@@ -48,7 +45,6 @@ alias tree='tree -a -L 2'
 # new
 alias lg='lazygit'
 alias img='kitty +kitten icat'
-alias copy='xclip -selection clipboard'
 alias now='date +"%d/%m/%Y %H:%M:%S"'
 alias today='date +"%d/%m/%Y"'
 alias clock='date +"%H:%M:%S"'
@@ -97,4 +93,4 @@ alias vmake='sudo nvim/etc/portage/make.conf'
 
 
 # init
-fastfetch $(cat $HOME/dotfiles/themes/current/fastfetch)
+fastfetch

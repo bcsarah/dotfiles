@@ -1,38 +1,59 @@
 [global]
-monitor = 0
-follow = mouse
+    monitor = 0
+    follow = mouse
 
-width = 320
-height = 120
-origin = top-right
-offset = (10, 10)
+    width = 320
+    height = 120
+    origin = top-right
+    offset = (10, 10)
 
-notification_limit = 5
+    notification_limit = 5
 
-progress_bar = true
-progress_bar_height = 8
-progress_bar_min_width = 150
-progress_bar_max_width = 300
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
 
-transparency = 0
+    transparency = 0
 
-padding = 12
-horizontal_padding = 12
-text_icon_padding = 8
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 8
 
-frame_width = 2
-gap_size = 6
+    frame_width = 2
+    gap_size = 6
 
-font = JetBrainsMono Nerd Font 10
+    font = JetBrainsMono Nerd Font 10
 
-markup = full
-format = "<b>%s</b>\n%b"
-alignment = left
-vertical_alignment = center
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
 
-word_wrap = true
-ellipsize = middle
+    word_wrap = true
+    ellipsize = middle
 
-show_age_threshold = 60
-sticky_history = yes
-history_length = 20
+    show_age_threshold = 60
+    sticky_history = yes
+    history_length = 20
+
+    frame_color = "#B14242"
+    separator_color = "#949494"
+
+[urgency_low]
+    background = "#121212"
+    foreground = "#949494"
+    frame_color = "#4A8B8B"
+    timeout = 5
+
+[urgency_normal]
+    background = "#121212"
+    foreground = "#f5f5f5"
+    frame_color = "#B14242"
+    timeout = 8
+
+[urgency_critical]
+    background = "#121212"
+    foreground = "#f5f5f5"
+    frame_color = "#D87C4A"
+    timeout = 0

@@ -90,7 +90,8 @@ binds {
     Mod+W { close-window; }
     Mod+P { close-window; }
     Mod+E { spawn "thunar"; }
-    Mod+R { spawn "rofi -show drun"; }
+    Mod+R { spawn-sh "rofi -show drun"; }
+    Mod+Shift+R { spawn-sh "rofi -show run"; }
 
     Mod+S { spawn-sh "kitty -e cmus"; }
     Mod+B { spawn "firefox"; }
