@@ -59,10 +59,9 @@ layout {
 
 
 // Startup
-spawn-sh-at-startup "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=niri"
 spawn-sh-at-startup "swaybg -i ~/.wpp"
 spawn-sh-at-startup "syncthing --no-browser"
+spawn-sh-at-startup "wlsunset -T 4001 -t 4000"
 
 hotkey-overlay {
     skip-at-startup
@@ -81,6 +80,11 @@ window-rule {
 window-rule {
     match title="Steam"
     open-maximized true
+}
+
+window-rule {
+    match title="Volume Control"
+    open-floating true
 }
 
 window-rule {
