@@ -1,0 +1,183 @@
+# ==============================================================================
+# General
+
+[general]
+autostart = ["swaybg -i ~/.wpp", "wlsunset -T 4001 -t 4000", "syncthing --no-browser"]
+show_cheatsheet = false
+# xwayland = false
+# xwayland_native_resolution = true
+# xwayland_xsettings = false
+# xwayland_primary_output = "DP-1"
+# attach_modal_dialogs = false
+
+
+# ==============================================================================
+# Lid events
+
+[events]
+lid_close = "umbriel msg output-disable eDP-1"
+lid_open = "umbriel msg output-enable eDP-1"
+
+
+# ==============================================================================
+# Appearance
+
+[appearance.blur]
+radius = 3
+
+[appearance]
+border_width = 2
+corner_radius = 4
+
+
+# ==============================================================================
+# Input
+
+[input.keyboard]
+numlock_toggle = true
+layout = "br"
+variant = "abnt2"
+
+[input.focus]
+follows_mouse = "sloppy"
+hover_raises = false
+
+[input.touchpad]
+tap = true
+natural_scroll = true
+scroll_method = "two_finger"
+
+
+# ==============================================================================
+# Output
+[output.eDP-1]
+workspaces = 4
+
+
+# ==============================================================================
+# Keybinds
+
+[keybinds]
+
+# Applications and session
+"Mod+Q" = "spawn kitty"
+"Mod+W" = "window-close"
+"Mod+E" = "spawn thunar"
+"Mod+R" = "spawn rofi -show drun"
+"Mod+Shift+R" = "spawn rofi -show run"
+
+"Mod+S" = "spawn kitty -e cmus"
+"Mod+B" = "spawn firefox"
+"Mod+Z" = "spawn pavucontrol"
+
+"Mod+Escape" =  "spawn ~/dotfiles/scripts/power-menu"
+"Mod+Shift+W" = "spawn ~/dotfiles/scripts/wpp"
+"Mod+N" =       "spawn ~/dotfiles/scripts/dev"
+"Mod+O" =       "spawn ~/dotfiles/scripts/notes"
+
+# Focus and movement
+"Mod+H" = "window-focus-left"
+"Mod+J" = "window-focus-down"
+"Mod+K" = "window-focus-up"
+"Mod+L" = "window-focus-right"
+"Mod+Shift+H" = "column-move-left"
+"Mod+Shift+J" = "window-move-down"
+"Mod+Shift+K" = "window-move-up"
+"Mod+Shift+L" = "column-move-right"
+
+# Window state and layout
+"Mod+F"       = "window-toggle-maximize"
+"Mod+Shift+F" = "window-toggle-fullscreen"
+"Mod+V"       = "window-toggle-floating"
+"Mod+Shift+V" = "window-focus-switch-floating"
+"Mod+U" = "layout-toggle-split"
+
+"Mod+Minus" = "window-modify-primary-extent -0.1"
+"Mod+Equal" = "window-modify-primary-extent +0.1"
+"Mod+Shift+Minus" = "window-modify-secondary-extent -0.1"
+"Mod+Shift+Equal" = "window-modify-secondary-extent +0.1"
+
+"Mod+WheelUp"   = "window-focus-left"
+"Mod+WheelDown" = "window-focus-right"
+
+# Workspaces
+"Mod+1" = "workspace-switch 1"
+"Mod+2" = "workspace-switch 2"
+"Mod+3" = "workspace-switch 3"
+"Mod+4" = "workspace-switch 4"
+"Mod+Shift+1" = "window-move-to-workspace 1"
+"Mod+Shift+2" = "window-move-to-workspace 2"
+"Mod+Shift+3" = "window-move-to-workspace 3"
+"Mod+Shift+4" = "window-move-to-workspace 4"
+
+# Media
+"XF86AudioRaiseVolume"  = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"
+"XF86AudioLowerVolume"  = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"
+"XF86AudioMute"         = "spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+"XF86AudioMicMute"      = "spawn wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+"XF86AudioPlay"         = "spawn playerctl play-pause"
+"XF86AudioStop"         = "spawn playerctl stop"
+"XF86AudioPrev"         = "spawn playerctl previous"
+"XF86AudioNext"         = "spawn playerctl next"
+"XF86MonBrightnessUp"   = "spawn brightnessctl --class=backlight set +10%"
+"XF86MonBrightnessDown" = "spawn brightnessctl --class=backlight set 10%-"
+
+# Overview
+"Mod+Tab"   = "overview-toggle"
+
+
+# ==============================================================================
+# Layout
+
+[layout]
+mode = "dwindle" # scrolling, dwindle, master, stacking.
+extent_presets = [0.333, 0.5, 0.667]
+
+[layout.scrolling]
+default_extent_fraction = 0.5
+
+[layout.dwindle]
+preserve_split = false
+
+
+# ==============================================================================
+# Window rules
+
+[[window_rule]]
+border_color_focused = "#B14242"
+border_color_unfocused = "#949494"
+blur = true
+
+[[window_rule]]
+match.is_focused = false
+opacity = 0.9
+
+[[window_rule]]
+match.is_focused = true
+opacity = 0.95
+
+[[window_rule]]
+match.app_id = "firefox"
+default_maximize = true
+
+[[window_rule]]
+match.app_id = "steam"
+default_maximize = true
+
+[[window_rule]]
+match.app_id = "pavucontrol"
+default_floating = true
+
+[[window_rule]]
+match.title = "Picture-in-Picture"
+default_floating = true
+default_maximize = false
+default_position = { x = 20, y = 20, anchor = "bottom_right" }
+
+
+# ==============================================================================
+# Overview
+[hot_corners.top_left]
+enabled = true
+delay_ms = 100
+action = "overview-open"

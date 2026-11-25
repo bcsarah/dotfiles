@@ -25,16 +25,6 @@ cursor {
     //xcursor-size 24
 }
 
-
-// Monitor
-/-output "eDP-1" {
-    mode "1920x1080@120.030"
-    scale 1
-    transform "normal"
-    position x=1280 y=0
-}
-
-
 // Layout
 layout {
     gaps 10
@@ -60,8 +50,8 @@ layout {
 
 // Startup
 spawn-sh-at-startup "swaybg -i ~/.wpp"
-spawn-sh-at-startup "syncthing --no-browser"
 spawn-sh-at-startup "wlsunset -T 4001 -t 4000"
+spawn-sh-at-startup "syncthing --no-browser"
 
 hotkey-overlay {
     skip-at-startup
@@ -73,17 +63,22 @@ prefer-no-csd
 
 // Window Rules
 window-rule {
-    match title="Firefox"
+    match app-id="firefox"
     open-maximized true
 }
 
 window-rule {
-    match title="Steam"
+    match app-id="steam"
     open-maximized true
 }
 
 window-rule {
-    match title="Volume Control"
+    match app-id="pavucontrol"
+    open-floating true
+}
+
+window-rule {
+    match title="Picture-in-Picture"
     open-floating true
 }
 
@@ -159,8 +154,8 @@ binds {
     XF86AudioStop         allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev         allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext         allow-when-locked=true { spawn-sh "playerctl next"; }
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set +10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 10%-"; }
 
     // Printscreen
     Print { screenshot; }

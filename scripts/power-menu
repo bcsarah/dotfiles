@@ -11,7 +11,7 @@ case "$input" in
         reboot
         ;;
     exit)
-        pkill niri
+        pkill umbriel
         ;;
     lock)
         swaylock --color 1c1c1c --inside-color 303030 --inside-clear-color 303030 --inside-caps-lock-color 303030 --ring-color c4746e --ring-clear-color 8caa7e --ring-caps-lock-color d4a373 --key-hl-color c4746e --bs-hl-color e06c75 --text-color ffffff --text-clear-color 8caa7e --text-caps-lock-color d4a373 --line-color 00000000 --separator-color 00000000 --indicator-radius 100 --indicator-thickness 8 --show-failed-attempts
