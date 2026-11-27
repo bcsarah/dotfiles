@@ -8,7 +8,7 @@
       "2": "red"
     },
     "padding": {
-      "top": 4,
+      "top": 3,
       "left": 3
     }
   },
@@ -22,24 +22,19 @@
   },
 
   "modules": [
-    {
-      "type": "title",
-      "color": {
-        "user": "red",
-        "host": "red"
-      }
-    },
+    { "type": "title" },
 
     "break",
 
     { "type": "battery",  "key": "󰁹 " },
-    { "type": "datetime", "key": "󰥔 " },
+    { "type": "datetime", "key": "󰸗 " },
 
     "break",
 
     { "type": "os",       "key": " " },
     { "type": "kernel",   "key": "󰇺 " },
     { "type": "packages", "key": "󰏖 " },
+    { "type": "command",  "key": "󰥔 ", "text": "birth=$(stat -c %W /); now=$(date +%s); echo $(((now - birth) / 86400)) days" },
 
     "break",
 
@@ -47,8 +42,6 @@
     { "type": "disk",     "key": "󱛟 ", "folders": ["/"] },
     { "type": "wm",       "key": " " },
 
-    "break",
-
-    { "type": "colors" }
+    "break"
   ]
 }
