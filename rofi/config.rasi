@@ -2,7 +2,7 @@ configuration {
     modi: "drun,run,window,ssh,combi";
     show-icons: true;
     icon-theme: "Papirus-Dark";
-    terminal: "kitty";
+    terminal: "foot";
     font: "JetBrainsMono Nerd Font 11";
 
     drun-display-format: "{name}";
@@ -10,7 +10,6 @@ configuration {
     display-run: " Run";
     display-window: " Windows";
     display-ssh: " SSH";
-    display-clipboard: " Clip";
 
     kb-row-up: "Up,Control+k";
     kb-row-down: "Down,Control+j";

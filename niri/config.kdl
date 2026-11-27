@@ -18,7 +18,7 @@ switch-events {
 
 // Startup
 spawn-sh-at-startup "swaybg -i ~/.wpp"
-spawn-sh-at-startup "wlsunset -T 4001 -t 4000"
+spawn-sh-at-startup "wlsunset -t 3500"
 spawn-sh-at-startup "syncthing --no-browser"
 
 
