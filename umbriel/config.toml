@@ -1,38 +1,20 @@
-# ==============================================================================
-# General
-
 [general]
 autostart = ["swaybg -i ~/.wpp", "wlsunset -T 4001 -t 4000", "syncthing --no-browser"]
 show_cheatsheet = false
-# xwayland = false
-# xwayland_native_resolution = true
-# xwayland_xsettings = false
-# xwayland_primary_output = "DP-1"
-# attach_modal_dialogs = false
-
-
-# ==============================================================================
-# Lid events
 
 [events]
 lid_close = "umbriel msg output-disable eDP-1"
 lid_open = "umbriel msg output-enable eDP-1"
 
-
 # ==============================================================================
-# Appearance
-
 [appearance.blur]
 radius = 3
 
 [appearance]
-border_width = 2
+border_width = 0
 corner_radius = 4
 
-
 # ==============================================================================
-# Input
-
 [input.keyboard]
 numlock_toggle = true
 layout = "br"
@@ -40,42 +22,38 @@ variant = "abnt2"
 
 [input.focus]
 follows_mouse = "sloppy"
-hover_raises = false
+hover_raises = true
 
 [input.touchpad]
 tap = true
 natural_scroll = true
 scroll_method = "two_finger"
 
-
 # ==============================================================================
-# Output
 [output.eDP-1]
 workspaces = 4
 
-
 # ==============================================================================
-# Keybinds
-
 [keybinds]
 
-# Applications and session
-"Mod+Q" = "spawn kitty"
-"Mod+W" = "window-close"
-"Mod+E" = "spawn thunar"
-"Mod+R" = "spawn rofi -show drun"
+"Mod+Q"       = "spawn kitty"
+"Mod+W"       = "window-close"
+"Mod+E"       = "spawn thunar"
+"Mod+R"       = "spawn rofi -show drun"
 "Mod+Shift+R" = "spawn rofi -show run"
+"Mod+Tab"     = "overview-toggle"
 
-"Mod+S" = "spawn kitty -e cmus"
 "Mod+B" = "spawn firefox"
+"Mod+S" = "spawn kitty -e cmus"
+"Mod+M" = "spawn rofimoji"
 "Mod+Z" = "spawn pavucontrol"
 
-"Mod+Escape" =  "spawn ~/dotfiles/scripts/power-menu"
+"Mod+Escape"  = "spawn ~/dotfiles/scripts/power-menu"
 "Mod+Shift+W" = "spawn ~/dotfiles/scripts/wpp"
-"Mod+N" =       "spawn ~/dotfiles/scripts/dev"
-"Mod+O" =       "spawn ~/dotfiles/scripts/notes"
+"Mod+N"       = "spawn ~/dotfiles/scripts/dev"
+"Mod+O"       = "spawn ~/dotfiles/scripts/notes"
 
-# Focus and movement
+# Window Management
 "Mod+H" = "window-focus-left"
 "Mod+J" = "window-focus-down"
 "Mod+K" = "window-focus-up"
@@ -85,12 +63,11 @@ workspaces = 4
 "Mod+Shift+K" = "window-move-up"
 "Mod+Shift+L" = "column-move-right"
 
-# Window state and layout
 "Mod+F"       = "window-toggle-maximize"
 "Mod+Shift+F" = "window-toggle-fullscreen"
 "Mod+V"       = "window-toggle-floating"
 "Mod+Shift+V" = "window-focus-switch-floating"
-"Mod+U" = "layout-toggle-split"
+"Mod+U"       = "layout-toggle-split"
 
 "Mod+Minus" = "window-modify-primary-extent -0.1"
 "Mod+Equal" = "window-modify-primary-extent +0.1"
@@ -122,15 +99,9 @@ workspaces = 4
 "XF86MonBrightnessUp"   = "spawn brightnessctl --class=backlight set +10%"
 "XF86MonBrightnessDown" = "spawn brightnessctl --class=backlight set 10%-"
 
-# Overview
-"Mod+Tab"   = "overview-toggle"
-
-
 # ==============================================================================
-# Layout
-
 [layout]
-mode = "dwindle" # scrolling, dwindle, master, stacking.
+mode = "scrolling" # scrolling, dwindle, master, stacking.
 extent_presets = [0.333, 0.5, 0.667]
 
 [layout.scrolling]
@@ -139,34 +110,22 @@ default_extent_fraction = 0.5
 [layout.dwindle]
 preserve_split = false
 
-
 # ==============================================================================
-# Window rules
-
 [[window_rule]]
-border_color_focused = "#B14242"
-border_color_unfocused = "#949494"
-blur = true
 
 [[window_rule]]
 match.is_focused = false
-opacity = 0.9
+opacity = 0.8
 
 [[window_rule]]
 match.is_focused = true
 opacity = 0.95
 
+# firefox
 [[window_rule]]
 match.app_id = "firefox"
 default_maximize = true
-
-[[window_rule]]
-match.app_id = "steam"
-default_maximize = true
-
-[[window_rule]]
-match.app_id = "pavucontrol"
-default_floating = true
+default_workspace = 2
 
 [[window_rule]]
 match.title = "Picture-in-Picture"
@@ -174,10 +133,18 @@ default_floating = true
 default_maximize = false
 default_position = { x = 20, y = 20, anchor = "bottom_right" }
 
+# gamez
+[[window_rule]]
+match.app_id = ["steam", "sh.ppy.osu", "org.vinegarhq.Sober", "Fightcade"]
+default_maximize = true
+default_workspace = 3
 
-# ==============================================================================
-# Overview
-[hot_corners.top_left]
-enabled = true
-delay_ms = 100
-action = "overview-open"
+# thuanr
+[[window_rule]]
+match.title = "File Operation Progress"
+default_floating = true
+
+# pavucontrol
+[[window_rule]]
+match.app_id = "pavucontrol"
+default_floating = true
