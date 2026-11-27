@@ -8,7 +8,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR=nvim
 export VISUAL=nvim
-export TERMINAL="kitty"
+export TERMINAL="foot"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -44,7 +44,6 @@ alias tree='tree -a -L 2'
 
 # new
 alias lg='lazygit'
-alias img='kitty +kitten icat'
 alias now='date +"%d/%m/%Y %H:%M:%S"'
 alias today='date +"%d/%m/%Y"'
 alias clock='date +"%H:%M:%S"'

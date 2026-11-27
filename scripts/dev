@@ -6,4 +6,4 @@ base="$HOME/$dev"
 dir=$(ls $base | rofi -dmenu -p "projects")
 [ -z "$dir" ] && exit 0
 
-exec kitty -e tmux new-session -c $base/$dir
+exec foot tmux new-session -c $base/$dir

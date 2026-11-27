@@ -10,4 +10,4 @@ note=$(ls "$base/$dir" | grep ".md" | sed 's/\.md$//' | rofi -dmenu -p "notes")
 [ -z "$note" ] && exit 0
 
 file="$base/$dir/$note.md"
-kitty -d $base -e nvim $file
+foot -D $base -e nvim $file

@@ -55,14 +55,14 @@ layout {
 // Binds
 binds {
     // Bind apps
-    Mod+Q       { spawn "kitty"; }
+    Mod+Q       { spawn "foot"; }
     Mod+W       { close-window; }
     Mod+E       { spawn "thunar"; }
     Mod+R       { spawn-sh "rofi -show drun"; }
     Mod+Shift+R { spawn-sh "rofi -show run"; }
     Mod+Tab     { toggle-overview; }
 
-    Mod+S { spawn-sh "kitty -e cmus"; }
+    Mod+S { spawn-sh "foot -e cmus"; }
     Mod+B { spawn "firefox"; }
     Mod+M { spawn "rofimoji"; }
     Mod+Z { spawn "pavucontrol"; }

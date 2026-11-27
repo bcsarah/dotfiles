@@ -26,21 +26,21 @@
 
     "break",
 
-    { "type": "battery",  "key": "󰁹 " },
-    { "type": "datetime", "key": "󰸗 " },
+    { "type": "battery",  "key": "󰁹" },
+    { "type": "datetime", "key": "󰸗" },
 
     "break",
 
-    { "type": "os",       "key": " " },
-    { "type": "kernel",   "key": "󰇺 " },
-    { "type": "packages", "key": "󰏖 " },
-    { "type": "command",  "key": "󰥔 ", "text": "birth=$(stat -c %W /); now=$(date +%s); echo $(((now - birth) / 86400)) days" },
+    { "type": "os",       "key": "" },
+    { "type": "kernel",   "key": "󰇺" },
+    { "type": "packages", "key": "󰏖" },
+    { "type": "command",  "key": "󰥔", "text": "birth=$(stat -c %W /); now=$(date +%s); echo $(((now - birth) / 86400)) days" },
 
     "break",
 
-    { "type": "memory",   "key": " " },
-    { "type": "disk",     "key": "󱛟 ", "folders": ["/"] },
-    { "type": "wm",       "key": " " },
+    { "type": "memory",   "key": "" },
+    { "type": "disk",     "key": "󱛟", "folders": ["/"] },
+    { "type": "wm",       "key": "" },
 
     "break"
   ]
